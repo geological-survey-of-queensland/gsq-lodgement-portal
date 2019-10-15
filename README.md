@@ -3,7 +3,7 @@
 ## Purpose of this document
 Provide a specification for the new GSQ Lodgement Portal that:  
 * Accurately defines the business requirements
-* Is a key input to softare design for a software developer  
+* Is a key input to software design for a software developer  
 
 The primary input into this document is the data model defined in the [Resources Industry Report Profile](https://github.com/geological-survey-of-queensland/industry-report-profile).
 
