@@ -29,3 +29,25 @@ When government issues a permit to a holder, the legislation requires a permit h
 
 
 ## Lodgement Portal vocabularies
+
+
+## See also
+
+
+## License
+This code repository's content are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), the deed of which is stored in this repository here: [LICENSE](LICENSE).
+
+
+## Contacts
+*System owner*:  
+**Mark Gordon**  
+Geological Survey of Quensland  
+Department of Natural Resources, Mines and Energy  
+Brisbane, QLD, Australia  
+<mark.gordon@dnrme.qld.gov.au>  
+
+*Author*:  
+**David Crosswell**  
+Enterprise Architect  
+Cross-Lateral Enterprises   
+<https://crosslateral.com.au>
