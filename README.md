@@ -26,9 +26,9 @@ When government issues a permit to a holder, the legislation requires a permit h
 5. Provide search functionality for GSQ staff to search for reports.
 
 ### Vendor deliverables
-1.	An online lodgement portal to allow industry users to submit reports and upload associated geoscience data files in a structured, itemised format.
-  a.	Data must be able to be submitted through a human-computer interface
-  b.	Data must be able to be submitted through a computer-computer interface
+1.	An online lodgement portal to allow industry users to submit reports and upload associated geoscience data files in a structured, itemised format.  
+    a.	Data must be able to be submitted through a human-computer interface  
+    b.	Data must be able to be submitted through a computer-computer interface  
 2.	A solution to allow internal GSQ users to manually enter and manage geoscience data and upload geoscience data files.
 3.	Automated workflows to process the receipt, review, acceptance and rejection of geoscience data submitted to the data lake storage platform, including industry reports, industry data and internal data.
 4.	A method of enabling the upload of large geoscience data files (up to low TB file size) to the data lake storage platform.
