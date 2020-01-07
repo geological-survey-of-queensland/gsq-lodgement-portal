@@ -69,6 +69,22 @@ The vocabularies used in this profile are:
 5. [Data Access Rights](https://vocabs.gsq.digital/vocabulary/data-access-rights)
 6. [Commodity](https://vocabs.gsq.digital/vocabulary/gsq-commodity)
 
+## Data Migration out of QDEX Reports
+
+The following data is to be migrated from QDEX Reports.
+
+|Name|Description|Count|Migrate to|
+|---|---|---|---|
+|QDEX - Exploration Reports|The result of mandatory reporting requirements to the government by mineral, coal and petroleum explorers in Queensland. The collection commenced with the introduction of the exploration permitting system in Queensland in the 1950's and continues to the present day with several hundred reports added annually.|97065|Lodgement Portal|
+|Queensland Geological Maps|A collection of current Geological Maps published by the Geological Survey of Queensland. The collection also includes Geology Compilation Plots compiled from recent project work.|419|Open Data Portal|
+|GSQ Record Series|Publications produced as part of the record series by the Geological Survey of Queensland.|1299|Open Data Portal|
+|Soils and Land Resources Reports|Information on Queensland soils, acid sulfate soils, land systems, agricultural land suitability, agricultural land capability, available in land resources reports and maps and land management manuals.	|390|Open Data Portal|
+|Exploration Reports|Exploration Reports specifically related to drilling and non-drilling carried out by recipients of Queensland Government exploration grants, including the Collaborative Exploration Initiative grants under the Strategic Resources Exploration Program.|119|Open Data Portal|
+|Departmental Publications|Departmental Publications including Queensland Government Mining Journal (QGMJ).|2075|Open Data Portal|
+|GSQ-Commissioned Industry Studies/Reports|Reports on Studies undertaken by Industry, but commissioned by the Geological Survey of Queensland.|15|Open Data Portal|
+|Industry Consultative Reports|Reports created by external parties and of geological significance that are submitted to DNRM and associated with the exploration industry, but not tied to tenure or legislation|31|Open Data Portal|
+
+
 ## See also
 * [Industry report profile](https://github.com/geological-survey-of-queensland/industry-report-profile)
 
