@@ -35,9 +35,9 @@ When government issues a permit to a holder, the legislation requires a permit h
 ## Four versions of the Lodgement Portal
 There are 4 versions of lodgement portal to be built:
 1. MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports - described on this page.
-2. Version 2 Lodgement Portal that parses the data lodged in the petroleum, coal, and mineral reporting guideline templates - described on [Version2-portal-README.MD](/MVP2-portal-README.MD)
-3. Version 3 Lodgement Portal that does some cool stuff - described on [Version3-portal-README.MD](/MVP3-portal-README.MD)
-4. Version 4 Lodgement Portal that does some additional cool stuff - described on [Version4-portal-README.MD](/MVP4-portal-README.MD)
+2. Version 2 Lodgement Portal that parses the data lodged in the petroleum, coal, and mineral reporting guideline templates - described on [Version2-portal-README.MD](/Version2-portal-README.MD)
+3. Version 3 Lodgement Portal that does some cool stuff - described on [Version3-portal-README.MD](/Version3-portal-README.MD)
+4. Version 4 Lodgement Portal that does some additional cool stuff - described on [Version4-portal-README.MD](/Version4-portal-README.MD)
 
 ## MVP Lodgement Portal activity diagram
 <p align="center">
