@@ -30,14 +30,14 @@ When government issues a permit to a holder, the legislation requires a permit h
     a.	Data must be able to be submitted through a human-computer interface  
     b.	Data must be able to be submitted through a computer-computer interface  
 2.	Automated workflows to process the geoscience data submitted to the data lake storage platform, including industry reports, industry data and internal data.
-3.	A method of enabling the upload of large geoscience data files (up to low TB file size) to the data lake storage platform.
+3.	A method of enabling the upload of large geoscience data files to the data lake storage platform.
 
-## First build the MVP Lodgement Portal
+## Four versions of the Lodgement Portal
 There are 4 versions of lodgement portal to be built:
-1. MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports.
-2. xx
-3. xx
-4. xx
+1. MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports - described on this page.
+2. Version 2 Lodgement Portal that parses the data lodged in the petroleum, coal, and mineral reporting guideline templates - described on [Version2-portal-README.MD](/MVP2-portal-README.MD)
+3. Version 3 Lodgement Portal that does some cool stuff - described on [Version3-portal-README.MD](/MVP3-portal-README.MD)
+4. Version 4 Lodgement Portal that does some additional cool stuff - described on [Version4-portal-README.MD](/MVP4-portal-README.MD)
 
 ## MVP Lodgement Portal activity diagram
 <p align="center">
