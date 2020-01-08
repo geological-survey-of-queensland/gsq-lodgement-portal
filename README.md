@@ -34,7 +34,9 @@ When government issues a permit to a holder, the legislation requires a permit h
 4.	A method of enabling the upload of large geoscience data files (up to low TB file size) to the data lake storage platform.
 
 ## Lodgement Portal conceptual data model
-
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-conceptual-design.png" width="100%"><br>
+Figure 1: Lodgement Portal conceptual data model</p>
 
 ## Lodgement Portal data elements
 |Data Element|Remarks|Source|
