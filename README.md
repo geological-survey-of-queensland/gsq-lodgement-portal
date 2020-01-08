@@ -29,16 +29,27 @@ When government issues a permit to a holder, the legislation requires a permit h
 1.	An online lodgement portal to allow industry users to submit reports and upload associated geoscience data files in a structured, itemised format.  
     a.	Data must be able to be submitted through a human-computer interface  
     b.	Data must be able to be submitted through a computer-computer interface  
-2.	A solution to allow internal GSQ users to manually enter and manage geoscience data and upload geoscience data files.
-3.	Automated workflows to process the receipt, review, acceptance and rejection of geoscience data submitted to the data lake storage platform, including industry reports, industry data and internal data.
-4.	A method of enabling the upload of large geoscience data files (up to low TB file size) to the data lake storage platform.
+2.	Automated workflows to process the geoscience data submitted to the data lake storage platform, including industry reports, industry data and internal data.
+3.	A method of enabling the upload of large geoscience data files (up to low TB file size) to the data lake storage platform.
 
-## Lodgement Portal conceptual data model
+## First build the MVP Lodgement Portal
+There are 4 versions of lodgement portal to be built:
+1. MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports.
+2. xx
+3. xx
+4. xx
+
+## MVP Lodgement Portal activity diagram
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="60%"><br>
+Figure 1: MVP Lodgement Portal activity diagram</p>
+
+## MVP Lodgement Portal conceptual data model
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-conceptual-design.png" width="100%"><br>
 Figure 1: Lodgement Portal conceptual data model</p>
 
-## Lodgement Portal data elements
+## MVP Lodgement Portal data elements
 |Element|Field name|Remarks|Source|
 |---|---|---|---|
 |report_id|Report ID|A unique, persistent identifer|System|
@@ -117,6 +128,19 @@ The vocabularies used in this profile are:
 4. [Commodity](https://vocabs.gsq.digital/vocabulary/gsq-commodity)
 5. Report detail type.
 6. Report status.
+
+## Lodgement Portal authentication and authorisation
+The Lodgement Portal requires authentication using the Identity Broker:
+* External users authenticate using QGCIDM
+* Internal users authenticate using ADFS
+
+The Lodgement Portal requires user authorisation:
+* External users have rights to submit for particular organisations
+* Internal users have CRUD authorisation rights
+
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation-activity-diagram.png" width="40%"><br>
+Figure 1: Lodgement Portal external user authentication and authorisation</p>
 
 ## Data Migration out of QDEX Reports
 
