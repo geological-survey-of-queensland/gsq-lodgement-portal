@@ -82,6 +82,7 @@ Figure 1: Lodgement Portal conceptual data model</p>
 
 ### Geometry data elements (sub-table)
 The spatial coverage of the report. If no spatial data is submitted with the report and the report is for a permit(s), the spatial coverage is created based on the permit extents boundary. The geometry is stored in the PostGIS component of the database.
+
 |Element|Field name|Remarks|Source|
 |---|---|---|---|
 |geometry_id|Geometry ID|The identifier of the geometry to allow retrieval of the geometrty.|WKT|
@@ -89,6 +90,7 @@ The spatial coverage of the report. If no spatial data is submitted with the rep
 
 ### Report_details data elements (sub-table)
 Enables the collection of various data, held as key:value pairs, i.e. report_detail_type:report_detail_value. e.g. tectonic:Kalkadoon
+
 |Element|Field name|Remarks|Source|
 |---|---|---|---|
 |report_detail_type|Report detail type|Report-specific additional information type|Vocab|
@@ -96,6 +98,7 @@ Enables the collection of various data, held as key:value pairs, i.e. report_det
 
 ### Dataset_resource data elements (sub-table)
 The datasets submitted with the report, e.g. PDF files, wireline logs, CSV files, are stored as objects in S3. Each resource is described with DCAT2-compliant metadata. This table lists all of the dataset resources linked to a report.
+
 |Element|Field name|Remarks|Source|
 |---|---|---|---|
 |dct:identifier|PID|Persistent identifier for the resource|System|
