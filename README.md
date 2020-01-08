@@ -41,12 +41,12 @@ There are 4 versions of lodgement portal to be built:
 
 ## MVP Lodgement Portal activity diagram
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="60%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="70%"><br>
 Figure 1: MVP Lodgement Portal activity diagram</p>
 
 ## MVP Lodgement Portal conceptual data model
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-conceptual-design.png" width="100%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-conceptual-design.png" width="90%"><br>
 Figure 1: Lodgement Portal conceptual data model</p>
 
 ## MVP Lodgement Portal data elements
