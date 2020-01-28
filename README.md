@@ -145,29 +145,31 @@ Figure 1: Lodgement Portal external user authentication and authorisation</p>
 ## Data Migration out of QDEX Reports
 
 The following data is to be migrated from QDEX Reports. Historically, QDEX Reports has been used to publish other types of publications.
+
 * The new lodgement portal will focus on reports lodged by industry (Exploration Reports and Industry Consultative Reports).
 * Other types of publications will be published through the Open Data Portal.
 
-|Name|Description|Count|Migrate to|
-|---|---|---|---|
-|QDEX - Exploration Reports|The result of mandatory reporting requirements to the government by mineral, coal and petroleum explorers in Queensland. The collection commenced with the introduction of the exploration permitting system in Queensland in the 1950's and continues to the present day with several hundred reports added annually.|97065|Lodgement Portal|
-|Industry Consultative Reports|Reports created by external parties and of geological significance that are submitted to DNRM and associated with the exploration industry, but not tied to tenure or legislation|31|Lodgement Portal|
-|Queensland Geological Maps|A collection of current Geological Maps published by the Geological Survey of Queensland. The collection also includes Geology Compilation Plots compiled from recent project work.|419|Open Data Portal|
-|GSQ Record Series|Publications produced as part of the record series by the Geological Survey of Queensland.|1299|Open Data Portal|
-|Soils and Land Resources Reports|Information on Queensland soils, acid sulfate soils, land systems, agricultural land suitability, agricultural land capability, available in land resources reports and maps and land management manuals.	|390|Open Data Portal|
-|Exploration Reports|Exploration Reports specifically related to drilling and non-drilling carried out by recipients of Queensland Government exploration grants, including the Collaborative Exploration Initiative grants under the Strategic Resources Exploration Program.|119|Open Data Portal|
-|Departmental Publications|Departmental Publications including Queensland Government Mining Journal (QGMJ).|2075|Open Data Portal|
-|GSQ-Commissioned Industry Studies/Reports|Reports on Studies undertaken by Industry, but commissioned by the Geological Survey of Queensland.|15|Open Data Portal|
-
+|Name|Description|Count|Migrate metadata to|Migrate data objects to|
+|---|---|---|---|---|
+|QDEX - Exploration Reports|The result of mandatory reporting requirements to the government by mineral, coal and petroleum explorers in Queensland. The collection commenced with the introduction of the exploration permitting system in Queensland in the 1950's and continues to the present day with several hundred reports added annually.|97065|Lodgement Portal|Confidential to Confidential S3/<br>Open to Open Data S3|
+|Industry Consultative Reports|Reports created by external parties and of geological significance that are submitted to DNRM and associated with the exploration industry, but not tied to tenure or legislation|31|Lodgement Portal|Confidential to Confidential S3/<br>Open to Open Data S3|
+|Queensland Geological Maps|A collection of current Geological Maps published by the Geological Survey of Queensland. The collection also includes Geology Compilation Plots compiled from recent project work.|419|Open Data Portal|Open Data S3|
+|GSQ Record Series|Publications produced as part of the record series by the Geological Survey of Queensland.|1299|Open Data Portal|Open Data S3
+|Soils and Land Resources Reports|Information on Queensland soils, acid sulfate soils, land systems, agricultural land suitability, agricultural land capability, available in land resources reports and maps and land management manuals.|390|Open Data Portal|Open Data Portal|
+|Exploration Reports|Exploration Reports specifically related to drilling and non-drilling carried out by recipients of Queensland Government exploration grants, including the Collaborative Exploration Initiative grants under the Strategic Resources Exploration Program.|119|Open Data Portal|Open Data S3|
+|Departmental Publications|Departmental Publications including Queensland Government Mining Journal (QGMJ).|2075|Open Data Portal|Open Data S3
+|GSQ-Commissioned Industry Studies/Reports|Reports on Studies undertaken by Industry, but commissioned by the Geological Survey of Queensland.|15|Open Data Portal|Open Data S3|
 
 ## See also
+
 * [Industry report profile](https://github.com/geological-survey-of-queensland/industry-report-profile)
 
 ## License
+
 This code repository's content are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/), the deed of which is stored in this repository here: [LICENSE](LICENSE).
 
-
 ## Contacts
+
 *System owner*:  
 **Mark Gordon**  
 Geological Survey of Quensland  
@@ -178,5 +180,5 @@ Brisbane, QLD, Australia
 *Author*:  
 **David Crosswell**  
 Enterprise Architect  
-Cross-Lateral Enterprises   
+Cross-Lateral Enterprises
 <https://crosslateral.com.au>
