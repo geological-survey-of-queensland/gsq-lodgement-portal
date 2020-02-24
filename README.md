@@ -63,11 +63,17 @@ It is vital that GSQ exit QDEX Reports by June 30, 2020. Hence, we will iterate 
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="70%"><br>
 Figure 1: MVP Lodgement Portal activity diagram</p>
 
+## MVP Lodgement Portal PID minting
+The Persistent Identifier (PID) is the unique identifier for a site or survey that is submitted to the department. GSQ wants industry to use this PID when submitting data to the department.
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/pid-lodgement-sequence-diagram.png" width="80%"><br>
+Figure 2: MVP Lodgement Portal PID minting</p>
+
 ## MVP Lodgement Portal conceptual data model
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-conceptual-design.png" width="90%"><br>
-Figure 1: Lodgement Portal conceptual data model</p>
+Figure 3: Lodgement Portal conceptual data model</p>
 
 ## MVP Lodgement Portal data elements
 
