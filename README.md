@@ -52,15 +52,15 @@ It is vital that GSQ exit QDEX Reports by June 30, 2020. Hence, we will iterate 
 
 1. Analyse, design, build, and deploy Version 1 - the MVP Lodgement Portal. This portal replaces QDEX Reports.  
   a. The MVP software (Version 1) provides the platform and "plumbing" for all future versions - i.e. web portal, authentication, authorisation, lodgement form, lodgement database, metadata, CKAN integration, S3 integration, spatial processing.  
-  b. The MVP software enables data migration out of QDEX Reports into the Lodgement Portal.
-  c. The MVP software enables data migration out of QDEX Reports into the Data Catalogue (Open Data Portal, Private Data Portal, and Data Object Store (S3)).
+  b. The MVP software enables data migration out of QDEX Reports into the Lodgement Portal.  
+  c. The MVP software enables data migration out of QDEX Reports into the Data Catalogue (Open Data Portal, Private Data Portal, and Data Object Store (S3)).  
 2. Analyse, design, build, and deploy Version 2 - inheriting the functionality of the MVP and building the parsing functionality to populate the Geoproperties database.
 3. Analyse, design, build, and deploy Versions 3 and 4.
 
 ## MVP Lodgement Portal activity diagram
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="70%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement.png" width="70%"><br>
 Figure 1: MVP Lodgement Portal activity diagram</p>
 
 ## Lodgement Form PID minting
