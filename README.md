@@ -307,7 +307,7 @@ The Lodgement Portal requires user authorisation:
 * Internal users have rights to submit lodgement forms or view lodged forms
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation.png" width="50%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation.png" width="80%"><br>
 Figure 5: Lodgement Portal external user authentication and authorisation</p>
 
 ## Alignment to QDEX Reports Metadata
