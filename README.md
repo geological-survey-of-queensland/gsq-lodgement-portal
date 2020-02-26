@@ -60,7 +60,7 @@ It is vital that GSQ exit QDEX Reports by June 30, 2020. Hence, we will iterate 
 ## MVP Lodgement Portal activity diagram
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement.png" width="70%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="70%"><br>
 Figure 1: MVP Lodgement Portal activity diagram</p>
 
 ## Lodgement Form PID minting
@@ -307,7 +307,7 @@ The Lodgement Portal requires user authorisation:
 * Internal users have rights to submit lodgement forms or view lodged forms
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation-activity-diagram.png" width="50%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation.png" width="50%"><br>
 Figure 5: Lodgement Portal external user authentication and authorisation</p>
 
 ## Alignment to QDEX Reports Metadata
