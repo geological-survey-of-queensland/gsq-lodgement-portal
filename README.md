@@ -258,7 +258,7 @@ The following report types are PDF forms.
 * PID minting or PID matching will be performed as defined.
 
 |Report Type|Mint or Match|
-|---|---|---|---|
+|---|---|
 |[PA-21A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0004/259897/pa-21a-notice-intention-survey.pdf) Notice of Intention to carry out seismic survey or scientific or technical survey|Mint survey|
 |[PA-22A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0005/259898/pa-22a-notice-completion-survey.pdf) Notice of Completion of seismic survey or scientific or technical survey|Match survey|
 |[PM 1/2013](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0003/289605/notification-geophysical-survey.pdf) Notification of geophysical survey|Mint survey|
