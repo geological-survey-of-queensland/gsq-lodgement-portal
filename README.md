@@ -124,7 +124,6 @@ Figure 4: Lodgement Portal conceptual data model</p>
 |report_lodge_time|Created|Date and time the report was lodged (date of receipt)|System Date|
 |report_open_file_date|Issued|Date of formal issuance (open file publication). Calculated for new reports.|Date|
 |report_access_rights|Data access rights|Controls user and system access to the resource|Vocab|
-|report_keywords|Keywords|Terms that describe the content of the report|Lookup|
 |report_geometry|Geometry|Spatial coverage of the report. If no spatial data is submitted with the report and the report is for a permit(s), the spatial coverage is created based on the permit extents boundary.|Geometry|
 |report_details|Report details|Report-specific additional information|Key:Values|
 |report_dataset|Dataset link|Links to related datasets including raw data|Hyperlink|
@@ -250,6 +249,23 @@ The following reports will be submitted through the [Mineral Reporting Template]
 |Water Report - Performance Review|water-report-performance-review|WATPRR|49|
 |Well proposal|well-proposal |WELPRO|4358|
 
+## Report Types lodged as PDF forms
+
+The following report types are PDF forms.
+
+* These will be lodged as PDF forms through the lodgement portal.
+* The submitter will complete the lodgement form metadata.
+* PID minting or PID matching will be performed as defined.
+
+|Report Type|Mint or Match|
+|---|---|---|---|
+|[PA-21A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0004/259897/pa-21a-notice-intention-survey.pdf) Notice of Intention to carry out seismic survey or scientific or technical survey|Mint survey|
+|[PA-22A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0005/259898/pa-22a-notice-completion-survey.pdf) Notice of Completion of seismic survey or scientific or technical survey|Match survey|
+|[PM 1/2013](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0003/289605/notification-geophysical-survey.pdf) Notification of geophysical survey|Mint survey|
+|[PA-42](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0008/259901/pa-42-notice-of-intention.pdf) Notice of intention to convert a petroleum well to a water observation bore or water supply bore|None|
+|[WRA-05A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0006/259935/wra-05a-notification-completion-conversion.pdf) Notice of completion of conversion of petroleum well to water supply bore or water observation bore|None|
+|[MMOL-44](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0003/289605/notification-geophysical-survey.pdf) Notice of decommissioning a well, water observation bore, water monitoring bore or water supply bore|None|
+
 ## Report Types that are deprecated - no longer lodged to DNRME
 
 The following report types are no longer current.
@@ -307,7 +323,7 @@ The Lodgement Portal requires user authorisation:
 * Internal users have rights to submit lodgement forms or view lodged forms
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation.png" width="60%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation.png" width="80%"><br>
 Figure 5: Lodgement Portal external user authentication and authorisation</p>
 
 ## Alignment to QDEX Reports Metadata
@@ -324,7 +340,6 @@ Figure 5: Lodgement Portal external user authentication and authorisation</p>
 | Map References|Goes into JSON|
 | Commodity|Report commodity - Commodity vocab lookup|
 | Keywords|Report Data Category - Earth science data category vocab lookup (where they match)|
-| Keywords|Keywords - balance of keywords|
 | Tenure|Report Permit - permit service lookup|
 | Tenure Holder|Goes in JSON - can infer from permit lookup|
 | Tectonic|Report is of feature - vocab lookup|
