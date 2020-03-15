@@ -42,9 +42,9 @@ When government issues a permit to a holder, the legislation requires a permit h
 There are 4 versions of lodgement portal to be built:
 
 1. MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports - described on this page.
-2. Version 2 Lodgement Portal that parses the data lodged in the petroleum, coal, and mineral reporting guideline templates - described on [Version2-portal-README.MD](/Version2-portal-README.MD)
-3. Version 3 Lodgement Portal that does some cool stuff - described on [Version3-portal-README.MD](/Version3-portal-README.MD)
-4. Version 4 Lodgement Portal that does some additional cool stuff - described on [Version4-portal-README.MD](/Version4-portal-README.MD)
+2. Version 2 Lodgement Portal that extends the MVP Lodgement Portal to parse the data lodged in the petroleum, coal, and mineral reporting guideline templates - described on [Version2-portal-README.MD](/Version2-portal-README.MD)
+3. Multipart lodgement form (per ModulrTech style) for mineral & coal annual report - described on [Version3-portal-README.MD](/Version3-portal-README.MD)
+4. Multipart lodgement form (per ModulrTech style) for well completion report - described on [Version4-portal-README.MD](/Version4-portal-README.MD)
 
 ## Iterative delivery of the versions
 
@@ -153,7 +153,7 @@ The Persistent Identifier (PID) is the unique identifier for a site or survey th
 
 Customers lodge _Notice of Intention_ forms to the department. This means that the borehole or the survey is proposed but not completed.
 
-We need to tell the submitter of the form what the PID is and what it is used for. We can do this by displaying the PID in the "Lodgement Successful" screen. We want to do after the form submission so we don't get orphan PIDs, i.e. PIDs created without the accompanying lodgement metadata.
+We need to tell the submitter of the form what the PID is and what it is used for. We can do this by emailing the PID to the submitter after successful submission. We want to do this after the form submission so we don't get orphan PIDs, i.e. PIDs created without the accompanying lodgement metadata.
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/pid-request-sequence-diagram.png" width="100%"><br>
