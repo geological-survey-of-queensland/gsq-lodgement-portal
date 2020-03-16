@@ -375,9 +375,15 @@ The following data is to be migrated from QDEX Reports. Historically, QDEX Repor
 |Departmental Publications|Departmental Publications including Queensland Government Mining Journal (QGMJ).|2075|Open Data Portal CKAN|Open Data S3|
 |GSQ-Commissioned Industry Studies/Reports|Reports on Studies undertaken by Industry, but commissioned by the Geological Survey of Queensland.|15|Open Data Portal CKAN|Open Data S3|
 
+## QDEX Reports Lodgement Screen
+![QDEX Reports lodgement screen](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/QDEX-reports-lodgement-screen.png)
+
 ## See also
 
-* [Industry report profile](https://github.com/geological-survey-of-queensland/industry-report-profile)
+* [Industry report profile](https://github.com/geological-survey-of-queensland/industry-report-profile)  
+* [Queensland Digital Exploration Reports System Report Lodger User Guide](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0004/188626/qdex-report-lodger-user-guide.pdf)  
+* [Queensland Digital Exploration Reports System Report Lodger User Guide For mining associated and non-associated water reports – Taking of water](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0005/188627/qdex-report-lodger-user-guide-water-act.pdf)  
+* [Queensland Digital Exploration Reports SystemReporting Guidelines ](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0010/188623/qdex-guidelines-digital-company-reports.pdf)
 
 ## License
 
