@@ -378,12 +378,14 @@ The following data is to be migrated from QDEX Reports. Historically, QDEX Repor
 ## QDEX Reports Lodgement Screen
 ![QDEX Reports lodgement screen](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/QDEX-reports-lodgement-screen.png)
 
+![QDEX Reports file upload screen](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/QDEX-reports-file-upload.png)
+
 ## See also
 
 * [Industry report profile](https://github.com/geological-survey-of-queensland/industry-report-profile)  
 * [Queensland Digital Exploration Reports System Report Lodger User Guide](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0004/188626/qdex-report-lodger-user-guide.pdf)  
 * [Queensland Digital Exploration Reports System Report Lodger User Guide For mining associated and non-associated water reports – Taking of water](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0005/188627/qdex-report-lodger-user-guide-water-act.pdf)  
-* [Queensland Digital Exploration Reports SystemReporting Guidelines ](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0010/188623/qdex-guidelines-digital-company-reports.pdf)
+* [Queensland Digital Exploration Reports System Reporting Guidelines ](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0010/188623/qdex-guidelines-digital-company-reports.pdf)
 
 ## License
 
