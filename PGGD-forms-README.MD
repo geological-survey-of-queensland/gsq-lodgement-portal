@@ -23,11 +23,19 @@ A number of the forms were decommissioned, leaving four active forms:
   * A copy of the generated form is sent to DES.  
   * This data is referred to if someone queries fracturing operations, e.g. chemicals used.  
 
-## Busines process
+## Business process
 
 ### Current business process
 
 ### Future state business process
+
+## Technology
+
+### Technology as-is
+
+### Technology to-be
+
+## Forms
 
 ### PGGD Forms as-is
 
@@ -36,4 +44,13 @@ A number of the forms were decommissioned, leaving four active forms:
 * PGGD-03  
 * PGGD-04  
 
+### PGGD Forms to-be
+
+* PGGD-01  
+* PGGD-02  
+* PGGD-03  
+* PGGD-04  
+
 ### Database schema as-is
+
+### Database schema to-be
