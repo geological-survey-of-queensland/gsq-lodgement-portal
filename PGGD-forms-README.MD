@@ -30,7 +30,7 @@ A number of the forms were decommissioned, leaving four active forms:
 ### PGGD-01 Sequence Diagram
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-01.png" width="100%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-01.png" width="90%"><br>
 Figure x: PGGD-01 sequence diagram</p>
 
 ### PGGD-02 Sequence Diagram
@@ -42,7 +42,7 @@ Figure x: PGGD-02 sequence diagram</p>
 ### PGGD-03 Sequence Diagram
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-03.png" width="100%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-03.png" width="90%"><br>
 Figure x: PGGD-03 sequence diagram</p>
 
 ### PGGD-04 Sequence Diagram
