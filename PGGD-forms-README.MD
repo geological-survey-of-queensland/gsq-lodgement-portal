@@ -56,7 +56,7 @@ Figure x: PGGD-04 sequence diagram</p>
 ### Technology as-is
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-tech-as-is.png" width="50%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-tech-as-is.png" width="40%"><br>
 Figure x: PGGD technology as-is</p>
 
 ### Technology to-be
@@ -92,33 +92,68 @@ Figure x: PGGD-04 Form</p>
 This is the document that is generated as PDF and emailed to the submitter:  
 [PGGD-01 Notice of intention to drill a well or bore](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD01-notice.pdf)
 
+### PGGD-02 Notice as-is
+
+This is the document that is generated as PDF and emailed to the submitter:  
+[PGGD-01 Notice of intention to drill a well or bore](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD01-notice.pdf)
+
 ### PGGD-03 Notice as-is
 
 This is the document that is generated as PDF and emailed to the submitter:  
 [PGGD-03 Notice of intention to carry out hydraulic fracturing activities](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD03-notice.pdf)
 
-### PGGD Forms to-be
+### PGGD-04 Notice as-is
 
-* PGGD-01  
-* PGGD-02  
-* PGGD-03  
-* PGGD-04  
+This is the document that is generated as PDF and emailed to the submitter:  
+[PGGD-01 Notice of intention to drill a well or bore](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD01-notice.pdf)
+
+## PGGD Forms to-be
+
+### PGGD-01 to be
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD01-form.PNG" width="70%"><br>
+Figure x: New PGGD-01 Form</p>
+
+### PGGD-02 to be
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.png" width="80%"><br>
+Figure x: New PGGD-02 Form</p>
+
+### PGGD-03 to be
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.png" width="80%"><br>
+Figure x: New PGGD-03 Form</p>
+
+### PGGD-04 to be
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.png" width="80%"><br>
+Figure x: PGGD-04 Form</p>
 
 ### Database schema as-is
 
-The PGGD forms writes data to the following tables:
+The PGGD forms _write_ data to the following tables:
 
-* QDEX ONLINEAPP.DOCUMENT - 
-* MERLIN BHF_BOREHOLE_ACTIVITY - PGGD-03 writes INTENTION against the BORE_ID
-* MERLIN BHF_BOREHOLES - PGGD-01 creates a new borehole record in this table
+* QDEX ONLINEAPP.DOCUMENT:
+* MERLIN BHF_BOREHOLES:
+  * PGGD-01 creates a new borehole record in this table  
+  * PGGD-02 updates the borehole record in this table
+* EPF_COMPANY_REPORTS
+* MERLIN BHF_BOREHOLE_ACTIVITY: Records the FRAC activity type only  
+  * PGGD-03 writes INTENTION against the BORE_ID with a START_DATE ad END_DATE
+  * PGGD-04 writes the STATUS of the activity with a START_DATE ad END_DATE:
+    * C - Completion
+    * AL - Alteration
+    * O - Other
+    * PC - Partial completion
+    * AB - Abandoned
 * MERLIN BHF_MATERIALS_USED - 
 
-The PGGD-03 and PGGD-04 forms read from the following tables:
+The PGGD-03 and PGGD-04 forms _read_ from the following tables:
 
-* MERLIN BHF_MATERIALS_USED - this populates the materials fields drop-down values  
+* MERLIN BHF_MATERIALS_USED - this populates the fluids and chemicals drop-down field values  
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-db-schema-as-is.png" width="100%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-db-schema-as-is.png" width="80%"><br>
 Figure x: PGGD database schema</p>
 
 ### Database schema to-be
