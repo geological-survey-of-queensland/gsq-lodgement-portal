@@ -121,12 +121,12 @@ Figure x: New PGGD-02 Form</p>
 
 ### PGGD-03 to be
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.png" width="70%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.PNG" width="70%"><br>
 Figure x: New PGGD-03 Form</p>
 
 ### PGGD-04 to be
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.png" width="70%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.PNG" width="70%"><br>
 Figure x: PGGD-04 Form</p>
 
 ### Database schema as-is
