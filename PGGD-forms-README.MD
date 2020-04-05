@@ -116,7 +116,7 @@ Figure x: New PGGD-01 Form</p>
 
 ### PGGD-02 to be
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.png" width="70%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.PNG" width="70%"><br>
 Figure x: New PGGD-02 Form</p>
 
 ### PGGD-03 to be
