@@ -95,7 +95,7 @@ This is the document that is generated as PDF and emailed to the submitter:
 ### PGGD-02 Notice as-is
 
 This is the document that is generated as PDF and emailed to the submitter:  
-[PGGD-01 Notice of intention to drill a well or bore](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD01-notice.pdf)
+[PGGD-02 Notice of completion, alteration or abandonment of a well or bore](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD02-notice.pdf)
 
 ### PGGD-03 Notice as-is
 
@@ -116,17 +116,17 @@ Figure x: New PGGD-01 Form</p>
 
 ### PGGD-02 to be
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.png" width="80%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.png" width="70%"><br>
 Figure x: New PGGD-02 Form</p>
 
 ### PGGD-03 to be
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.png" width="80%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.png" width="70%"><br>
 Figure x: New PGGD-03 Form</p>
 
 ### PGGD-04 to be
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.png" width="80%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.png" width="70%"><br>
 Figure x: PGGD-04 Form</p>
 
 ### Database schema as-is
