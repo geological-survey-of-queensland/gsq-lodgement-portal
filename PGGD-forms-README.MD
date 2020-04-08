@@ -27,7 +27,7 @@ A number of the forms were decommissioned, leaving four active forms:
 
 ## Future state business process
 
-
+The future state business processes use the GDMP Lodgement Portal and Geological Properties database for form submission, creation of boreholes, update of boreholes, and recording borehole events.
 
 ### PGGD-01 Sequence Diagram
 
@@ -37,11 +37,12 @@ Figure x: PGGD-01 sequence diagram</p>
 
 #### To-be PGGD-01 business process
 
-* The operator will use the **Notice of intention to drill a well or bore** Word template (or their own template) to enter the details currently entered into the existing PGGD-01 form.  This notice is given to the landholder by the operator.
-* The operator will provide a copy of the completed template to the department.
-* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
-* On submission, a new borehole is created in the Geological Properties database.
-* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
+1. The operator will use the **Notice of intention to drill a well or bore** Word template (or their own template) to enter the details currently entered into the existing PGGD-01 form.  
+    a. This notice is given to the landholder by the operator.  
+    b. The operator will provide a copy of the completed template to the department.  
+1. The operator completes the new Lodgement Portal PGGD-01 online form and attaches the **Notice of intention**.
+1. On submission, a new borehole is created in the Geological Properties database using the data submitted in the PGGD-01 form.
+1. An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier for the later form submissions.
 
 ### PGGD-02 Sequence Diagram
 
@@ -51,11 +52,14 @@ Figure x: PGGD-02 sequence diagram</p>
 
 #### To-be PGGD-02 business process
 
-* The operator will use the **Notice of completion, alteration or abandonment of a well or bore** Word template (or their own template) to enter the details currently entered into the existing PGGD-02 form.  This notice is given to the landholder by the operator.
-* The operator will provide a copy of the completed template to the department.
-* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
-* On submission, a new borehole is created in the Geological Properties database.
-* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
+1. The operator will use the **Notice of completion, alteration or abandonment of a well or bore** Word template (or their own template) to enter the details currently entered into the existing PGGD-02 form.  
+    a. This notice is given to the landholder by the operator.  
+    b. The operator will provide a copy of the completed template to the department.  
+1. The operator completes the new Lodgement Portal PGGD-02 online form and attaches the **Notice of intention**.
+1. On form submission, in the Geological Properties database:  
+    a. A new borehole status event **Rig release date** is created in the table **Borehole_status** table. The status_start_date is set to the **Rig release date** captured in the form and status_end_date is set to the **Rig release date** captured in the form.  
+    b. A second borehole status event **Completed/Never drilled/Plugged and abandoned/Cased and suspended/Water bore** is created in the table **Borehole_status** table. The status_start_date is set to the **Spud date** captured in the form and status_end_date is set to the **Completion date** captured in the form. If no **Spud date** is provided, the status_start_date is set to the **Completion date**.  
+1. An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
 
 ### PGGD-03 Sequence Diagram
 
@@ -65,11 +69,12 @@ Figure x: PGGD-03 sequence diagram</p>
 
 #### To-be PGGD-03 business process
 
-* The operator will use the **Notice of intention to carry out hydraulic fracturing activities** Word template (or their own template) to enter the details currently entered into the existing PGGD-01 form.  This notice is given to the landholder by the operator.
-* The operator will provide a copy of the completed template to the department.
-* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
-* On submission, a new borehole is created in the Geological Properties database.
-* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
+1. The operator will use the **Notice of intention to carry out hydraulic fracturing activities** Word template (or their own template) to enter the details currently entered into the existing PGGD-01 form.  
+    a. This notice is given to the landholder by the operator.  
+    b. The operator will provide a copy of the completed template to the department.  
+1. The operator completes the new Lodgement Portal PGGD-03 online form and attaches the **Notice of intention**.
+1. On form submission, a new borehole status event **Fracturing notice of intention** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Estimated commencement date** captured in the form and status_end_date is set to the **Estimated completion date** captured in the form.
+1. An email is sent to the submitter acknowledging the form submission.
 
 ### PGGD-04 Sequence Diagram
 
@@ -83,10 +88,10 @@ Figure x: PGGD-04 sequence diagram</p>
     a. This form includes the summary of the actual composition of the hydraulic fracturing fluid used.  
     b. This notice is given to the landholder by the operator.  
     c. The operator will provide a copy of the completed template to the department.
-1. The submitter completes the new Lodgement Portal PGGD-04 online form and attaches the **Notice of completion**.
+1. The operator completes the new Lodgement Portal PGGD-04 online form and attaches the **Notice of completion**.
 1. If the end status is **Completion** or **Partial Completion**, the operator attaches a **detailed actual composition** of the hydraulic fracturing fluids used.
-1. If the submitter answers "Yes" to the question of "_Did any incidents occur that may have resulted in environmental harm or caused an adverse impact on any underlying or overlying acuifiers whilst undertaking activities?_": The submitter must attach a detailed statement of the incident using the Word template **Hydraulic Fracturing Incident Report**.
-1. On form submission, a new borehole status event **Fracturing Completion/Partial Completion/Abandoned/Alteration/Other** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Commencement date** captured in the form and status_end_date is set to the **Completion date** captured in the form.
+1. If the operator answers "Yes" to the question of "_Did any incidents occur that may have resulted in environmental harm or caused an adverse impact on any underlying or overlying acuifiers whilst undertaking activities?_": The submitter must attach a detailed statement of the incident using the Word template **Hydraulic Fracturing Incident Report**.
+1. On form submission, a new borehole status event **Fracturing completion/partial completion/abandoned/alteration/other** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Commencement date** captured in the form and status_end_date is set to the **Completion date** captured in the form.
 1. The uploaded documents are recorded as a Dataset_resource against the borehole in the Geological Properties database.
 1. An email is sent to the submitter acknowledging the form submission.
 
@@ -102,7 +107,7 @@ Figure x: PGGD technology as-is</p>
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-forms-tech-architecture.png" width="80%"><br>
-Figure x: PGGD technology as-is</p>
+Figure x: PGGD technology to-ne</p>
 
 ## Forms as-is
 
@@ -200,3 +205,9 @@ The PGGD-03 and PGGD-04 forms _read_ from the following tables:
 Figure x: PGGD database schema</p>
 
 ### Database schema to-be
+
+The to-be PGGD forms use the Lodgement Portal database schema and the Geological Properties database schema.
+
+## Data migration
+
+To-do
