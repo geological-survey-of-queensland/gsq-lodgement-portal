@@ -24,9 +24,10 @@ A number of the forms were decommissioned, leaving four active forms:
   * This data is referred to if someone queries fracturing operations, e.g. chemicals used.  
 
 ## Current business process
-To be added
 
 ## Future state business process
+
+
 
 ### PGGD-01 Sequence Diagram
 
@@ -78,24 +79,16 @@ Figure x: PGGD-04 sequence diagram</p>
 
 #### To-be PGGD-04 business process
 
-The hydraulic fracturing has one of five possible end status:
-
-* Completion
-* Partial Completion
-* Abandoned
-* Alteration
-* Other
-
-If the submitter answers "Yes" to the question of "Did any incidents occur that may have resulted in environmental harm or caused an adverse impact on any underlying or overlying acuifiers whilst undertaking activities?".
-
-* The operator will use the **Notice of completion of hydraulic fracturing activities** Word template (or their own template) to enter the details currently entered into the existing PGGD-04 form.  
-  * This form includes the summary of the actual composition of the hydraulic fracturing fluid used.
-  * This notice is given to the landholder by the operator.
-* The operator will provide a copy of the completed template to the department.
-* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
-* The operator attaches a detailed actual composition of the hydraulic fracturing fluid used.
-* On submission, a new borehole is created in the Geological Properties database.
-* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
+1. The operator will use the **Notice of completion of hydraulic fracturing activities** Word template (or their own template) to enter the details currently entered into the existing PGGD-04 form.  
+    a. This form includes the summary of the actual composition of the hydraulic fracturing fluid used.  
+    b. This notice is given to the landholder by the operator.  
+    c. The operator will provide a copy of the completed template to the department.
+1. The submitter completes the new Lodgement Portal PGGD-04 online form and attaches the **Notice of completion**.
+1. If the end status is **Completion** or **Partial Completion**, the operator attaches a **detailed actual composition** of the hydraulic fracturing fluids used.
+1. If the submitter answers "Yes" to the question of "_Did any incidents occur that may have resulted in environmental harm or caused an adverse impact on any underlying or overlying acuifiers whilst undertaking activities?_": The submitter must attach a detailed statement of the incident using the Word template **Hydraulic Fracturing Incident Report**.
+1. On form submission, a new borehole status event **Fracturing Completion/Partial Completion/Abandoned/Alteration/Other** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Commencement date** captured in the form and status_end_date is set to the **Completion date** captured in the form.
+1. The uploaded documents are recorded as a Dataset_resource against the borehole in the Geological Properties database.
+1. An email is sent to the submitter acknowledging the form submission.
 
 ## Technology
 
@@ -106,6 +99,10 @@ If the submitter answers "Yes" to the question of "Did any incidents occur that 
 Figure x: PGGD technology as-is</p>
 
 ### Technology to-be
+
+<p align="center">
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-forms-tech-architecture.png" width="80%"><br>
+Figure x: PGGD technology as-is</p>
 
 ## Forms as-is
 
@@ -155,22 +152,22 @@ This is the document that is generated as PDF and emailed to the submitter:
 
 ## PGGD Forms to-be
 
-### PGGD-01 to be
+### PGGD-01 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD01-form.PNG" width="70%"><br>
 Figure x: New PGGD-01 Form</p>
 
-### PGGD-02 to be
+### PGGD-02 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.PNG" width="70%"><br>
 Figure x: New PGGD-02 Form</p>
 
-### PGGD-03 to be
+### PGGD-03 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.PNG" width="70%"><br>
 Figure x: New PGGD-03 Form</p>
 
-### PGGD-04 to be
+### PGGD-04 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.PNG" width="70%"><br>
 Figure x: PGGD-04 Form</p>
