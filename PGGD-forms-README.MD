@@ -33,7 +33,7 @@ The future state business processes use the GDMP Lodgement Portal and Geological
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-01.png" width="85%"><br>
-Figure x: PGGD-01 sequence diagram</p>
+Figure 1: PGGD-01 sequence diagram</p>
 
 #### To-be PGGD-01 business process
 
@@ -48,7 +48,7 @@ Figure x: PGGD-01 sequence diagram</p>
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-02.png" width="85%"><br>
-Figure x: PGGD-02 sequence diagram</p>
+Figure 2: PGGD-02 sequence diagram</p>
 
 #### To-be PGGD-02 business process
 
@@ -65,7 +65,7 @@ Figure x: PGGD-02 sequence diagram</p>
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-03.png" width="85%"><br>
-Figure x: PGGD-03 sequence diagram</p>
+Figure 3: PGGD-03 sequence diagram</p>
 
 #### To-be PGGD-03 business process
 
@@ -80,7 +80,7 @@ Figure x: PGGD-03 sequence diagram</p>
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-04.png" width="85%"><br>
-Figure x: PGGD-04 sequence diagram</p>
+Figure 4: PGGD-04 sequence diagram</p>
 
 #### To-be PGGD-04 business process
 
@@ -101,13 +101,13 @@ Figure x: PGGD-04 sequence diagram</p>
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-tech-as-is.png" width="40%"><br>
-Figure x: PGGD technology as-is</p>
+Figure 5: PGGD technology as-is</p>
 
 ### Technology to-be
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-forms-tech-architecture.png" width="80%"><br>
-Figure x: PGGD technology to-ne</p>
+Figure 6: PGGD technology to-be</p>
 
 ## Forms as-is
 
@@ -115,25 +115,25 @@ Figure x: PGGD technology to-ne</p>
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD01_form.png" width="90%"><br>
-Figure x: PGGD-01 Form</p>
+Figure 7: PGGD-01 Form</p>
 
 ### PGGD-02 as-is
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD02_form.png" width="95%"><br>
-Figure x: PGGD-02 Form</p>
+Figure 8: PGGD-02 Form</p>
 
 ### PGGD-03 as-is
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD03_form.png" width="100%"><br>
-Figure x: PGGD-03 Form</p>
+Figure 9: PGGD-03 Form</p>
 
 ### PGGD-04 as-is
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD04_form.png" width="100%"><br>
-Figure x: PGGD-04 Form</p>
+Figure 10: PGGD-04 Form</p>
 
 ### PGGD-01 Notice as-is
 
@@ -160,22 +160,22 @@ This is the document that is generated as PDF and emailed to the submitter:
 ### PGGD-01 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD01-form.PNG" width="70%"><br>
-Figure x: New PGGD-01 Form</p>
+Figure 11: New PGGD-01 Form</p>
 
 ### PGGD-02 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.PNG" width="70%"><br>
-Figure x: New PGGD-02 Form</p>
+Figure 12: New PGGD-02 Form</p>
 
 ### PGGD-03 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.PNG" width="70%"><br>
-Figure x: New PGGD-03 Form</p>
+Figure 13: New PGGD-03 Form</p>
 
 ### PGGD-04 form to be
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.PNG" width="70%"><br>
-Figure x: PGGD-04 Form</p>
+Figure 14: PGGD-04 Form</p>
 
 ### Database schema as-is
 
@@ -194,7 +194,7 @@ The PGGD forms _write_ data to the following tables:
     * O - Other
     * PC - Partial completion
     * AB - Abandoned
-* MERLIN BHF_MATERIALS_USED - 
+* MERLIN BHF_MATERIALS_USED
 
 The PGGD-03 and PGGD-04 forms _read_ from the following tables:
 
@@ -202,7 +202,7 @@ The PGGD-03 and PGGD-04 forms _read_ from the following tables:
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD-db-schema-as-is.png" width="80%"><br>
-Figure x: PGGD database schema</p>
+Figure 15: PGGD database schema</p>
 
 ### Database schema to-be
 
