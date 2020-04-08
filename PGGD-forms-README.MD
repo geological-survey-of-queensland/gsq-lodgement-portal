@@ -27,17 +27,35 @@ A number of the forms were decommissioned, leaving four active forms:
 
 ## Future state business process
 
+
+
 ### PGGD-01 Sequence Diagram
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-01.png" width="85%"><br>
 Figure x: PGGD-01 sequence diagram</p>
 
+#### To-be PGGD-01 business process
+
+* The operator will use the **Notice of intention to drill a well or bore** Word template (or their own template) to enter the details currently entered into the existing PGGD-01 form.  This notice is given to the landholder by the operator.
+* The operator will provide a copy of the completed template to the department.
+* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
+* On submission, a new borehole is created in the Geological Properties database.
+* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
+
 ### PGGD-02 Sequence Diagram
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-02.png" width="70%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-02.png" width="85%"><br>
 Figure x: PGGD-02 sequence diagram</p>
+
+#### To-be PGGD-02 business process
+
+* The operator will use the **Notice of completion, alteration or abandonment of a well or bore** Word template (or their own template) to enter the details currently entered into the existing PGGD-02 form.  This notice is given to the landholder by the operator.
+* The operator will provide a copy of the completed template to the department.
+* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
+* On submission, a new borehole is created in the Geological Properties database.
+* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
 
 ### PGGD-03 Sequence Diagram
 
@@ -45,11 +63,40 @@ Figure x: PGGD-02 sequence diagram</p>
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-03.png" width="85%"><br>
 Figure x: PGGD-03 sequence diagram</p>
 
+#### To-be PGGD-03 business process
+
+* The operator will use the **Notice of intention to carry out hydraulic fracturing activities** Word template (or their own template) to enter the details currently entered into the existing PGGD-01 form.  This notice is given to the landholder by the operator.
+* The operator will provide a copy of the completed template to the department.
+* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
+* On submission, a new borehole is created in the Geological Properties database.
+* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
+
 ### PGGD-04 Sequence Diagram
 
 <p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-04.png" width="70%"><br>
+<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/Sequence-Diagram-PGGD-04.png" width="85%"><br>
 Figure x: PGGD-04 sequence diagram</p>
+
+#### To-be PGGD-04 business process
+
+The hydraulic fracturing has one of five possible end status:
+
+* Completion
+* Partial Completion
+* Abandoned
+* Alteration
+* Other
+
+If the submitter answers "Yes" to the question of "Did any incidents occur that may have resulted in environmental harm or caused an adverse impact on any underlying or overlying acuifiers whilst undertaking activities?".
+
+* The operator will use the **Notice of completion of hydraulic fracturing activities** Word template (or their own template) to enter the details currently entered into the existing PGGD-04 form.  
+  * This form includes the summary of the actual composition of the hydraulic fracturing fluid used.
+  * This notice is given to the landholder by the operator.
+* The operator will provide a copy of the completed template to the department.
+* The operator completes the new PGGD form metadata, and attaches the **Notice of intention**.
+* The operator attaches a detailed actual composition of the hydraulic fracturing fluid used.
+* On submission, a new borehole is created in the Geological Properties database.
+* An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
 
 ## Technology
 
@@ -105,7 +152,7 @@ This is the document that is generated as PDF and emailed to the submitter:
 ### PGGD-04 Notice as-is
 
 This is the document that is generated as PDF and emailed to the submitter:  
-[PGGD-01 Notice of intention to drill a well or bore](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD01-notice.pdf)
+[PGGD-04 Notice of completion of hydraulic fracturing activities](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/PGGD04-notice.pdf)
 
 ## PGGD Forms to-be
 
