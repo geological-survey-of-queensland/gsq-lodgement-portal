@@ -24,10 +24,9 @@ A number of the forms were decommissioned, leaving four active forms:
   * This data is referred to if someone queries fracturing operations, e.g. chemicals used.  
 
 ## Current business process
+To be added
 
 ## Future state business process
-
-
 
 ### PGGD-01 Sequence Diagram
 
