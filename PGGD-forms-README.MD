@@ -14,14 +14,17 @@ A number of the forms were decommissioned, leaving four active forms:
   * Generates a PDF for the submitter to provide to the land owner  
 * PGGD-02 - Notice of completion, alteration or abandonment of petroleum well or bore
   * Updates the status of the borehole record in MERLIN.  
-  * Records a borehole activity in MERLIN.  
+  * Updates the borehole created in PGGD-01 in MERLIN.  
 * PGGD-03 - Notice of intention to carry out hydraulic fracturing activities  
+  * Updates the borehole created in PGGD-01.  
   * Records a borehole activity in MERLIN.  
+  * Captures engineering and operations data about the hydraulic fracturing in MERLIN.  
+  * This data is referred to if someone queries fracturing operations, e.g. chemicals used.  
+  * A copy of the generated form is sent to DES.  
 * PGGD-04 - Notice of completion of hydraulic fracturing activities
   * Records a borehole activity in MERLIN.
   * Captures engineering and operations data about the hydraulic fracturing in MERLIN.  
   * A copy of the generated form is sent to DES.  
-  * This data is referred to if someone queries fracturing operations, e.g. chemicals used.  
 
 ## Current business process
 
@@ -41,8 +44,11 @@ Figure 1: PGGD-01 sequence diagram</p>
     a. This notice is given to the landholder by the operator.  
     b. The operator will provide a copy of the completed template to the department.  
 1. The operator completes the new Lodgement Portal PGGD-01 online form and attaches the **Notice of intention**.
-1. On submission, a new borehole is created in the Geological Properties database using the data submitted in the PGGD-01 form.
+1. On submission, a new borehole is created in the Geological Properties database using the data submitted in the PGGD-01 form. The status is set to **Proposed**.
 1. An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier for the later form submissions.
+1. The following business rules are applied:  
+    a. The Well Name must be unique, i.e. not in Geoproperties DB.  
+    b. The Estimated Commencement Date must be 10 business days after today.  
 
 ### PGGD-02 Sequence Diagram
 
@@ -55,7 +61,7 @@ Figure 2: PGGD-02 sequence diagram</p>
 1. The operator will use the **Notice of completion, alteration or abandonment of a well or bore** Word template (or their own template) to enter the details currently entered into the existing PGGD-02 form.  
     a. This notice is given to the landholder by the operator.  
     b. The operator will provide a copy of the completed template to the department.  
-1. The operator completes the new Lodgement Portal PGGD-02 online form and attaches the **Notice of intention**.
+1. The operator completes the new Lodgement Portal PGGD-02 online form and attaches the **Notice of completion**.
 1. On form submission, in the Geological Properties database:  
     a. A new borehole status event **Rig release date** is created in the table **Borehole_status** table. The status_start_date is set to the **Rig release date** captured in the form and status_end_date is set to the **Rig release date** captured in the form.  
     b. A second borehole status event **Completed/Never drilled/Plugged and abandoned/Cased and suspended/Water bore** is created in the table **Borehole_status** table. The status_start_date is set to the **Spud date** captured in the form and status_end_date is set to the **Completion date** captured in the form. If no **Spud date** is provided, the status_start_date is set to the **Completion date**.  
