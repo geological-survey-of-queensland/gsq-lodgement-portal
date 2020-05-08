@@ -329,33 +329,35 @@ The Lodgement Portal requires user authorisation:
 Figure 5: Lodgement Portal external user authentication and authorisation</p>
 
 ## Alignment to QDEX Reports Metadata
-|QDEX Reports Field|Lodgement Portal Metadata Field|
-|----|----|
-| Report Number|Report PID|
-| Report Title|Report Title|
-| Report Status|Report Access Rights - vocab lookup|
-| Report Type|Report Type - Georesource Report Type vocab lookup|
-| Author Name|Report Author|
-| Lodger|Report Submitter (the logged in user)|
-| Submitter|Report Owner - party database lookup|
-| Locality|Goes into JSON|
-| Map References|Goes into JSON|
-| Commodity|Report commodity - Commodity vocab lookup|
-| Keywords|Report Data Category - Earth science data category vocab lookup (where they match)|
-| Tenure|Report Permit - permit service lookup|
-| Tenure Holder|Goes in JSON - can infer from permit lookup|
-| Tectonic|Report is of feature - vocab lookup|
-| Stratigraphy| Report is of feature - vocab lookup|
-| Age|Goes into JSON|
-| Date of Report|Report Start Time + Report End Time|
-| Date of Review|Goes into JSON - not used anymore|
-| Date of Receipt|Report Lodged Date|
-| Date Due for Open|Report Open File Date|
-| Date of Open|Move into JSON|
-| Project Names|Report Details|
-| Mines/Prospect Names|Report is of Site|
-| Well Names|Report is of Site|
-| Seismic Survey Names|Report is of Survey|
+|QDEX Reports Field|Lodgement Portal Metadata Field|Notes|
+|----|----|----|
+| Report Number|report_id|Continue numbering sequence from 120,000|
+| Report Title|report_title||
+| Report Status|report_access_rights|From [vocabulary](https://vocabs.gsq.digital/vocabulary/data-access-rights)|
+| Report Type|report_type|From [vocabulary](https://vocabs.gsq.digital/vocabulary/qld-resource-permit)|
+| Author Name|report_author|Free text|
+| Lodger|report_submitter|The logged in user. [Concept link](https://vocabs.gsq.digital/object?vocab_id=gsq-roles&uri=http%3A//linked.data.gov.au/def/iso11179-6/RolesAndResponsibilities/Submitter)|
+| Submitter|report_owner|Authorised holder of the permit. [Concept link](https://vocabs.gsq.digital/object?vocab_id=gsq-roles&uri=http%3A//linked.data.gov.au/def/iso19115-1/RoleCode/owner)|
+| Locality|Goes into JSON||
+| Map References|Goes into JSON||
+| Commodity|report_commodity|From [vocabulary](https://vocabs.gsq.digital/vocabulary/geo-commodities)|
+| Keywords|Goes into JSON|In future, we may use to map to Earth science data category|
+| Tenure|report_permit|Permit service lookup for new lodgements|
+| Tenure Holder|Goes in JSON|Can infer from permit lookup for new lodgements|
+| Tectonic|report_is_of_feature|To be mapped to Geologic Features vocabulary|
+| Stratigraphy|report_is_of_feature|To be mapped to Geologic Features vocabulary|
+| Age|Goes into JSON||
+| Date of Report|report_start_time & report_end_time|Same date in both fields for migration|
+| Date of Review|Goes into JSON|Not used in future|
+| Date of Receipt|report_lodged_date||
+| Date Due for Open|report_open_file_date||
+| Date of Open|Goes into JSON||
+| Project Names|report_details|Key-value pair in details|
+| Mines/Prospect Names|report_is_of_site|Lookup site in Geoproperties|
+| Well Names|report_is_of_site|Lookup site (borehole) in Geoproperties|
+| Seismic Survey Names|report_is_of_survey|Lookup survey in Geoproperties|
+| Document Source |Goes into JSON|If value is not null|
+| BRN |Goes into JSON|If value is not null|
 
 ## Data Migration out of QDEX Reports
 
