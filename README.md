@@ -407,5 +407,5 @@ Brisbane, QLD, Australia
 *Author*:  
 **David Crosswell**  
 Enterprise Architect  
-Cross-Lateral Enterprises
+Cross-Lateral  
 <https://crosslateral.com.au>
