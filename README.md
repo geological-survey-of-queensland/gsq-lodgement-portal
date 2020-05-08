@@ -359,6 +359,8 @@ Figure 5: Lodgement Portal external user authentication and authorisation</p>
 | Document Source |Goes into JSON|If value is not null|
 | BRN |Goes into JSON|If value is not null|
 
+> **NOTE**: Remainder of QDEX metadata to go into JSON metadata file. File name to be cr\<report-id\>-metadata.json, e.g. cr12345-metadata.json
+
 ## Data Migration out of QDEX Reports
 
 The following data is to be migrated from QDEX Reports. Historically, QDEX Reports has been used to publish other types of publications.
