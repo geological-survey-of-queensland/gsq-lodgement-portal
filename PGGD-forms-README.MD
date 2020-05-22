@@ -164,24 +164,20 @@ This is the document that is generated as PDF and emailed to the submitter:
 ## PGGD Forms to-be
 
 ### PGGD-01 form to be
-<p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD01-form.PNG" width="70%"><br>
-Figure 11: New PGGD-01 Form</p>
+Click here to view the form:  
+[PGGD-01 Notice of intention to drill a well or bore](https://rawcdn.githack.com/geological-survey-of-queensland/gsq-lodgement-portal/7137f8bd7e0720a27892fc637d24101f7147f830/pggd01.html)
 
 ### PGGD-02 form to be
-<p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD02-form.PNG" width="70%"><br>
-Figure 12: New PGGD-02 Form</p>
+Click here to view the form:  
+[PGGD-02 Notice of completion, alteration or abandonment of a well or bore](https://rawcdn.githack.com/geological-survey-of-queensland/gsq-lodgement-portal/7137f8bd7e0720a27892fc637d24101f7147f830/pggd02.html)
 
 ### PGGD-03 form to be
-<p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD03-form.PNG" width="70%"><br>
-Figure 13: New PGGD-03 Form</p>
+Click here to view the form:  
+[PGGD-03 Notice of intention to carry out hydraulic fracturing activities](https://rawcdn.githack.com/geological-survey-of-queensland/gsq-lodgement-portal/7137f8bd7e0720a27892fc637d24101f7147f830/pggd03.html)
 
 ### PGGD-04 form to be
-<p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/new-PGGD04-form.PNG" width="70%"><br>
-Figure 14: PGGD-04 Form</p>
+Click here to view the form:  
+[PGGD-04 Notice of completion of hydraulic fracturing activities](https://rawcdn.githack.com/geological-survey-of-queensland/gsq-lodgement-portal/7137f8bd7e0720a27892fc637d24101f7147f830/pggd04.html)
 
 ### Database schema as-is
 
