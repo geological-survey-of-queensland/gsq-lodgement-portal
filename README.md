@@ -361,12 +361,12 @@ Figure 5: Lodgement Portal external user authentication and authorisation</p>
 
 > **NOTE**: Remainder of QDEX metadata to go into JSON metadata file. File name to be cr\<report-id\>-metadata.json, e.g. cr12345-metadata.json
 
-## Data Migration out of QDEX Reports
+## Report "collections" that will be migrated to the Lodgement Portal vs Reports that will be migrated into the Open Data Portal
 
 The following data is to be migrated from QDEX Reports. Historically, QDEX Reports has been used to publish other types of publications.
 
 * The new lodgement portal will focus on reports lodged by industry (Exploration Reports and Industry Consultative Reports).
-* Other types of publications will be published through the Open Data Portal.
+* Other types of publications will be published directly through the Open Data Portal - i.e. GSQ staff will use the CKAN Open Data Portal to publish, not lodge them through the Lodgement Portal.
 
 |Name|Description|QDEX Count|Migrate metadata to|Migrate data objects to|
 |---|---|---|---|---|
