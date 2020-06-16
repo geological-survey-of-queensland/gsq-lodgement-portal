@@ -169,7 +169,7 @@ Click here to view the form:
 
 ### PGGD-02 form to be
 Click here to view the form:  
-[PGGD-02 Notice of completion, alteration or abandonment of a well or bore](https://rawcdn.githack.com/geological-survey-of-queensland/gsq-lodgement-portal/7137f8bd7e0720a27892fc637d24101f7147f830/pggd02.html)
+[PGGD-02 Notice of completion, alteration or abandonment of a well or bore](https://rawcdn.githack.com/geological-survey-of-queensland/gsq-lodgement-portal/e9b7bc7ee62e0a9368773faf507d7753d10c15d3/pggd02.html)
 
 ### PGGD-03 form to be
 Click here to view the form:  
