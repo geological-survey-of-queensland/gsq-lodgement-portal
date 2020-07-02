@@ -62,9 +62,24 @@ Figure 2: PGGD-02 sequence diagram</p>
     a. This notice is given to the landholder by the operator.  
     b. The operator will provide a copy of the completed template to the department.  
 1. The operator completes the new Lodgement Portal PGGD-02 online form and attaches the **Notice of completion**.
-1. On form submission, in the Geological Properties database:  
-    a. A new borehole status event **Rig release date** is created in the table **Borehole_status** table. The status_start_date is set to the **Rig release date** captured in the form and status_end_date is set to the **Rig release date** captured in the form.  
-    b. A second borehole status event **Completed/Never drilled/Plugged and abandoned/Cased and suspended/Water bore** is created in the table **Borehole_status** table. The status_start_date is set to the **Spud date** captured in the form and status_end_date is set to the **Completion date** captured in the form. If no **Spud date** is provided, the status_start_date is set to the **Completion date**.  
+1. . A new ‘Status’ and ‘Status Event’ with a ‘Start Date’ and ‘End Date’ will be created in the ‘Status History’ table.
+
+If Notice type ( selected on the form) = Completion or Cased and Suspended then the form displays Drill start date and Rig release date; if Notice type = Alteration Abandonment, Water Observation Borehole, Water Supply Borehole and Producing Hydrocarbons then the form displays Activity start date and Activity end date.
+If Notice type = Never Drilled then do not display any dates
+If Notice type = Not Drilled then create new Status = Never Used and Status Event = Never Drilled and Status Start Date = Date of lodgement of form.
+If Notice type = Cased and Suspended then create new Status = Cased and Suspended and Status Event = Cased & Suspended and Status Start Date = Rig Release Date.
+If Notice type = Water Observation Borehole then create new Status = Monitoring and Status Event = Conversion to Water Observation Borehole and Status Start Date = Activity End Date
+If Notice type = Water Supply Borehole then create new Status = Water Supply and Status Event = Converted to Water Supply Borehole and Status Start Date = Activity End Date
+If Notice Type = Producing Hydrocarbons then create new Status = On Production and Status Event = Producing Hydrocarbons.  Status Start Date = Activity Start Date and Status End Date = Activity End Date.
+Drill start date links to Drill Start Date in Boreholes
+Rig release date links to Rig Release Date in Boreholes
+Activity start date links to Status Start Date in Boreholes as below
+Activity end date links to Status End Date in Boreholes as below
+If Notice type = Completion, then new Status must be created with Status = Completed, and Status Event = Completion.  Status Start Date is Rig Release date
+If Notice type = Alteration, date fields are Activity start date and Activity end date
+If Notice type = Alteration, then need to create a new Status = Previous Status, Status Event = Alteration and Activity start date links to Status Start Date and Activity end date links to Status End Date.
+If Notice type = Abandonment, date fields are Activity start date and Activity end data
+If Notice type = Abandonment, then create a new Status = Capped and Abandoned with Status Event = Abandonment and Activity start date links to Status Start Date and Activity end date links to Status End Date.
 1. An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
 
 ### PGGD-03 Sequence Diagram
@@ -79,7 +94,7 @@ Figure 3: PGGD-03 sequence diagram</p>
     a. This notice is given to the landholder by the operator.  
     b. The operator will provide a copy of the completed template to the department.  
 1. The operator completes the new Lodgement Portal PGGD-03 online form and attaches the **Notice of intention**.
-1. On form submission, a new borehole status event **Fracturing notice of intention** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Estimated commencement date** captured in the form and status_end_date is set to the **Estimated completion date** captured in the form.
+1. On form submission, a new borehole status event **Hydraulic fracturing on notice** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Estimated commencement date** captured in the form and status_end_date is set to the **Estimated completion date** captured in the form.
 1. An email is sent to the submitter acknowledging the form submission.
 
 ### PGGD-04 Sequence Diagram
@@ -97,7 +112,8 @@ Figure 4: PGGD-04 sequence diagram</p>
 1. The operator completes the new Lodgement Portal PGGD-04 online form and attaches the **Notice of completion**.
 1. If the end status is **Completion** or **Partial Completion**, the operator attaches a **detailed actual composition** of the hydraulic fracturing fluids used.
 1. If the operator answers "Yes" to the question of "_Did any incidents occur that may have resulted in environmental harm or caused an adverse impact on any underlying or overlying acuifiers whilst undertaking activities?_": The submitter must attach a detailed statement of the incident using the Word template **Hydraulic Fracturing Incident Report**.
-1. On form submission, a new borehole status event **Fracturing completion/partial completion/abandoned/alteration/other** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Commencement date** captured in the form and status_end_date is set to the **Completion date** captured in the form.
+1. If Completion Status = Abandoned then the Status with the Status Event of Hydraulic fracturing on notice changes the Status Event to Hydraulic fracturing abandoned and Activity end date is added to or replaces the Status End Date.
+If Completion Status = Partial Completion, Alteration, Completion or Other then  Status with the Status Event of Hydraulic fracturing on notice must have the Status Event changed from Hydraulic fracturing on notice to Completion of hydraulic fracturing and Fracturing start date overwrites Status Start Date and Fracturing end date overwrites Status End Date.
 1. The uploaded documents are recorded as a Dataset_resource against the borehole in the Geological Properties database.
 1. An email is sent to the submitter acknowledging the form submission.
 
