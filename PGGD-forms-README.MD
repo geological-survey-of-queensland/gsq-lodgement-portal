@@ -63,22 +63,22 @@ Figure 2: PGGD-02 sequence diagram</p>
     b. The operator will provide a copy of the completed template to the department.  
 1. The operator completes the new Lodgement Portal PGGD-02 online form and attaches the **Notice of completion**.
 1. . A new ‘Status’ and ‘Status Event’ with a ‘Start Date’ and ‘End Date’ will be created in the ‘Status History’ table.
-a. If Notice type ( selected on the form) = Completion or Cased and Suspended then the form displays Drill start date and Rig release date; if Notice type = Alteration Abandonment, Water Observation Borehole, Water Supply Borehole and Producing Hydrocarbons then the form displays Activity start date and Activity end date.
-b. If Notice type = Never Drilled then do not display any dates
-c. If Notice type = Not Drilled then create new Status = Never Used and Status Event = Never Drilled and Status Start Date = Date of lodgement of form.
-d. If Notice type = Cased and Suspended then create new Status = Cased and Suspended and Status Event = Cased & Suspended and Status Start Date = Rig Release Date.
-e. If Notice type = Water Observation Borehole then create new Status = Monitoring and Status Event = Conversion to Water Observation Borehole and Status Start Date = Activity End Date
-f. If Notice type = Water Supply Borehole then create new Status = Water Supply and Status Event = Converted to Water Supply Borehole and Status Start Date = Activity End Date
-g. If Notice Type = Producing Hydrocarbons then create new Status = On Production and Status Event = Producing Hydrocarbons.  Status Start Date = Activity Start Date and Status End Date = Activity End Date.
-h. Drill start date links to Drill Start Date in Boreholes
-i. Rig release date links to Rig Release Date in Boreholes
-j. Activity start date links to Status Start Date in Boreholes as below
-k. Activity end date links to Status End Date in Boreholes as below
-l. If Notice type = Completion, then new Status must be created with Status = Completed, and Status Event = Completion.  Status Start Date is Rig Release date
-m. If Notice type = Alteration, date fields are Activity start date and Activity end date
-n. If Notice type = Alteration, then need to create a new Status = Previous Status, Status Event = Alteration and Activity start date links to Status Start Date and Activity end date links to Status End Date.
-o. If Notice type = Abandonment, date fields are Activity start date and Activity end data
-p. If Notice type = Abandonment, then create a new Status = Capped and Abandoned with Status Event = Abandonment and Activity start date links to Status Start Date and Activity end date links to Status End Date.
+    a. If Notice type ( selected on the form) = Completion or Cased and Suspended then the form displays Drill start date and Rig release date; if Notice type = Alteration Abandonment, Water Observation Borehole, Water Supply Borehole and Producing Hydrocarbons then the form displays Activity start date and Activity end date.
+    b. If Notice type = Never Drilled then do not display any dates
+    c. If Notice type = Not Drilled then create new Status = Never Used and Status Event = Never Drilled and Status Start Date = Date of lodgement of form.
+    d. If Notice type = Cased and Suspended then create new Status = Cased and Suspended and Status Event = Cased & Suspended and Status Start Date = Rig Release Date.
+    e. If Notice type = Water Observation Borehole then create new Status = Monitoring and Status Event = Conversion to Water Observation Borehole and Status Start Date = Activity End Date
+    f. If Notice type = Water Supply Borehole then create new Status = Water Supply and Status Event = Converted to Water Supply Borehole and Status Start Date = Activity End Date
+    g. If Notice Type = Producing Hydrocarbons then create new Status = On Production and Status Event = Producing Hydrocarbons.  Status Start Date = Activity Start Date and Status End Date = Activity End Date.
+    h. Drill start date links to Drill Start Date in Boreholes
+    i. Rig release date links to Rig Release Date in Boreholes
+    j. Activity start date links to Status Start Date in Boreholes as below
+    k. Activity end date links to Status End Date in Boreholes as below
+    l. If Notice type = Completion, then new Status must be created with Status = Completed, and Status Event = Completion.  Status Start Date is Rig Release date
+    m. If Notice type = Alteration, date fields are Activity start date and Activity end date
+    n. If Notice type = Alteration, then need to create a new Status = Previous Status, Status Event = Alteration and Activity start date links to Status Start Date and Activity end date links to Status End Date.
+    o. If Notice type = Abandonment, date fields are Activity start date and Activity end data
+    p. If Notice type = Abandonment, then create a new Status = Capped and Abandoned with Status Event = Abandonment and Activity start date links to Status Start Date and Activity end date links to Status End Date.
 1. An email is sent to the submitter acknowledging the submission. This email contains the **Borehole PID** and instructions for how to use this PID as the unique identifier.
 
 ### PGGD-03 Sequence Diagram
