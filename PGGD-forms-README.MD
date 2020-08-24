@@ -76,7 +76,7 @@ Figure 2: PGGD-02 sequence diagram</p>
     
     f. If Notice type = Water Supply Borehole then create new Status = Water Supply and Status Event = Converted to Water Supply Borehole and Status Start Date = Activity End Date
     
-    g. If Notice Type = Producing Hydrocarbons then create new Status = On Production and Status Event = Producing Hydrocarbons.  Status Start Date = Activity Start Date and Status End Date = Activity End Date.
+    g. If Notice Type = Producing Hydrocarbons then create new Status = On Production and Status Event = Producing Hydrocarbons.  Status Start Date = Activity Start Date and Status End Date = NULL.
     
     h. Drill start date links to Drill Start Date in Boreholes
     
@@ -109,7 +109,7 @@ Figure 3: PGGD-03 sequence diagram</p>
     a. This notice is given to the landholder by the operator.  
     b. The operator will provide a copy of the completed template to the department.  
 1. The operator completes the new Lodgement Portal PGGD-03 online form and attaches the **Notice of intention**.
-1. On form submission, a new borehole status event **Hydraulic fracturing on notice** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Estimated commencement date** captured in the form and status_end_date is set to the **Estimated completion date** captured in the form.
+1. On form submission, a new borehole status event **Hydraulic fracturing on notice** is created in the Geological Properties database table **Borehole_status**. The status_start_date is set to the **Estimated commencement date** captured in the form and status_end_date is set to NULL.
 1. An email is sent to the submitter acknowledging the form submission.
 
 ### PGGD-04 Sequence Diagram
@@ -128,7 +128,7 @@ Figure 4: PGGD-04 sequence diagram</p>
 1. If the end status is **Completion** or **Partial Completion**, the operator attaches a **detailed actual composition** of the hydraulic fracturing fluids used.
 1. If the operator answers "Yes" to the question of "_Did any incidents occur that may have resulted in environmental harm or caused an adverse impact on any underlying or overlying acuifiers whilst undertaking activities?_": The submitter must attach a detailed statement of the incident using the Word template **Hydraulic Fracturing Incident Report**.
 1. If Completion Status = Abandoned then the Status with the Status Event of Hydraulic fracturing on notice changes the Status Event to Hydraulic fracturing abandoned and Activity end date is added to or replaces the Status End Date.
-If Completion Status = Partial Completion, Alteration, Completion or Other then  Status with the Status Event of Hydraulic fracturing on notice must have the Status Event changed from Hydraulic fracturing on notice to Completion of hydraulic fracturing and Fracturing start date overwrites Status Start Date and Fracturing end date overwrites Status End Date.
+If Completion Status = Partial Completion, Alteration, Completion or Other then  Status with the Status Event of Hydraulic fracturing on notice must have the Status Event changed from Hydraulic fracturing on notice to Completion of hydraulic fracturing and Fracturing start date overwrites Status Start Date and Status End Date is NULL.
 1. The uploaded documents are recorded as a Dataset_resource against the borehole in the Geological Properties database.
 1. An email is sent to the submitter acknowledging the form submission.
 
