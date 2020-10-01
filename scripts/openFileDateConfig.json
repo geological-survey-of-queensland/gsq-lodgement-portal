@@ -1,1 +1,650 @@
-{"version":"0.3","Last updated date":"28/08/2020","Last updated by":"S Rajapakse, SRA","reportCalculations":[{"reportType":"http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-acquisition","calculationType":"STANDARD","calculations":[{"period":{"years":2,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-final","calculationType":"STANDARD","calculations":[{"period":{"years":2,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-logistics","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/geothermal-report-annual-reserves","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/geothermal-report-injection","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/geothermal-report-injection-testing","calculationType":"PERMIT","calculations":[{"validation":["http://linked.data.gov.au/def/qld-resource-permit/GeothermalLease"],"period":{"years":5,"months":0,"days":0}},{"validation":["http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGeothermal"],"period":{"years":2,"months":0,"days":0}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/geothermal-report-production","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/geothermal-report-production-testing","calculationType":"PERMIT","calculations":[{"validation":["http://linked.data.gov.au/def/qld-resource-permit/GeothermalLease"],"period":{"years":5,"months":0,"days":0}},{"validation":["http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGeothermal"],"period":{"years":2,"months":0,"days":0}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/greenhouse-gas-report-injection","calculationType":"PERMIT","calculations":[{"validation":["http://linked.data.gov.au/def/qld-resource-permit/GreenhouseGasLease"],"period":{"years":5,"months":0,"days":0}},{"validation":["http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGreenhouseGas"],"period":{"years":2,"months":0,"days":0}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/greenhouse-gas-report-storage-capacity","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/greenhouse-gas-report-storage-injection","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report","calculationType":"STANDARD","calculations":[{"period":{"years":5,"months":2,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/permit-report-annual","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/permit-report-final","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/permit-report-final-relinquishment","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/permit-report-mineral-associated-water","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/permit-report-surrender","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/mine-plan-lodgement","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/mmol-44","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pa-21A","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pa-22A","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pa-42","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pipeline-report-surrender","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-end-authority","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-end-tenure","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-annual","calculationType":"STANDARD","calculations":[{"period":{"years":5,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-cumulative-water-production","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-field-information","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-infrastructure","calculationType":"STANDARD","calculations":[{"period":{"years":5,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-non-associated-water","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-production-information","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-resource-and-reserves-information","calculationType":"STANDARD","calculations":[{"period":{"years":0,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-relinquishment","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/petroleum-report-surrender","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pggd-01","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pggd-02","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pggd-03","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pggd-04","calculationType":"IMMEDIATE"},{"reportType":"http://linked.data.gov.au/def/georesource-report/pm-1-2013","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/scientific-or-technical-survey-report","calculationType":"STANDARD","calculations":[{"period":{"years":2,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/seismic-survey-report-final","calculationType":"STANDARD","calculations":[{"period":{"years":3,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/seismic-survey-report-other","calculationType":"STANDARD","calculations":[{"period":{"years":3,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/seismic-survey-report-reprocessing","calculationType":"STANDARD","calculations":[{"period":{"years":3,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/survey-plan","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/water-report-performance-review","calculationType":"CONFIDENTIAL"},{"reportType":"http://linked.data.gov.au/def/georesource-report/well-completion-report","calculationType":"BOREHOLE","calculations":[{"validation":["http://linked.data.gov.au/def/resource-project-lifecycle/exploration","http://linked.data.gov.au/def/resource-project-lifecycle/appraisal"],"period":{"years":2,"months":6,"days":1}},{"validation":["http://linked.data.gov.au/def/resource-project-lifecycle/development"],"period":{"years":5,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/well-production-testing-report","calculationType":"PERMIT","calculations":[{"validation":["http://linked.data.gov.au/def/qld-resource-permit/AuthorityToProspect"],"period":{"years":2,"months":0,"days":1}},{"validation":["http://linked.data.gov.au/def/qld-resource-permit/PetroleumLease"],"period":{"years":5,"months":0,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/well-or-bore-abandonment-report","calculationType":"BOREHOLE","calculations":[{"validation":["http://linked.data.gov.au/def/resource-project-lifecycle/exploration","http://linked.data.gov.au/def/resource-project-lifecycle/appraisal"],"period":{"years":2,"months":6,"days":1}},{"validation":["http://linked.data.gov.au/def/resource-project-lifecycle/development"],"period":{"years":5,"months":6,"days":1}}]},{"reportType":"http://linked.data.gov.au/def/georesource-report/wra-05A","calculationType":"CONFIDENTIAL"}]}
+{
+  "version": "0.3",
+  "Last updated date": "28/08/2020",
+  "Last updated by": "S Rajapakse, SRA",
+  "reportCalculations": [
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-acquisition",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 2,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-final",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 2,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-logistics",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-annual-reserves",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-injection",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-injection-testing",
+      "calculationType": "PERMIT",
+      "calculations": [
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/GeothermalLease"
+          ],
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 0
+          }
+        },
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGeothermal"
+          ],
+          "period": {
+            "years": 2,
+            "months": 0,
+            "days": 0
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-production",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-production-testing",
+      "calculationType": "PERMIT",
+      "calculations": [
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/GeothermalLease"
+          ],
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 0
+          }
+        },
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGeothermal"
+          ],
+          "period": {
+            "years": 2,
+            "months": 0,
+            "days": 0
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/greenhouse-gas-report-injection",
+      "calculationType": "PERMIT",
+      "calculations": [
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/GreenhouseGasLease"
+          ],
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 0
+          }
+        },
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGreenhouseGas"
+          ],
+          "period": {
+            "years": 2,
+            "months": 0,
+            "days": 0
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/greenhouse-gas-report-storage-capacity",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/greenhouse-gas-report-storage-injection",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-annual",
+      "calculationType": "PERMIT",
+      "calculations": [
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/MiningLease"
+          ],
+          "period": {
+            "years": 3,
+            "months": 0,
+            "days": 1
+          }
+        },
+        {
+          "validation": [
+            "ELSE"
+          ],
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-final",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-final-relinquishment",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-mineral-associated-water",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-surrender",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/mine-plan-lodgement",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/mmol-44",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pa-21A",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pa-22A",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pa-42",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pipeline-report-surrender",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-end-authority",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-end-tenure",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-annual",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-cumulative-water-production",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-field-information",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-infrastructure",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-non-associated-water",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-production-information",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-resource-and-reserves-information",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 0,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-relinquishment",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-surrender",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pggd-01",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pggd-02",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pggd-03",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pggd-04",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/pm-1-2013",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/scientific-or-technical-survey-report",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 3,
+            "months": 6,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/seismic-survey-report-final",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 3,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/seismic-survey-report-other",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 3,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/seismic-survey-report-reprocessing",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 3,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/survey-plan",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/water-report-performance-review",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/well-completion-report",
+      "calculationType": "BOREHOLE",
+      "calculations": [
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/resource-project-lifecycle/exploration",
+            "http://linked.data.gov.au/def/resource-project-lifecycle/appraisal"
+          ],
+          "period": {
+            "years": 3,
+            "months": 0,
+            "days": 1
+          }
+        },
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/resource-project-lifecycle/development"
+          ],
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/well-production-testing-report",
+      "calculationType": "PERMIT",
+      "calculations": [
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/AuthorityToProspect"
+          ],
+          "period": {
+            "years": 3,
+            "months": 0,
+            "days": 1
+          }
+        },
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/qld-resource-permit/PetroleumLease"
+          ],
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/well-or-bore-abandonment-report",
+      "calculationType": "BOREHOLE",
+      "calculations": [
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/resource-project-lifecycle/exploration",
+            "http://linked.data.gov.au/def/resource-project-lifecycle/appraisal"
+          ],
+          "period": {
+            "years": 3,
+            "months": 0,
+            "days": 1
+          }
+        },
+        {
+          "validation": [
+            "http://linked.data.gov.au/def/resource-project-lifecycle/development"
+          ],
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/wra-05A",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/collaborative-exploration-initiative-proposals",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geological-survey-of-queensland-publication",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geological-survey-of-queensland-record",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/queensland-government-mining-journal",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-other",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-other",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/any-other-report",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/any-other-report",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/any-other-report",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/commissioned-industry-study-or-report",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/departmental-drilling",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/presentation",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/technical-report",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-annual-ml",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-annual",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-final-higher-tenure",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-surrender-higher-tenure",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-final",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-surrender",
+      "calculationType": "IMMEDIATE"
+    },
+    "http://linked.data.gov.au/def/georesource-report/water-report-other"
+  ]
+}
