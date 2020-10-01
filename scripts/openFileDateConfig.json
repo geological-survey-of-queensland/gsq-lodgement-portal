@@ -1,7 +1,7 @@
 {
-  "version": "0.3",
-  "Last updated date": "28/08/2020",
-  "Last updated by": "S Rajapakse, SRA",
+  "version": "0.4",
+  "Last updated date": "01/10/2020",
+  "Last updated by": "D Armstrong, GSQ",
   "reportCalculations": [
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-acquisition",
