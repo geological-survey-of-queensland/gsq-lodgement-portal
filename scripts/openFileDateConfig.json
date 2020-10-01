@@ -645,6 +645,9 @@
       "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-surrender",
       "calculationType": "IMMEDIATE"
     },
-    "http://linked.data.gov.au/def/georesource-report/water-report-other"
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/water-report-other",
+      "calculationType": "CONFIDENTIAL"
+    }
   ]
 }
