@@ -175,7 +175,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -353,7 +353,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -707,7 +707,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -885,7 +885,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -1063,7 +1063,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -1236,7 +1236,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -1419,7 +1419,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -1601,7 +1601,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -1784,7 +1784,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -1962,7 +1962,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -2140,7 +2140,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -2318,7 +2318,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -2496,7 +2496,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -3896,7 +3896,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": false
+              "isRequired": true
             }
           ]
         },
@@ -5564,7 +5564,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": false
+              "isRequired": true
             }
           ]
         },
@@ -5911,7 +5911,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -6073,7 +6073,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -6389,7 +6389,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": false
+              "isRequired": true
             }
           ]
         },
@@ -6544,7 +6544,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": false
+              "isRequired": true
             }
           ]
         },
@@ -9632,7 +9632,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -9810,7 +9810,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
@@ -9988,7 +9988,7 @@
             {
               "name": "spatialDocuments",
               "type": "component",
-              "isRequired": true
+              "isRequired": false
             }
           ]
         },
