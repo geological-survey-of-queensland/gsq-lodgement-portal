@@ -190,32 +190,6 @@
       ]
     },
     {
-      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-annual",
-      "calculationType": "PERMIT",
-      "calculations": [
-        {
-          "validation": [
-            "http://linked.data.gov.au/def/qld-resource-permit/MiningLease"
-          ],
-          "period": {
-            "years": 3,
-            "months": 0,
-            "days": 1
-          }
-        },
-        {
-          "validation": [
-            "ELSE"
-          ],
-          "period": {
-            "years": 5,
-            "months": 0,
-            "days": 1
-          }
-        }
-      ]
-    },
-    {
       "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-final",
       "calculationType": "IMMEDIATE"
     },
