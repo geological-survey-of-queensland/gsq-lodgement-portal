@@ -195,7 +195,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-report-production-information": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report - Production Information",
+          "title": "Lodge a Petroleum Report - Petroleum Production Report",
           "name": "Report Details",
           "inputs": [
             {
@@ -373,7 +373,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-report-resource-and-reserves-information": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report - Resource and Reserves Information",
+          "title": "Lodge a Petroleum Report - Petroleum Resources and Reserves Report",
           "name": "Report Details",
           "inputs": [
             {
@@ -1256,7 +1256,7 @@
     "http://linked.data.gov.au/def/georesource-report/well-completion-report": {
       "steps": [
         {
-          "title": "Lodge a Well Completion Report",
+          "title": "Lodge a Well or Bore Completion Report",
           "name": "Report Details",
           "inputs": [
             {
@@ -1804,7 +1804,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-annual": {
       "steps": [
         {
-          "title": "Lodge a Permit Report - Annual (EPC,EPM,MDL)",
+          "title": "Lodge a Coal and Mineral Permit Report - Annual (EPC,EPM,MDL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -1982,7 +1982,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-final": {
       "steps": [
         {
-          "title": "Coal and Mineral Permit Report - Final (End of Tenure)",
+          "title": "Lodge a Coal and Mineral Permit Report - Final (End of Tenure)",
           "name": "Report Details",
           "inputs": [
             {
@@ -2160,7 +2160,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment": {
       "steps": [
         {
-          "title": "Lodge a Permit Report - Partial Relinquishment",
+          "title": "Lodge a Coal and Mineral Permit Report - Partial Relinquishment",
           "name": "Report Details",
           "inputs": [
             {
@@ -2338,7 +2338,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-surrender": {
       "steps": [
         {
-          "title": "Coal and Mineral Permit Report - Surrender (End of Tenure)",
+          "title": "Lodge a Coal and Mineral Permit Report - Surrender (End of Tenure)",
           "name": "Report Details",
           "inputs": [
             {
@@ -5413,7 +5413,7 @@
     "http://linked.data.gov.au/def/georesource-report/mine-plan-lodgement": {
       "steps": [
         {
-          "title": "Lodge a Mine Plan Lodgement",
+          "title": "Lodge a Mine Working Plan",
           "name": "Report Details",
           "inputs": [
             {
@@ -5758,7 +5758,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-final-relinquishment": {
       "steps": [
         {
-          "title": "Lodge a Permit Report - Final Relinquishment",
+          "title": "Lodge a Coal and Mineral Permit Report - Final Relinquishment",
           "name": "Report Details",
           "inputs": [
             {
@@ -5931,7 +5931,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-mineral-associated-water": {
       "steps": [
         {
-          "title": "Lodge a Permit Report - Mineral Associated Water",
+          "title": "Lodge a Coal and Mineral Permit Report - Mineral Associated Water",
           "name": "Report Details",
           "inputs": [
             {
@@ -7766,7 +7766,7 @@
     "http://linked.data.gov.au/def/georesource-report/collaborative-exploration-initiative-proposals": {
       "steps": [
         {
-          "title": "Lodge a Report for Collaborative Exploration Initiative Proposals",
+          "title": "Lodge a Collaborative Exploration Initiative Proposal",
           "name": "Report Details",
           "inputs": [
             {
@@ -7891,7 +7891,7 @@
     "http://linked.data.gov.au/def/georesource-report/collaborative-exploration-initiative-final": {
       "steps": [
         {
-          "title": "Lodge a Final Report for Collaborative Exploration Initiatives",
+          "title": "Lodge a Final Report for a Collaborative Exploration Initiative",
           "name": "Report Details",
           "inputs": [
             {
@@ -9652,7 +9652,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-final-higher-tenure": {
       "steps": [
         {
-          "title": "Coal and Mineral Permit Report - Final (Grant of higher tenure)",
+          "title": "Lodge a Coal and Mineral Permit Report - Final (Grant of higher tenure)",
           "name": "Report Details",
           "inputs": [
             {
@@ -9830,7 +9830,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-surrender-higher-tenure": {
       "steps": [
         {
-          "title": "Coal and Mineral Permit Report - Surrender (Grant of higher tenure)",
+          "title": "Lodge a Coal and Mineral Permit Report - Surrender (Grant of higher tenure)",
           "name": "Report Details",
           "inputs": [
             {
