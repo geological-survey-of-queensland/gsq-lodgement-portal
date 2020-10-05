@@ -530,23 +530,6 @@
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/any-other-report",
-      "calculationType": "STANDARD",
-      "calculations": [
-        {
-          "period": {
-            "years": 5,
-            "months": 0,
-            "days": 1
-          }
-        }
-      ]
-    },
-    {
-      "reportType": "http://linked.data.gov.au/def/georesource-report/any-other-report",
-      "calculationType": "CONFIDENTIAL"
-    },
-    {
-      "reportType": "http://linked.data.gov.au/def/georesource-report/any-other-report",
       "calculationType": "CONFIDENTIAL"
     },
     {
@@ -610,14 +593,6 @@
           }
         }
       ]
-    },
-    {
-      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-final",
-      "calculationType": "IMMEDIATE"
-    },
-    {
-      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-surrender",
-      "calculationType": "IMMEDIATE"
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/water-report-other",
