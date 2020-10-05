@@ -545,9 +545,6 @@
       "calculationType": "CONFIDENTIAL"
     },
     {
-      "calculationType": "CONFIDENTIAL"
-    },
-    {
       "reportType": "http://linked.data.gov.au/def/georesource-report/technical-report",
       "calculationType": "CONFIDENTIAL"
     },
