@@ -593,16 +593,7 @@
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/collaborative-exploration-initiative-final",
-      "calculationType": "STANDARD",
-      "calculations": [
-        {
-          "period": {
-            "years": 0,
-            "months": 6,
-            "days": 1
-          }
-        }
-      ]
+      "calculationType": "CONFIDENTIAL"
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/water-report-other",
