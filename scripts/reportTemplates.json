@@ -9447,7 +9447,8 @@
           "title": "Documents and Data",
           "inputs": [
             {
-              "name": "reportingTemplateDocuments",
+              "name": "associatedDocuments",
+              "label": "associated document",
               "type": "component",
               "isRequired": true
             },
