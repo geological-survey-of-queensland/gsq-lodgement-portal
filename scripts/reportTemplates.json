@@ -3228,7 +3228,7 @@
     "http://linked.data.gov.au/def/georesource-report/pipeline-report-surrender": {
       "steps": [
         {
-          "title": "Lodge a Pipeline Report - Surrender",
+          "title": "Petroleum Report - Pipeline Surrender (PPL)",
           "name": "Report Details",
           "inputs": [
             {
