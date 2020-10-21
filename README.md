@@ -267,7 +267,7 @@ The following report types are PDF forms.
 |[WRA-05A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0006/259935/wra-05a-notification-completion-conversion.pdf) Notice of completion of conversion of petroleum well to water supply bore or water observation bore|N/A|
 |[MMOL-44](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0003/289605/notification-geophysical-survey.pdf) Notice of decommissioning a well, water observation bore, water monitoring bore or water supply bore|N/A|
 
-## Report Types that are deprecated - no longer lodged to DNRME
+## Report Types that are deprecated or superseded - no longer lodged to DNRME
 
 The following report types are no longer current.
 
@@ -283,6 +283,8 @@ The following report types are no longer current.
 |Water Report - Other|water-report-other |WATOTH|131|
 |Well Report Other|well-report-other |WELOTH |555|
 |Well proposal|well-proposal |WELPRO|4358|
+|Production (Petroleum)|production-petroleum|PROD|610|
+|Reserves (Petroleum)|reserves-petroleum|RESERV|741|
 
 ## Report Types that will not be lodged through lodgement portal
 
@@ -298,8 +300,6 @@ The following report types will be submitted directly to the department, not lod
 |Collaborative Exploration Initiative - Final|collaborative-exploration-initiative-final|CDIFIN|37|
 |Industry Consultative Report|industry-consultative-report|OTHER|31|
 |Industry Network Initiative - Final|industry-network-initiative-final|INIFIN|2|
-|Production (Petroleum)|production-petroleum|PROD|610|
-|Reserves (Petroleum)|reserves-petroleum|RESERV|741|
 
 ## Lodgement Portal vocabularies
 
