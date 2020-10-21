@@ -190,8 +190,8 @@ The following reports will be submitted through the [Petroleum and Gas Reporting
 |Report Type|Concept|Notation|QDEX Count|PID|
 |---|---|---|---|---|
 |Hydraulic Fracturing Activity Report|hydraulic-fracturing-activity-report |HFACR|1291|Match|
-|Petroleum Report - Production Information|petroleum-report-production-information |PROINF|0|N/A|
-|Petroleum Report - Resource and Reserves Information|petroleum-report-resource-and-reserves-information |RESINF|0|N/A|
+|Petroleum Report - Petroleum Production Report|petroleum-report-production-information |PROINF|0|N/A|
+|Petroleum Report - Petroleum Resources and Reserves Report|petroleum-report-resource-and-reserves-information |RESINF|0|N/A|
 |Scientific or Technical Survey Report|scientific-or-technical-survey-report |STSURV|86|N/A|
 |Seismic Survey Report - Final|seismic-survey-report-final |SSFINL|820|Match|
 |Seismic Survey Report - Other|seismic-survey-report-other |SSOTHR|415|Match|
