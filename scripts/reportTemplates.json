@@ -1,7 +1,7 @@
 {
   "version": "0.5",
-  "Last updated date": "02/10/2020",
-  "Last updated by": "D Armstrong, GSQ",
+  "Last updated date": "12/11/2020",
+  "Last updated by": "B Talebi, GSQ",
   "templates": {
     "http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
       "steps": [
@@ -7210,6 +7210,11 @@
               "name": "permit",
               "isRequired": true,
               "populateOwner": true
+            },
+            {
+              "type": "component",
+              "name": "borehole",
+              "isRequired": true
             }
           ]
         },
@@ -7284,6 +7289,11 @@
               "label": "Details",
               "type": "component",
               "readOnly": true
+            },
+            {
+              "type": "component",
+              "name": "borehole",
+              "isRequired": true
             }
           ]
         },
@@ -7364,6 +7374,12 @@
               "label": "Details",
               "type": "component",
               "readOnly": true
+            },
+            {
+              "type": "component",
+              "name": "borehole",
+              "isRequired": true,
+              "isMultiSelect": true
             }
           ]
         },
