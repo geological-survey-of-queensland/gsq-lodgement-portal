@@ -4293,7 +4293,13 @@
               "validations": {
                 "type": "string",
                 "rules": [
-                  {
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
                     "name": "max",
                     "params": [
                       256,
