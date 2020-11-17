@@ -598,6 +598,10 @@
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/water-report-other",
       "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-annual",
+      "calculationType": "CONFIDENTIAL"
     }
   ]
 }
