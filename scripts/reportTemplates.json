@@ -1,7 +1,7 @@
 {
   "version": "0.5",
-  "Last updated date": "13/11/2020",
-  "Last updated by": "S Rajapakse, SRA",
+  "Last updated date": "18/11/2020",
+  "Last updated by": "D Armstrong, SRA",
   "templates": {
     "http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
       "steps": [
