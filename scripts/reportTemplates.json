@@ -4360,7 +4360,12 @@
                   }
                 ]
               }
-            },
+			},
+			{
+				"type": "component",
+				"name": "commodity",
+				"isRequired": true
+			},
             {
               "type": "component",
               "name": "earthScienceData",
