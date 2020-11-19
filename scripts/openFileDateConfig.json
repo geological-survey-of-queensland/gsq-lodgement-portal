@@ -1,6 +1,6 @@
 {
-  "version": "0.5",
-  "Last updated date": "06/10/2020",
+  "version": "0.6",
+  "Last updated date": "18/11/2020",
   "Last updated by": "D Armstrong, GSQ",
   "reportCalculations": [
     {
@@ -597,6 +597,10 @@
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/water-report-other",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-annual",
       "calculationType": "CONFIDENTIAL"
     }
   ]
