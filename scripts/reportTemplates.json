@@ -6096,7 +6096,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-mineral-associated-water": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Mineral Associated Water",
+          "title": "Lodge a Water Report - Mineral Associated Water",
           "name": "Report Details",
           "inputs": [
             {
