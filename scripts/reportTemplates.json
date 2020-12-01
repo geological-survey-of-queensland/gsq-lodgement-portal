@@ -7576,7 +7576,7 @@
     "http://linked.data.gov.au/def/georesource-report/pggd-01": {
       "steps": [
         {
-          "title": "Lodge a Notice of intention to drill a petroleum well or bore",
+          "title": "PGGD-01 Notice of intention to drill a petroleum well or bore",
           "name": "Report Details",
           "inputs": [
             {
@@ -9254,7 +9254,7 @@
     "http://linked.data.gov.au/def/georesource-report/water-report-other": {
       "steps": [
         {
-          "title": "Lodge a Water Report",
+          "title": "Lodge a Water Report - Other",
           "name": "Report Details",
           "inputs": [
             {
