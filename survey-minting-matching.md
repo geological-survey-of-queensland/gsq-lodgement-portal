@@ -4,7 +4,7 @@ The Persistent Identifier (PID) is the unique identifier for a survey that is su
 
 ## Minting a new PID
 
-Customers lodge _Notice of Intention to Survey_ forms to the department. This means that the survey is proposed but not completed.
+Customers lodge _Notice of Intention to Survey/ Notification of geophysical survey_ forms to the department. This means that the survey is proposed but not completed.
 
 We need to tell the submitter of the form what the Survey PID is and what it is used for. We can do this by emailing the PID to the submitter after successful submission.
 
@@ -35,7 +35,7 @@ Figure 3: Lodgement Portal Survey PID matching</p>
 
 NOTE: This process requires the existing Notice of Survey forms (PA-21A Notice of Intention to carry out seismic survey or scientific or technical survey and PM 1/2013 Notification of geophysical survey) to be enhanced or be replaced by a new form.
 
-1. The submitter submits a Survey Plan intention form in the Lodgement Portal.
+1. The submitter submits a Notification of geophysical survey form in the Lodgement Portal.
 1. On submission, a new survey is created in the Geological Properties database using the data submitted in the Survey form.  
     a. Type = Type from lodgement form. This will be either **Geophysical** - (http://linked.data.gov.au/def/survey-type/geophysical) or **Seismic**
 (http://linked.data.gov.au/def/survey-type/seismic)  
@@ -62,7 +62,7 @@ NOTE: This process requires the existing Notice of Survey forms (PA-21A Notice o
 
 ## To-be Survey PID Matching business process
 
-1. The submitter starts a Survey Plan form in the Lodgement Portal.  
+1. The submitter starts a Survey form in the Lodgement Portal.  
 1. The submitter selects a PID using a PID selector component (same user experience as borehole selector component).  
     a. The user can type in a PID or the survey title.  
     b. The system returns the PID and name of the survey to the submitter.  
