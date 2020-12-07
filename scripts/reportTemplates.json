@@ -8235,6 +8235,28 @@
               "isRequired": false
             },
             {
+              "name": "startDate",
+              "label": "Report Period Start Date",
+              "type": "calender",
+              "validations": {
+                "type": "date",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "Report Period Start Date is required"
+                    ]
+                  },
+                  {
+                    "name": "typeError",
+                    "params": [
+                      "Report Period Start Date is invalid"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
               "type": "calender",
               "name": "endDate",
               "label": "Report Period End Date",
