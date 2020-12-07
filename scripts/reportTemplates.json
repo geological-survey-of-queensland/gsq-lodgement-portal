@@ -9170,7 +9170,7 @@
               "type": "component",
               "name": "permit",
               "isRequired": false,
-              "populateOwner": false
+              "populateOwner": true
             },
             {
               "name": "author",
