@@ -7827,6 +7827,7 @@
               "type": "component",
               "name": "permit",
               "isRequired": false,
+              "populateOwner": true
             },
             {
               "name": "author",
