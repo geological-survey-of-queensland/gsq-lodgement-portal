@@ -8103,9 +8103,9 @@
                 "type": "date",
                 "rules": [
                   {
-                    "name": "nullable",
+                    "name": "required",
                     "params": [
-                      ""
+                      "Report Period Start Date is required"
                     ]
                   },
                   {
