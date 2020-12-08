@@ -7952,7 +7952,7 @@
           "inputs": [
             {
               "name": "title",
-              "label": "Title of the Report",
+              "label": "Title of the Proposal",
               "placeholder": "Project name, collaborative exploration initiative proposal",
               "type": "text",
               "validations": {
@@ -7961,14 +7961,14 @@
                   {
                     "name": "required",
                     "params": [
-                      "A Title is required for the report"
+                      "A Title is required for the proposal"
                     ]
                   },
                   {
                     "name": "max",
                     "params": [
                       256,
-                      "The Title of the report cannot be more than 256 characters"
+                      "The Title of the proposal cannot be more than 256 characters"
                     ]
                   }
                 ]
@@ -8004,14 +8004,14 @@
 					{
 						"name": "required",
 						"params": [
-						  "Report Author is required"
+						  "Proposal Author is required"
 						]
 					  },
 					{
                     "name": "max",
                     "params": [
                       256,
-                      "The Report Author cannot be more than 256 characters"
+                      "The Proposal Author cannot be more than 256 characters"
                     ]
                   }
                 ]
@@ -8570,7 +8570,7 @@
           "inputs": [
             {
               "name": "title",
-              "label": "Title of the Report",
+              "label": "Title of the Publication",
               "placeholder": "Title of the publication",
               "type": "text",
               "validations": {
@@ -8579,14 +8579,14 @@
                   {
                     "name": "required",
                     "params": [
-                      "A Title is required for the report"
+                      "A Title is required for the publication"
                     ]
                   },
                   {
                     "name": "max",
                     "params": [
                       256,
-                      "The Title of the report cannot be more than 256 characters"
+                      "The Title of the publication cannot be more than 256 characters"
                     ]
                   }
                 ]
@@ -8623,7 +8623,7 @@
                     "name": "max",
                     "params": [
                       256,
-                      "The Report Author cannot be more than 256 characters"
+                      "The Publication Author cannot be more than 256 characters"
                     ]
                   }
                 ]
@@ -8688,14 +8688,14 @@
                   {
                     "name": "required",
                     "params": [
-                      "A Title is required for the report"
+                      "A Title is required for the record"
                     ]
                   },
                   {
                     "name": "max",
                     "params": [
                       256,
-                      "The Title of the report cannot be more than 256 characters"
+                      "The Title of the record cannot be more than 256 characters"
                     ]
                   }
                 ]
@@ -9137,7 +9137,7 @@
           "inputs": [
             {
               "name": "title",
-              "label": "Title of the Report",
+              "label": "Title of the Presentation",
               "placeholder": "Title of presentation",
               "type": "text",
               "validations": {
@@ -9146,14 +9146,14 @@
                   {
                     "name": "required",
                     "params": [
-                      "A Title is required for the report"
+                      "A Title is required for the presentation"
                     ]
                   },
                   {
                     "name": "max",
                     "params": [
                       256,
-                      "The Title of the report cannot be more than 256 characters"
+                      "The Title of the presentation cannot be more than 256 characters"
                     ]
                   }
                 ]
@@ -9175,7 +9175,7 @@
 	    {
               "name": "reportAuthor",
               "label": "Report Author",
-              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "subLabelAtTop": "Please enter the name of the person who has authored this presentation",
               "type": "text",
               "validations": {
                 "type": "string",
@@ -9678,7 +9678,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-annual-ml": {
       "steps": [
         {
-          "title": "Lodge a Permit Report - Annual (ML)",
+          "title": "Lodge a Coal or Mineral Permit Report - Annual (ML)",
           "name": "Report Details",
           "inputs": [
             {
