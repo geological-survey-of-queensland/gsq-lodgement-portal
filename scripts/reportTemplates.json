@@ -9175,7 +9175,7 @@
 	    {
               "name": "reportAuthor",
               "label": "Report Author",
-              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "subLabelAtTop": "Please enter the name of the person who has authored this presentation",
               "type": "text",
               "validations": {
                 "type": "string",
