@@ -1,7 +1,7 @@
 {
   "version": "0.5",
-  "Last updated date": "07/12/2020",
-  "Last updated by": "D Armstrong, GSQ",
+  "Last updated date": "08/12/2020",
+  "Last updated by": "B Talebi, GSQ",
   "templates": {
     "http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
       "steps": [
@@ -1798,7 +1798,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-annual": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Annual (EPC,EPM,MDL)",
+          "title": "Lodge a Coal or Mineral Permit Report - Annual (EPC,EPM,MDL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -1976,7 +1976,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-final": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Final (End of Tenure)",
+          "title": "Lodge a Coal or Mineral Permit Report - Final (End of Tenure)",
           "name": "Report Details",
           "inputs": [
             {
@@ -2154,7 +2154,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Partial Relinquishment",
+          "title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment",
           "name": "Report Details",
           "inputs": [
             {
@@ -2332,7 +2332,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-surrender": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Surrender (End of Tenure)",
+          "title": "Lodge a Coal or Mineral Permit Report - Surrender (End of Tenure)",
           "name": "Report Details",
           "inputs": [
             {
@@ -5923,7 +5923,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-final-relinquishment": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Final Relinquishment",
+          "title": "Lodge a Coal or Mineral Permit Report - Final Relinquishment",
           "name": "Report Details",
           "inputs": [
             {
@@ -7829,10 +7829,29 @@
               "isRequired": false,
               "populateOwner": true
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+           {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "name": "survey",
@@ -7974,10 +7993,29 @@
               "isRequired": true,
               "populateOwner": true
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this proposal",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "name": "survey",
@@ -8080,10 +8118,29 @@
               "isRequired": true,
               "populateOwner": true
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "name": "survey",
@@ -8224,10 +8281,29 @@
               "placeholder": "Describe the contents of the report and its associated documents, including a summary of activities, significant results, conclusions, main methods used, areas of interest etc ",
               "type": "textArea"
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "name": "survey",
@@ -8363,10 +8439,29 @@
               "placeholder": "Describe a summary of the results of the drilling, methods used, and target basins, formations, or rock units",
               "type": "textArea"
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "component",
@@ -8510,10 +8605,29 @@
               "placeholder": "Describe the contents of the publication and its associated documents, including a summary of activities, significant results, conclusions, main methods used, areas of interest etc ",
               "type": "textArea"
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this publication",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "component",
@@ -8600,10 +8714,29 @@
               "placeholder": "Describe the contents of the report and its associated documents, including a summary of activities, significant results, conclusions, main methods used, areas of interest etc.",
               "type": "textArea"
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this record",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "component",
@@ -8696,10 +8829,29 @@
               "isRequired": true,
               "populateOwner": true
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "component",
@@ -8849,10 +9001,29 @@
               "isRequired": true,
               "populateOwner": true
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "component",
@@ -9001,10 +9172,29 @@
               "placeholder": "Describe the contents of the presentation, including a summary of significant results or messages, conclusions and any areas of interest etc.",
               "type": "textArea"
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "component",
@@ -9172,10 +9362,29 @@
               "isRequired": false,
               "populateOwner": true
             },
-            {
-              "name": "author",
-              "type": "component",
-              "isRequired": true
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
             },
             {
               "type": "component",
@@ -9647,7 +9856,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-final-higher-tenure": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Final (Grant of higher tenure)",
+          "title": "Lodge a Coal or Mineral Permit Report - Final (Grant of higher tenure)",
           "name": "Report Details",
           "inputs": [
             {
@@ -9825,7 +10034,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-surrender-higher-tenure": {
       "steps": [
         {
-          "title": "Lodge a Coal and Mineral Permit Report - Surrender (Grant of higher tenure)",
+          "title": "Lodge a Coal or Mineral Permit Report - Surrender (Grant of higher tenure)",
           "name": "Report Details",
           "inputs": [
             {
