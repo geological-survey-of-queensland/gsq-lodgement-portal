@@ -1,6 +1,6 @@
 {
   "version": "0.5",
-  "Last updated date": "08/12/2020",
+  "Last updated date": "21/12/2020",
   "Last updated by": "B Talebi, GSQ",
   "templates": {
     "http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
@@ -1798,7 +1798,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-annual": {
       "steps": [
         {
-          "title": "Lodge a Coal or Mineral Permit Report - Annual (EPC,EPM,MDL)",
+          "title": "Lodge a Coal or Mineral Permit Report - Annual Activity (EPC,EPM,MDL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -2154,7 +2154,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment": {
       "steps": [
         {
-          "title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment",
+          "title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment (End of Tenure)",
           "name": "Report Details",
           "inputs": [
             {
@@ -2329,6 +2329,184 @@
         }
       ]
     },
+    "http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment-higher-tenure": {
+      "steps": [
+        {
+          "title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment (Grant of higher tenure)",
+          "name": "Report Details",
+          "inputs": [
+            {
+              "name": "title",
+              "label": "Title of the Report",
+              "placeholder": "e.g. EPM123, Project Name, partial relinquishment report for period ending 28-04-2020",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "A Title is required for the report"
+                    ]
+                  },
+                  {
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Title of the report cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "alias",
+              "label": "Aliases",
+              "type": "component",
+              "readOnly": true
+            },
+            {
+              "name": "description",
+              "viewLabel": "Description",
+              "label": "Report Description",
+              "placeholder": "Describe a summary of the report including activities, significant results, conclusions, metals/minerals/deposit type, main methods used, target areas of interest etc.",
+              "type": "textArea"
+            },
+            {
+              "type": "component",
+              "name": "permit",
+              "isRequired": true,
+              "populateOwner": true
+            },
+            {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "Report Author is required"
+                    ]
+                  },
+                  {
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "startDate",
+              "label": "Report Period Start Date",
+              "type": "calender",
+              "validations": {
+                "type": "date",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "Report Period Start Date is required"
+                    ]
+                  },
+                  {
+                    "name": "typeError",
+                    "params": [
+                      "Report Period Start Date is required"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "endDate",
+              "label": "Report Period End Date",
+              "type": "calender",
+              "validations": {
+                "type": "date",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "Report Period End Date is required"
+                    ]
+                  },
+                  {
+                    "name": "min",
+                    "isComplex": true,
+                    "params": [
+                      "yup.ref('startDate')",
+                      "The Report Period End Date must be greater than the Report Period Start Date"
+                    ]
+                  },
+                  {
+                    "name": "typeError",
+                    "params": [
+                      "Report Period End Date is required"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "component",
+              "name": "commodity",
+              "isRequired": true
+            },
+            {
+              "type": "component",
+              "name": "earthScienceData",
+              "isRequired": true
+            },
+            {
+              "name": "detail",
+              "label": "Details",
+              "type": "component",
+              "readOnly": true
+            }
+          ]
+        },
+        {
+          "title": "Documents and Data",
+          "name": "Document Uploads",
+          "inputs": [
+            {
+              "name": "associatedDocuments",
+              "label": "associated document",
+              "type": "component",
+              "isRequired": true
+            },
+            {
+              "name": "reportingTemplateDocuments",
+              "type": "component",
+              "isRequired": true
+            },
+            {
+              "name": "spatialDocuments",
+              "type": "component",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "title": "Review and Submit",
+          "name": "Review & Submit",
+          "inputs": [
+            {
+              "name": "review",
+              "type": "component",
+              "isRequired": true
+            }
+          ]
+        }
+      ]
+    },	  
     "http://linked.data.gov.au/def/georesource-report/permit-report-surrender": {
       "steps": [
         {
@@ -2510,7 +2688,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-report-annual": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report - Annual",
+          "title": "Lodge a Petroleum Report - Annual (ATP/PL/PPL/PFL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -2688,7 +2866,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-end-tenure": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report - Final",
+          "title": "Lodge a Petroleum Report - Final (ATP/PL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -2866,7 +3044,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-report-relinquishment": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report - Relinquishment",
+          "title": "Lodge a Petroleum Report - Relinquishment (ATP/PL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -3044,7 +3222,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-report-surrender": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report - Surrender",
+          "title": "Lodge a Petroleum Report - Surrender (ATP/PL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -3395,7 +3573,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-end-authority": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report - End of Authority",
+          "title": "Lodge a Petroleum Report - End of Authority (DAA/PSL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -5923,7 +6101,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-final-relinquishment": {
       "steps": [
         {
-          "title": "Lodge a Coal or Mineral Permit Report - Final Relinquishment",
+          "title": "Lodge a Coal or Mineral Permit Report - Final Relinquishment (MDL)",
           "name": "Report Details",
           "inputs": [
             {
@@ -7627,7 +7805,7 @@
     "http://linked.data.gov.au/def/georesource-report/pggd-02": {
       "steps": [
         {
-          "title": "PGGD-02 Notice of completion, alteration or abandonment of a well or bore",
+          "title": "PGGD-02 Notice of completion, alteration or abandonment of a petroleum well or bore",
           "name": "Report Details",
           "inputs": [
             {
@@ -8783,7 +8961,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-other": {
       "steps": [
         {
-          "title": "Lodge a Coal or Mineral Permit Report",
+          "title": "Lodge a Coal or Mineral Permit Report - Other",
           "name": "Report Details",
           "inputs": [
             {
@@ -8955,7 +9133,7 @@
     "http://linked.data.gov.au/def/georesource-report/petroleum-report-other": {
       "steps": [
         {
-          "title": "Lodge a Petroleum Report",
+          "title": "Lodge a Petroleum Report - Other",
           "name": "Report Details",
           "inputs": [
             {
@@ -9678,7 +9856,7 @@
     "http://linked.data.gov.au/def/georesource-report/permit-report-annual-ml": {
       "steps": [
         {
-          "title": "Lodge a Coal or Mineral Permit Report - Annual (ML)",
+          "title": "Lodge a Coal or Mineral Permit Report - Annual Activity (ML)",
           "name": "Report Details",
           "inputs": [
             {
