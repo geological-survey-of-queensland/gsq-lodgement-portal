@@ -1,6 +1,6 @@
 {
   "version": "0.5",
-  "Last updated date": "21/12/2020",
+  "Last updated date": "06/01/2021",
   "Last updated by": "B Talebi, GSQ",
   "templates": {
     "http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
@@ -8257,6 +8257,175 @@
               "name": "title",
               "label": "Title of the Report",
               "placeholder": "Project name, collaborative exploration initiative final report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "A Title is required for the report"
+                    ]
+                  },
+                  {
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Title of the report cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "alias",
+              "label": "Aliases",
+              "type": "component",
+              "readOnly": true
+            },
+            {
+              "name": "description",
+              "viewLabel": "Description",
+              "label": "Report Description",
+              "placeholder": "Provide a summary of the initiative, collaboration and proposed activity for the project",
+              "type": "textArea"
+            },
+            {
+              "type": "component",
+              "name": "permit",
+              "isRequired": true,
+              "populateOwner": true
+            },
+	    {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+					{
+						"name": "required",
+						"params": [
+						  "Report Author is required"
+						]
+					  },
+					{
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "survey",
+              "type": "component",
+              "isRequired": false
+            },
+            {
+              "name": "borehole",
+              "type": "component",
+              "isRequired": false
+            },
+            {
+              "name": "startDate",
+              "label": "Report Period Start Date",
+              "type": "calender",
+              "validations": {
+                "type": "date",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "Report Period Start Date is required"
+                    ]
+                  },
+                  {
+                    "name": "typeError",
+                    "params": [
+                      "Report Period Start Date is invalid"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "calender",
+              "name": "endDate",
+              "label": "Report Period End Date",
+              "validations": {
+                "type": "date",
+                "rules": [
+                  {
+                    "name": "required",
+                    "params": [
+                      "Report Period End Date is required"
+                    ]
+                  },
+                  {
+                    "name": "typeError",
+                    "params": [
+                      "Report Period End Date is required"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "component",
+              "name": "commodity",
+              "isRequired": true
+            },
+            {
+              "type": "component",
+              "name": "earthScienceData",
+              "isRequired": true
+            }
+          ]
+        },
+        {
+          "title": "Documents and Data",
+          "name": "Document Uploads",
+          "inputs": [
+            {
+              "name": "associatedDocuments",
+              "label": "associated document",
+              "type": "component",
+              "isRequired": true
+            },
+            {
+              "name": "spatialDocuments",
+              "type": "component",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "title": "Review and Submit",
+          "name": "Review & Submit",
+          "inputs": [
+            {
+              "name": "review",
+              "type": "component",
+              "isRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    "http://linked.data.gov.au/def/georesource-report/collaborative-drilling-initiative-final": {
+      "steps": [
+        {
+          "title": "Lodge a Final Report for a Collaborative Drilling Initiative",
+          "name": "Report Details",
+          "inputs": [
+            {
+              "name": "title",
+              "label": "Title of the Report",
+              "placeholder": "Project name, collaborative drilling initiative final report",
               "type": "text",
               "validations": {
                 "type": "string",
