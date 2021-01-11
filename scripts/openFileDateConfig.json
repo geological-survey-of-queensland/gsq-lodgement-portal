@@ -1,7 +1,7 @@
 {
   "version": "0.6",
-  "Last updated date": "18/11/2020",
-  "Last updated by": "D Armstrong, GSQ",
+  "Last updated date": "11/01/2021",
+  "Last updated by": "B Talebi, GSQ",
   "reportCalculations": [
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-acquisition",
@@ -593,6 +593,10 @@
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/collaborative-exploration-initiative-final",
+      "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/collaborative-drilling-initiative-final",
       "calculationType": "CONFIDENTIAL"
     },
     {
