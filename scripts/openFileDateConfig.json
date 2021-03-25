@@ -1,7 +1,7 @@
 {
-  "version": "0.6",
-  "Last updated date": "11/01/2021",
-  "Last updated by": "B Talebi, GSQ",
+  "version": "0.7",
+  "Last updated date": "25/03/2021",
+  "Last updated by": "D Armstrong, GSQ",
   "reportCalculations": [
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-acquisition",
@@ -23,7 +23,7 @@
         {
           "period": {
             "years": 2,
-            "months": 0,
+            "months": 6,
             "days": 1
           }
         }
@@ -504,16 +504,7 @@
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-other",
-      "calculationType": "STANDARD",
-      "calculations": [
-        {
-          "period": {
-            "years": 5,
-            "months": 0,
-            "days": 1
-          }
-        }
-      ]
+      "calculationType": "CONFIDENTIAL"
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-other",
@@ -580,6 +571,19 @@
     },
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-surrender-higher-tenure",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment-higher-tenure",
       "calculationType": "STANDARD",
       "calculations": [
         {
