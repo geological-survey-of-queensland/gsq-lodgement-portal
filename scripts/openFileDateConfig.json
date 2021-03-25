@@ -583,6 +583,19 @@
       ]
     },
     {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment-higher-tenure",
+      "calculationType": "STANDARD",
+      "calculations": [
+        {
+          "period": {
+            "years": 5,
+            "months": 0,
+            "days": 1
+          }
+        }
+      ]
+    },
+    {
       "reportType": "http://linked.data.gov.au/def/georesource-report/collaborative-exploration-initiative-final",
       "calculationType": "CONFIDENTIAL"
     },
