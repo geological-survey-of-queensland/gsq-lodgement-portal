@@ -2,7 +2,7 @@
 
 ## Purpose of this document
 
-Provide a specification for the new GSQ Lodgement Portal that:  
+Provide a specification for the  GSQ Lodgement Portal that:  
 * Accurately defines the business requirements
 * Is a key input to software design for a software developer  
 
@@ -15,14 +15,14 @@ Resource authority holders need to submit a range of statutory reports on their 
 When government issues a permit to a holder, the legislation requires a permit holder to submit reports to the Department when certain activities are performed under the conditions of the permit.  
 * The reports contain knowledge of the geological resource. 
 * Historically, industry reports have been lodged through [QDEX Reports](https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/search).  
-* GDMP will deliver a new lodgement portal to replace QDEX Reports.  
+* A new GSQ lodgement portal to replace QDEX Reports was delivered as part of the Geoscience Data modernisation Project (GDMP).  
 * Most industry reports have a confidentiality period before becoming open file.  
 
 ## The Lodgement Portal
 
 ### Objectives of the Lodgement Portal
 
-1. Provide a single portal for industry and GSQ to lodge georesources reports.
+1. Provide a single portal for industry and GSQ to lodge Queensland georesources reports.
 2. Provide data validation at point of data entry.
 3. Provide a database store to store in-progress and submitted reports.
 4. Harvest the submitted metadata, data and datasets for insertion into CKAN, S3 and the [GeoProperties Database](https://github.com/geological-survey-of-queensland/ssor-database).
