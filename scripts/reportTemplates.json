@@ -1,7 +1,7 @@
 {
-	"version": "0.6",
-	"Last updated date": "02/08/2021",
-	"Last updated by": "S Rajapakse, SRA",
+	"version": "0.7",
+	"Last updated date": "08/09/2021",
+	"Last updated by": "V Kelly, GSQ",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
 			"steps": [
@@ -47,7 +47,9 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
+
 						},
 						{
 							"name": "reportAuthor",
@@ -359,6 +361,182 @@
 				}
 			]
 		},
+		"http://linked.data.gov.au/def/georesource-report/production-petroleum": {
+			"steps": [
+				{
+					"title": "Lodge a Petroleum Report - Legacy Petroleum Production Report",
+					"name": "Report Details",
+					"inputs": [
+						{
+							"name": "title",
+							"format": "[authorizedHolder] - [title] PETROLEUM PRODUCTION REPORT FOR PERIOD ENDING [endDate]",
+							"viewLabel": "Title of the Report",
+							"label": "Coverage Of Report",
+							"placeholder": "e.g. ALL QUEENSLAND, BOWEN BASIN, BIG HILL PROJECT, FAIR GULLY FIELD, PL 1",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "alias",
+							"label": "Aliases",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"name": "description",
+							"viewLabel": "Description",
+							"label": "Report Description",
+							"placeholder": "Describe the contents of the report and its associated documents, including a summary of activities, significant results, conclusions, areas of interest etc ",
+							"type": "textArea",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z- ./,]+$/",
+											"Description cannot include non-standard characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true
+						},
+						{
+							"name": "reportAuthor",
+							"label": "Report Author",
+							"subLabelAtTop": "Please enter the name of the person who has authored this report",
+							"type": "text",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Author is required"
+										]
+									},
+									{
+										"name": "max",
+										"params": [
+											256,
+											"The Report Author cannot be more than 256 characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "startDate",
+							"label": "Report Period Start Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "endDate",
+							"label": "Report Period End Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period End Date is required"
+										]
+									},
+									{
+										"name": "min",
+										"isComplex": true,
+										"params": [
+											"yup.ref('startDate')",
+											"The Report Period End Date must be greater than the Report Period Start Date"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period End Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "commodity",
+							"isRequired": true
+						},
+						{
+							"type": "component",
+							"name": "earthScienceData",
+							"isRequired": true
+						},
+						{
+							"name": "detail",
+							"label": "Details",
+							"type": "component",
+							"readOnly": true
+						}
+					]
+				},
+				{
+					"title": "Documents and Data",
+					"name": "Document Uploads",
+					"inputs": [
+						{
+							"name": "associatedDocuments",
+							"label": "associated document",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "reportingTemplateDocuments",
+							"type": "component",
+							"isRequired": false
+						},
+						{
+							"name": "spatialDocuments",
+							"type": "component",
+							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Review and Submit",
+					"name": "Review & Submit",
+					"inputs": [
+						{
+							"name": "review",
+							"type": "component",
+							"isRequired": true
+						}
+					]
+				}
+			]
+		},
 		"http://linked.data.gov.au/def/georesource-report/petroleum-report-resource-and-reserves-information": {
 			"steps": [
 				{
@@ -508,6 +686,176 @@
 							"name": "reportingTemplateDocuments",
 							"type": "component",
 							"isRequired": true
+						},
+						{
+							"name": "spatialDocuments",
+							"type": "component",
+							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Review and Submit",
+					"name": "Review & Submit",
+					"inputs": [
+						{
+							"name": "review",
+							"type": "component",
+							"isRequired": true
+						}
+					]
+				}
+			]
+		},
+		"http://linked.data.gov.au/def/georesource-report/reserves-petroleum": {
+			"steps": [
+				{
+					"title": "Lodge a Petroleum Report - Legacy Petroleum Resources and Reserves Report",
+					"name": "Report Details",
+					"inputs": [
+						{
+							"name": "title",
+							"format": "[authorizedHolder] - [title] PETROLEUM RESOURCES AND RESERVES REPORT FOR PERIOD ENDING [endDate]",
+							"viewLabel": "Title of the Report",
+							"label": "Coverage Of Report",
+							"placeholder": "e.g. ALL QUEENSLAND, BOWEN BASIN, BIG HILL PROJECT, FAIR GULLY FIELD, PL 1",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "alias",
+							"label": "Aliases",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"name": "description",
+							"viewLabel": "Description",
+							"label": "Report Description",
+							"placeholder": "Describe fluid volumes oil and gas.",
+							"type": "textArea",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z- ./,]+$/",
+											"Description cannot include non-standard characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true
+						},
+						{
+							"name": "reportAuthor",
+							"label": "Report Author",
+							"subLabelAtTop": "Please enter the name of the person who has authored this report",
+							"type": "text",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "max",
+										"params": [
+											256,
+											"The Report Author cannot be more than 256 characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "startDate",
+							"label": "Report Period Start Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "endDate",
+							"label": "Report Period End Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period End Date is required"
+										]
+									},
+									{
+										"name": "min",
+										"isComplex": true,
+										"params": [
+											"yup.ref('startDate')",
+											"The Report Period End Date must be greater than the Report Period Start Date"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period End Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "commodity",
+							"isRequired": true
+						},
+						{
+							"type": "component",
+							"name": "earthScienceData",
+							"isRequired": true
+						},
+						{
+							"name": "detail",
+							"label": "Details",
+							"type": "component",
+							"readOnly": true
+						}
+					]
+				},
+				{
+					"title": "Documents and Data",
+					"name": "Document Uploads",
+					"inputs": [
+						{
+							"name": "associatedDocuments",
+							"label": "associated document",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "reportingTemplateDocuments",
+							"type": "component",
+							"isRequired": false
 						},
 						{
 							"name": "spatialDocuments",
@@ -1274,7 +1622,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"name": "reportAuthor",
@@ -1440,7 +1789,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"name": "reportAuthor",
@@ -1622,7 +1972,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"name": "reportAuthor",
@@ -1767,6 +2118,182 @@
 						{
 							"name": "title",
 							"format": "[permit] [title] ANNUAL ACTIVITY REPORT FOR PERIOD ENDING [endDate] ",
+							"viewLabel": "Title of the Report",
+							"label": "Project Name",
+							"placeholder": "e.g. Norwich Park, Monto West, Ernestine",
+							"type": "component",
+							"isRequired": false
+						},
+						{
+							"name": "alias",
+							"label": "Aliases",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"name": "description",
+							"viewLabel": "Description",
+							"label": "Report Description",
+							"placeholder": "Describe a summary of the report for an exploration or development permit (EPC, EPM, MDL) including activities, significant results, conclusions, metals/minerals/deposit type, main methods used, target areas of interest etc.",
+							"type": "textArea",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z- ./,]+$/",
+											"Description cannot include non-standard characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true
+						},
+						{
+							"name": "reportAuthor",
+							"label": "Report Author",
+							"subLabelAtTop": "Please enter the name of the person who has authored this report",
+							"type": "text",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Author is required"
+										]
+									},
+									{
+										"name": "max",
+										"params": [
+											256,
+											"The Report Author cannot be more than 256 characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "startDate",
+							"label": "Report Period Start Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "endDate",
+							"label": "Report Period End Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period End Date is required"
+										]
+									},
+									{
+										"name": "min",
+										"isComplex": true,
+										"params": [
+											"yup.ref('startDate')",
+											"The Report Period End Date must be greater than the Report Period Start Date"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period End Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "commodity",
+							"isRequired": true
+						},
+						{
+							"type": "component",
+							"name": "earthScienceData",
+							"isRequired": true
+						},
+						{
+							"name": "detail",
+							"label": "Details",
+							"type": "component",
+							"readOnly": true
+						}
+					]
+				},
+				{
+					"title": "Documents and Data",
+					"name": "Document Uploads",
+					"inputs": [
+						{
+							"name": "associatedDocuments",
+							"label": "associated document",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "reportingTemplateDocuments",
+							"type": "component",
+							"isRequired": false
+						},
+						{
+							"name": "spatialDocuments",
+							"type": "component",
+							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Review and Submit",
+					"name": "Review & Submit",
+					"inputs": [
+						{
+							"name": "review",
+							"type": "component",
+							"isRequired": true
+						}
+					]
+				}
+			]
+		},
+		"http://linked.data.gov.au/def/georesource-report/permit-report-six-month": {
+			"steps": [
+				{
+					"title": "Lodge a Coal or Mineral Permit Report - Six Month",
+					"name": "Report Details",
+					"inputs": [
+						{
+							"name": "title",
+							"format": "[permit] [title] SIX MONTH REPORT FOR PERIOD ENDING [endDate] ",
 							"viewLabel": "Title of the Report",
 							"label": "Project Name",
 							"placeholder": "e.g. Norwich Park, Monto West, Ernestine",
@@ -4716,7 +5243,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"name": "reportAuthor",
@@ -5045,7 +5573,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"name": "reportAuthor",
@@ -7447,7 +7976,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"type": "component",
@@ -7518,7 +8048,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"type": "component",
@@ -7601,7 +8132,8 @@
 							"type": "component",
 							"name": "permit",
 							"isRequired": true,
-							"populateOwner": true
+							"populateOwner": true,
+                  					"isMultiSelect": false
 						},
 						{
 							"type": "component",
