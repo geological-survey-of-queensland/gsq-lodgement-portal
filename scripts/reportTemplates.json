@@ -510,12 +510,12 @@
 							"name": "associatedDocuments",
 							"label": "associated document",
 							"type": "component",
-							"isRequired": false
+							"isRequired": true
 						},
 						{
 							"name": "reportingTemplateDocuments",
 							"type": "component",
-							"isRequired": true
+							"isRequired": false
 						},
 						{
 							"name": "spatialDocuments",
@@ -850,12 +850,12 @@
 							"name": "associatedDocuments",
 							"label": "associated document",
 							"type": "component",
-							"isRequired": false
+							"isRequired": true
 						},
 						{
 							"name": "reportingTemplateDocuments",
 							"type": "component",
-							"isRequired": true
+							"isRequired": false
 						},
 						{
 							"name": "spatialDocuments",
