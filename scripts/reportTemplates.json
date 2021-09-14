@@ -10056,10 +10056,10 @@
 							"name": "title",
 							"format": "[title]",
 							"viewLabel": "Title of the Report",
-							"readOnly": true,
 							"label": "Title of the Report",
-							"placeholder": "Project name, technical report, purpose",
-							"type": "component"
+							"placeholder": "Project name, technical report, purpose, date from and to",
+							"type": "component",
+							"isRequired": true
 						},
 						{
 							"name": "alias",
