@@ -1,6 +1,6 @@
 {
-	"version": "0.7",
-	"Last updated date": "08/09/2021",
+	"version": "0.8",
+	"Last updated date": "09/11/2021",
 	"Last updated by": "V Kelly, GSQ",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
@@ -36,7 +36,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -219,7 +219,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -395,7 +395,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -571,7 +571,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -741,7 +741,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -910,7 +910,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -1259,7 +1259,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -1435,7 +1435,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -1611,7 +1611,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -1961,7 +1961,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -2143,7 +2143,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -2319,7 +2319,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -2495,7 +2495,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -2671,7 +2671,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -2847,7 +2847,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -3023,7 +3023,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -3199,7 +3199,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -3375,7 +3375,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -3551,7 +3551,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -3727,7 +3727,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -3903,7 +3903,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -4230,7 +4230,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -4400,7 +4400,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -4569,7 +4569,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -4739,7 +4739,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -4898,7 +4898,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -5068,7 +5068,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -5232,7 +5232,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -5404,7 +5404,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -5562,7 +5562,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -5733,7 +5733,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -5904,7 +5904,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -6069,7 +6069,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -6234,7 +6234,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -6405,7 +6405,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -6577,7 +6577,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -6748,7 +6748,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -6908,7 +6908,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7059,7 +7059,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7217,7 +7217,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7370,7 +7370,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7523,7 +7523,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7718,7 +7718,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7798,7 +7798,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7887,7 +7887,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -7965,7 +7965,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -8037,7 +8037,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -8121,7 +8121,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -8415,7 +8415,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -8577,7 +8577,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -8700,7 +8700,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -9021,7 +9021,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -9177,7 +9177,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -9341,7 +9341,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -9448,7 +9448,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -9555,7 +9555,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -9725,7 +9725,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -9900,7 +9900,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -10007,7 +10007,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -10080,7 +10080,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -10247,7 +10247,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -10438,7 +10438,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -10614,7 +10614,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
@@ -10790,7 +10790,7 @@
 										"name": "matches",
 										"isComplex": true,
 										"params": [
-											"/^[0-9A-Za-z- ./,]+$/",
+											"[\^0-9A-Za-z \.,!@\?\'\$%\(\)\[\]\*=\-_\—<>~;:\/&\+\"\\]",
 											"Description cannot include non-standard characters"
 										]
 									}
