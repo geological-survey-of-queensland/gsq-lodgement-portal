@@ -8622,7 +8622,8 @@
 						{
 							"name": "borehole",
 							"type": "component",
-							"isRequired": false
+							"isRequired": false,
+							"isMultiSelect": true
 						},
 						{
 							"type": "component",
@@ -8745,7 +8746,8 @@
 						{
 							"name": "borehole",
 							"type": "component",
-							"isRequired": false
+							"isRequired": false,
+							"isMultiSelect": true
 						},
 						{
 							"name": "startDate",
