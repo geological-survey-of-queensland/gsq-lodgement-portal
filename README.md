@@ -37,12 +37,17 @@ When government issues a permit to a holder, the legislation requires a permit h
 2. Automated workflows to process the geoscience data submitted to the geological properties database, and data catalogue and data object store.
 3. A method of enabling the upload of large geoscience data files to the data object store.
 
+### Character Limitations
+To ensure information entered into the lodgement portal can be stored and parsed effectively in the geoproperties database certain character limitations are enforced.
+- Titles are limited to alphanumeric characters (A-Z a-z 0-9), spaces( ), dashes(-), fullstops(.), forward-slash(/) and commas(,)
+- Descriptions are limited alphanumeric characters (A-Z a-z 0-9), spaces( ), dashes(-), fullstops(.), forward-slash(/), commas(,), common punctuation (!@?'$%()[]*=-_\—<>~;:&+)
+
 ## Four versions of the Lodgement Portal
 
 There are 4 versions of lodgement portal to be built:
 
 1. MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports - described on this page.
-2. Version 2 Lodgement Portal that extends the MVP Lodgement Portal to parse the data lodged in the petroleum, coal, and mineral reporting guideline templates - described on [Version2-portal-README.MD](/Version2-portal-README.MD)
+2. Version 2 Lodgement Portal expands the MVP Lodgement Portal to Coal, Mineral, and Extractive Industry Production and Sales Statistical Returns. This tage establishes the system framework to parse the data lodged in the reporting templates (.xlsx and .csv) and to establsih simple modular reporting and direct input of report data via the lodgement portal webform- described on [Version2-portal-README.MD](/Version2-portal-README.MD)
 3. Multipart lodgement form (per ModulrTech style) for mineral & coal annual report - described on [Version3-portal-README.MD](/Version3-portal-README.MD)
 4. Multipart lodgement form (per ModulrTech style) for well completion report - described on [Version4-portal-README.MD](/Version4-portal-README.MD)
 
@@ -176,7 +181,7 @@ For instance:
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/pid-match-sequence-diagram.png" width="100%"><br>
 Figure 3: Lodgement Portal PID matching</p>
 
-## Report Types Covered by Petroleum & Gas Reporting Template
+## Report Types Covered by Petroleum & Gas Reporting Practice Direction
 
 The following reports will be submitted through the [Petroleum and Gas Reporting Template](https://www.dnrme.qld.gov.au/mining-resources/initiatives/pandg-reporting-guideline-2018) (.xls).
 
@@ -200,7 +205,7 @@ The following reports will be submitted through the [Petroleum and Gas Reporting
 |Well Production Testing Report|well-production-testing-report |WELTST|1927|Match|
 |Well or Bore Abandonment Report|well-or-bore-abandonment-report |WELAB|1141|Match|
 
-## Report Types Covered by Mineral & Coal Reporting Template
+## Report Types Covered by Mineral & Coal Reporting Practice Direction
 
 The following reports will be submitted through the [Mineral Reporting Template](https://www.dnrme.qld.gov.au/mining-resources/initiatives/mineral-coal-reporting-guideline) _or_ [Coal Reporting Template](https://www.dnrme.qld.gov.au/mining-resources/initiatives/mineral-coal-reporting-guideline) (.xls files).
 
@@ -219,7 +224,24 @@ The following reports will be submitted through the [Mineral Reporting Template]
 |Permit Report - Partial Relinquishment|permit-report-partial-relinquishment |RELINQ|8860|
 |Permit Report - Surrender|permit-report-surrender |SURR|3|
 
-## Report Types Not Covered by Reporting Guidelines
+
+## Report Types Covered by Mineral & Coal Statistical Returns Practice Direction
+The following reports will be submitted through Statistical Return submission templates (.xlsx) or via an equivalent lodgement portal webform.
+
+* They will be lodged through the Lodgement Portal with the submitter completing the standard report metdata in the lodgement form.
+* The submitter will upload the **.xls reporting template** through the lodgement form or input data directly into the webform.
+* When submitted, the metadata is written to the Lodgement Portal database. The **.xls reporting template** and any additional files are stored in S3.
+* The .xls file is harvested with the data inserted into the Geoproperties database.
+* The report metadata is pushed through to CKAN as a **Report dataset** with links to the data objects in S3.
+
+|Report Type|Concept|Notation|QDEX Count|
+|---|---|---|---|
+|Coal Quarterly Statistical Return |coal-stats-return |COALQSR|-|
+|Mineral Annual Statistical Return |mineral-stats-return |MINASR|-|
+|Extractive Industry Annual Statistical Return|extractive-stats-return |EXTASR|-|
+
+
+## Report Types Not Covered by Reporting Practice Directions
 
 * They will be lodged through the Lodgement Portal with the submitter completing the standard report metdata in the lodgement form.
 * The submitter will upload any additional data files through the lodgement form.
@@ -267,7 +289,7 @@ The following report types are PDF forms.
 |[WRA-05A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0006/259935/wra-05a-notification-completion-conversion.pdf) Notice of completion of conversion of petroleum well to water supply bore or water observation bore|N/A|
 |[MMOL-44](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0003/289605/notification-geophysical-survey.pdf) Notice of decommissioning a well, water observation bore, water monitoring bore or water supply bore|N/A|
 
-## Report Types that are deprecated or superseded - no longer lodged to DNRME
+## Report Types that are deprecated or superseded - no longer lodged to the Department of Resources
 
 The following report types are no longer current.
 
