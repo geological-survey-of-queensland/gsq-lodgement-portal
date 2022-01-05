@@ -37,7 +37,7 @@ When government issues a permit to a holder, the legislation requires a permit h
 2. Automated workflows to process the geoscience data submitted to the geological properties database, and data catalogue and data object store.
 3. A method of enabling the upload of large geoscience data files to the data object store.
 
-### Allowable Characters
+### Character Limitations
 To ensure information entered into the lodgement portal can be stored and parsed effectively in the geoproperties database certain character limitations are enforced.
 - Titles are limited to alphanumeric characters (A-Z a-z 0-9), spaces( ), dashes(-), fullstops(.), forward-slash(/) and commas(,)
 - Descriptions are limited alphanumeric characters (A-Z a-z 0-9), spaces( ), line breaks and common punctuation [].,!@?'$%()*=-_–~;:/&+"\
