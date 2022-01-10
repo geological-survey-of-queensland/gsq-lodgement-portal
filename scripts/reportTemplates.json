@@ -1,6 +1,6 @@
 {
 	"version": "0.7",
-	"Last updated date": "17/12/2021",
+	"Last updated date": "10/01/2022",
 	"Last updated by": "B Talebi, GSQ",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/hydraulic-fracturing-activity-report": {
@@ -545,7 +545,7 @@
 					"inputs": [
 						{
 							"name": "title",
-							"format": "[authorizedHolder] - [title] PETROLEUM TRANSMISSION REPORT FOR PERIOD ENDING [endDate]",
+							"format": "[permit] - [title] PETROLEUM TRANSMISSION REPORT FOR PERIOD ENDING [endDate]",
 							"viewLabel": "Title of the Report",
 							"label": "Coverage Of Report",
 							"placeholder": "e.g. ALL QUEENSLAND, BOWEN BASIN, BIG HILL PROJECT, FAIR GULLY FIELD, PL 1",
