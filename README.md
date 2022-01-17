@@ -49,10 +49,10 @@ To ensure information entered into the lodgement portal can be stored and parsed
 
 There are 4 versions of lodgement portal to be built:
 
-1. MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports - described on this page.
-2. Version 2 Lodgement Portal expands the MVP Lodgement Portal to Coal, Mineral, and Extractive Industry Production and Sales Statistical Returns. This tage establishes the system framework to parse the data lodged in the reporting templates (.xlsx and .csv) and to establsih simple modular reporting and direct input of report data via the lodgement portal webform- described on [Version2-portal-README.MD](/Version2-portal-README.MD)
-3. Multipart lodgement form (per ModulrTech style) for mineral & coal annual report - described on [Version3-portal-README.MD](/Version3-portal-README.MD)
-4. Multipart lodgement form (per ModulrTech style) for well completion report - described on [Version4-portal-README.MD](/Version4-portal-README.MD)
+1. Version 1 or MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports - described on this page.
+2. Version 2 Lodgement Portal expands the MVP Lodgement Portal to Coal, Mineral, and Extractive Industry Production and Sales Statistical Returns. This stage establishes the system framework to parse the data lodged in the reporting templates (.xlsx and .csv) and to establsih simple modular reporting and direct input of report data via the lodgement portal webform- described on [Version2-portal-README.MD](/Version2-portal-README.MD)
+3. Roll-out of data extraction from all submission templates and enhanced data validation on lodgement [Version3-portal-README.MD](/Version3-portal-README.MD)
+4. Multipart lodgement form (per ModulrTech style) for selected reports - described on [Version4-portal-README.MD](/Version4-portal-README.MD)
 
 ## Iterative delivery of the versions
 
