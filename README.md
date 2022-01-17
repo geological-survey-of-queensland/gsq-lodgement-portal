@@ -40,7 +40,7 @@ When government issues a permit to a holder, the legislation requires a permit h
 ### Character Limitations
 To ensure information entered into the lodgement portal can be stored and parsed effectively in the geoproperties database, certain character limitations are enforced.
 - Titles are limited to alphanumeric characters (A-Z a-z 0-9), spaces( ), dashes(-), fullstops(.), forward-slash(/) and commas(,)
-- Descriptions are limited alphanumeric characters (A-Z a-z 0-9), spaces( ), line breaks and common punctuation [].,!@?'$%()*=-_–~;:/&+"\
+- Descriptions are limited to alphanumeric characters (A-Z a-z 0-9), spaces( ), line breaks and common punctuation [].,!@?'$%()*=-_–~;:/&+"\
 - To insert a new line in the description, a double line break (double enter) must be used during input
 - Non-standard characters can be identified using a UTF-8 decoder such as [UTF-8 Decoder](https://www.browserling.com/tools/utf8-decode).
 - To troubleshoot complex inputs, use a decoder and replace problem characters with a UTF-8 equivalent, such as changing ” to ".
