@@ -10299,7 +10299,8 @@
 							"type": "component",
 							"name": "borehole",
 							"isRequired": false
-							"isMultiSelect": true				},
+							"isMultiSelect": true
+						},
 						{
 							"type": "component",
 							"name": "survey",
