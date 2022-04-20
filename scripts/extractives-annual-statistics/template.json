@@ -1,0 +1,410 @@
+{
+    "version": "0.1",
+    "Last updated date": "20/01/2022",
+    "Last updated by": "T Kularathna, SRA",
+    "ReportType": "http://linked.data.gov.au/def/georesource-report/extractives-annual-statistics",
+    "NamingConvention": {
+        "xlsxRegex": "(?i)^.+_annual-extractive-return-form_\\d{4}$",
+        "xlsxLabel": "[QUARRY_NAME]_annual-extractive-return-form_[End Date Year(YYYY)]",
+        "csvRegex": "(?i)^.+_annual-extractive-return-form_\\d{4}_.+$",
+        "csvLabel": "[QUARRY_NAME]_annual-extractive-return-form_[End Date Year(YYYY)]_[COMPONENT_NAME]"
+    },
+	"DocumentProperties":{
+		"FileName": "{0}_extractives-annual-return-data_FY-{1}.xlsx",
+		"DocumentTitle": "{0} EXTRACTIVES ANNUAL RETURN DATA FY {1}",
+		"DocumentDescription": "Associated data submission to {0}",
+		"ThemeVocabUri": "http://linked.data.gov.au/def/gsq-dataset-theme/resource-statistics",
+		"EarthScienceCategoryVocabUri": "http://linked.data.gov.au/def/earth-science-data-category/quarry-resource-geology"
+	},
+    "MetadataMapping": {
+        "RelatedMineName": "QUARRY_DETAILS.QUARRY_NAME",
+        "RelatedOperatorName": "QUARRY_DETAILS.QUARRY_OPERATOR",
+        "ReportStartDate": "QUARRY_DETAILS.REPORT_PERIOD_START",
+        "ReportEndDate": "QUARRY_DETAILS.REPORT_PERIOD_END"
+    },
+    "components": [{
+            "name": "QUARRY_DETAILS",
+			"webFormKey": "quarryDetails",
+			"webFormPrimary": true,
+            "xlsxOffsets": {
+                "columnOffset": 2,
+                "rowOffset": 8
+            },
+            "minRows": 1,
+            "maxRows": 1,
+            "inputs": [{
+                    "name": "siteName",
+                    "label": "Quarry Name",
+                    "columnHeader": "QUARRY_NAME",
+                    "isRequired": true,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Quarry Name is required"
+                                ]
+                            }, {
+                                "name": "max",
+                                "params": [
+                                    128,
+                                    "Quarry Name cannot be more than 128 characters"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "relatedOperatorName",
+                    "label": "Quarry Operator",
+                    "columnHeader": "QUARRY_OPERATOR",
+                    "isRequired": true,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Quarry Operator is required"
+                                ]
+                            }, {
+                                "name": "max",
+                                "params": [
+                                    128,
+                                    "Quarry Operator cannot be more than 128 characters"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "startDate",
+                    "label": "Report Period Start Date",
+                    "columnHeader": "REPORT_PERIOD_START",
+                    "isRequired": true,
+                    "type": "calender",
+                    "validations": {
+                        "type": "date",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Report Period Start Date is required"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "endDate",
+                    "label": "Report Period End Date",
+                    "columnHeader": "REPORT_PERIOD_END",
+                    "isRequired": true,
+                    "type": "calender",
+                    "validations": {
+                        "type": "date",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Report Period End Date is required"
+                                ]
+                            }, {
+                                "name": "min",
+                                "isComplex": true,
+                                "params": [
+                                    "yup.ref('startDate')",
+                                    "The Report Period End Date must be greater than the Report Period Start Date"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "fteEquivalentEmployees",
+                    "label": "FTE Equivalent Employees",
+                    "columnHeader": "FTE_EQUIVALENT_EMPLOYEES",
+                    "isRequired": true,
+                    "type": "float",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+                                    "/^\\d{1,10}(\\.\\d+)?$/",
+                                    "FTE Equivalent Employees must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                                ]
+                            }, {
+                                "name": "required",
+                                "params": [
+                                    "Total number of Full Time Equivalent employees working on the quarry grounds is required"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "fteEquivalentContractors",
+                    "label": "FTE Equivalent Contractors",
+                    "columnHeader": "FTE_EQUIVALENT_CONTRACTORS",
+                    "isRequired": true,
+                    "type": "float",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+                                    "/^\\d{1,10}(\\.\\d+)?$/",
+                                    "FTE Equivalent Contractors must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                                ]
+                            }, {
+                                "name": "required",
+                                "params": [
+                                    "Total number of Full Time Equivalent contractors working on the quarry grounds is required"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "reportingPeriodSales",
+                    "label": "Total Value of Sales (AUD $)",
+                    "columnHeader": "REPORTING_PERIOD_SALES",
+                    "isRequired": true,
+                    "type": "float",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+                                    "/^\\d{1,10}(\\.\\d+)?$/",
+                                    "Total Value of Sales must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                                ]
+                            }, {
+                                "name": "required",
+                                "params": [
+                                    "Total sales for the reporting period is required"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "quarryStatus",
+                    "label": "Status",
+                    "columnHeader": "QUARRY_STATUS",
+                    "isRequired": true,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules":  [{
+                                "name": "required",
+                                "params": [
+                                    "Status is required"
+                                ]
+                            }, {
+                                "name": "vocab",
+                                "isComplex": true,
+                                "params": [
+                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{   <http://linked.data.gov.au/def/site-status/quarry-status> skos:member ?id .   ?id skos:prefLabel ?displayText }} ORDER BY ?displayText",
+                                    "Status is not valid. Please refer to vocab Site Status."
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }, {
+            "name": "PRODUCTION",
+			"webFormKey": "operationalDetails",  
+            "xlsxOffsets": {
+                "columnOffset": 2,
+                "rowOffset": 8
+            },
+            "minRows": 1,
+            "inputs": [{
+                    "name": "materialNumber",
+					"label": "Material Number",
+                    "columnHeader": "MATERIAL_NUMBER",
+                    "isRequired": true,
+                    "type": "integer",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+                                    "/^\\d{1,4}$/",
+                                    "Material Number must be a postive, whole number."
+                                ]
+                            }, {
+                                "name": "required",
+                                "params": [
+                                    "Material Number is required"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "materialType",
+                    "label": "Material Type",
+                    "columnHeader": "MATERIAL_TYPE",
+                    "isRequired": true,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Material Type is required"
+                                ]
+                            }, {
+                                "name": "vocab",
+                                "isComplex": true,
+                                "params": [
+                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{   <http://linked.data.gov.au/def/geo-commodities/qld-extractive-sales> skos:member ?id .   ?id skos:prefLabel ?displayText }} ORDER BY ?displayText",
+                                    "Material Type is not valid. Please refer to vocab (prefered label) for Geoscience Commodities."
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "materialQuantity",
+                    "label": "Quantity",
+                    "columnHeader": "MATERIAL_QUANTITY",
+                    "isRequired": true,
+                    "type": "float",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Material Quantity is required"
+                                ]
+                            }, {
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+                                    "/^\\d{1,10}(\\.\\d+)?$/",
+                                    "Material Quantity must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "materialUOM",
+                    "label": "Unit",
+                    "columnHeader": "MATERIAL_UOM",
+                    "isRequired": true,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Material UoM is required"
+                                ]
+                            }, {
+                                "name": "vocab",
+                                "isComplex": true,
+                                "params": [
+                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?id ?displayText WHERE  { VALUES ?pred { skos:prefLabel skos:altLabel skos:hiddenLabel rdfs:label skos:notation } ?id skos:inScheme <http://linked.data.gov.au/def/geou> . ?id ?pred ?displayText . } ORDER BY ?displayText ?concept",
+                                    "Unit of Measure is not valid. Please refer to vocab (preferred label) for Geoscience Profile of QUDT Units."
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }, {
+            "name": "QUARRY_PLAN_DETAILS",
+			"webFormKey": "extractiveSales",  
+            "xlsxOffsets": {
+                "columnOffset": 2,
+                "rowOffset": 8
+            },
+            "minRows": 1,
+            "inputs": [{
+                    "name": "parcelSequenceNumber",
+					"label": "Parcel Number",
+                    "columnHeader": "PARCEL_SEQUENCE_NUMBER",
+                    "isRequired": true,
+                    "type": "integer",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+                                    "/^\\d{1,4}$/",
+                                    "Parcel Sequence Number must be positive, whole number."
+                                ]
+                            }, {
+                                "name": "required",
+                                "params": [
+                                    "Parcel Sequence Number is required"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "lotNumber",
+                    "label": "Lot Number",
+                    "columnHeader": "LOT_NUMBER",
+                    "isRequired": true,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Lot Number is required"
+                                ]
+                            }, {
+                                "name": "max",
+                                "params": [
+                                    48,
+                                    "Lot Number cannot be more than 48 characters"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "planNumber",
+                    "label": "Plan Number",
+                    "columnHeader": "PLAN_NUMBER",
+                    "isRequired": true,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Plan Number is required"
+                                ]
+                            }, {
+                                "name": "max",
+                                "params": [
+                                    48,
+                                    "Plan Number cannot be more than 48 characters"
+                                ]
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "adjacentToLot",
+                    "label": "Adjacent to Lot",
+                    "columnHeader": "ADJACENT_TO_LOT",
+                    "isRequired": false,
+                    "type": "text",
+                    "validations": {
+                        "type": "string",
+                        "rules": [{
+                                "name": "max",
+                                "params": [
+                                    48,
+                                    "Adjacent to Lot cannot be more than 48 characters"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
