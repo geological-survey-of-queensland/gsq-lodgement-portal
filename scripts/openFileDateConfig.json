@@ -612,7 +612,7 @@
       "calculationType": "CONFIDENTIAL"
     },
     {
-      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-end-tenure",
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-end-tenure",
       "calculationType": "IMMEDIATE"
     },
     {
