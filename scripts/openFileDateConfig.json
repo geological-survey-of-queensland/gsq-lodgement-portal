@@ -1,6 +1,6 @@
 {
   "version": "0.7",
-  "Last updated date": "25/03/2021",
+  "Last updated date": "25/05/2022",
   "Last updated by": "D Armstrong, GSQ",
   "reportCalculations": [
     {
@@ -610,6 +610,18 @@
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-annual",
       "calculationType": "CONFIDENTIAL"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-end-tenure",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-relinquishment",
+      "calculationType": "IMMEDIATE"
+    },
+    {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-surrender",
+      "calculationType": "IMMEDIATE"
     }
   ]
 }
