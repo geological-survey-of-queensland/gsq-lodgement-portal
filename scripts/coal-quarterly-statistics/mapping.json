@@ -1,0 +1,630 @@
+{
+	"Components": [
+		{
+			"Name": "MINE_DETAILS",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "||MINE_NAME|| PRODUCTION ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"SurveyType": "http://linked.data.gov.au/def/survey-type/resource-production",
+						"SurveyMethod": "http://linked.data.gov.au/def/survey-method/ground",
+						"StartDate": "||REPORT_PERIOD_START||",
+						"EndDate": "||REPORT_PERIOD_END||",
+						"CreatedBy": "||MINE_OPERATOR||",
+						"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+						"SurveyAgents": [{
+								"Organisation": "||MINE_OPERATOR||",
+								"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+							}
+						],
+						"SurveyStatuses": [{
+								"Status": "http://linked.data.gov.au/def/survey-status/completed",
+								"StartDate": "||REPORT_PERIOD_START||",
+								"EndDate": "||REPORT_PERIOD_END||"
+							}
+						],
+						"SurveyRelationships": [
+							{
+								"RelatedToSurveyName": "||MINE_NAME|| SALES ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+								"RelationshipType": "http://linked.data.gov.au/def/survey-relationship-type/dependent"
+							}
+						]
+					},
+					{
+						"SurveyName": "||MINE_NAME|| SALES ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"SurveyType": "http://linked.data.gov.au/def/survey-type/resource-sales",
+						"SurveyMethod": "http://linked.data.gov.au/def/survey-method/data-survey",
+						"StartDate": "||REPORT_PERIOD_START||",
+						"EndDate": "||REPORT_PERIOD_END||",
+						"CreatedBy": "||MINE_OPERATOR||",
+						"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+						"SurveyAgents": [{
+								"Organisation": "||MINE_OPERATOR||",
+								"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+							}
+						],
+						"SurveyDetails": [
+							{
+								"Type": "http://linked.data.gov.au/def/survey-detail-type/report-period-freight-cost",
+								"Value": "||REPORT_PERIOD_FREIGHT_COST||"
+							}
+						],
+						"SurveyStatuses": [{
+								"Status": "http://linked.data.gov.au/def/survey-status/completed",
+								"StartDate": "||REPORT_PERIOD_START||",
+								"EndDate": "||REPORT_PERIOD_END||"
+							}
+						],
+						"SurveyRelationships": [
+							{
+								"RelatedToSurveyName": "||MINE_NAME|| PRODUCTION ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+								"RelationshipType": "http://linked.data.gov.au/def/survey-relationship-type/dependent"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"Name": "TENEMENT_STATUS",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "||MINE_NAME|| PRODUCTION ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"SurveyPermits": [
+							{
+								"PermitType": "||TENEMENT_TYPE||",
+								"PermitNumber": "||TENEMENT_TYPE_NO||",
+								"PermitStatus": "||PRODUCTION_STATUS||"
+							}
+						]
+					},
+					{
+						"SurveyName": "||MINE_NAME|| SALES ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"SurveyPermits": [
+							{
+								"PermitType": "||TENEMENT_TYPE||",
+								"PermitNumber": "||TENEMENT_TYPE_NO||",
+								"PermitStatus": "||PRODUCTION_STATUS||"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"Name": "RAW_COAL_MINED_TRANSFERRED",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "||MINE_NAME|| PRODUCTION ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"SurveyDetails": [
+							{
+								"Type": "http://linked.data.gov.au/def/survey-detail-type/active-period",
+								"Value": "||RAW(PRODUCTION_MONTH)|| ||DAYS_ON_PRODUCTION|| DAYS"
+							}
+						],
+						"Samples": [
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/waste-rock",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/rock",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/mining",
+								"Name": "||MINE_NAME|| Overburden ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||OVERBURDEN||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||OVERBURDEN||",
+												"UOM": "http://qudt.org/vocab/unit/M3",
+												"Analyte": "Waste Rock"
+											}
+										]
+									}
+								]
+							},
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-raw-material",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-raw",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/mining",
+								"Name": "||MINE_NAME|| Gross Output ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||GROSS_OUTPUT||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||GROSS_OUTPUT||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coal"
+											}
+										]
+									}
+								]
+							},
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-raw-material",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-raw",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/material-transfer",
+								"Name": "||MINE_NAME|| Raw Transfer In ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||RAW_TRANSFERS_IN||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||RAW_TRANSFERS_IN||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coal",
+												"Qualifier": "IN"
+											}
+										]
+									}
+								]
+							},
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-raw-material",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-raw",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/material-transfer",
+								"Name": "||MINE_NAME|| Raw Transfer Out ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||RAW_TRANSFERS_OUT||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||RAW_TRANSFERS_OUT||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coal",
+												"Qualifier": "OUT"
+											}
+										]
+									}
+								]
+							} 
+						]
+					}
+				]
+			}
+		},
+		{
+			"Name": "PRODUCTS_PROCESSED",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "||MINE_NAME|| PRODUCTION ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"Samples": [
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-raw-material",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-raw",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/material-combination",
+								"Name": "||MINE_NAME|| Mine Process Stock ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||PROCESSING_TONNAGE||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"Preparation": "http://linked.data.gov.au/def/sample-preparation-methods/aggregate",
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||PROCESSING_TONNAGE||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coal"
+											}
+										]
+									},
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"Preparation": "http://linked.data.gov.au/def/sample-preparation-methods/beneficiate",
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||DISCARD_WASH||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Wash Discard"
+											}
+										]
+									}
+								],
+								"SampleRelationships": [
+									{
+										"RelatedToSampleName": "||MINE_NAME|| Gross Output ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+										"RelationshipType": "http://linked.data.gov.au/def/sample-relationship/isAggregateOf"
+									},
+									{
+										"RelatedToSampleName": "||MINE_NAME|| Raw Transfer In ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+										"RelationshipType": "http://linked.data.gov.au/def/sample-relationship/isAggregateOf"
+									},
+									{
+										"RelatedToSampleName": "||MINE_NAME|| Raw Transfer Out ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+										"RelationshipType": "http://linked.data.gov.au/def/sample-relationship/isAggregateOf"
+									}
+								]
+							},
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-product",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-washed",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/mine-processing",
+								"Name": "||MINE_NAME|| Washed Coal Produced ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||PROC_WASHED_COKING||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||PROC_WASHED_COKING||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coking Coal"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||PROC_WASHED_PCI||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Pulverised Coal Injection"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||PROC_WASHED_THERMAL||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Thermal Coal"
+											}
+										]
+									}
+								],
+								"SampleRelationships": [
+									{
+										"RelatedToSampleName": "||MINE_NAME|| Mine Process Stock ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+										"RelationshipType": "http://www.w3.org/ns/sosa/isSampleOf"
+									}
+								]
+							},
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-product",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-unwashed",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/mine-processing",
+								"Name": "||MINE_NAME|| Bypass Coal Produced ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||PROC_BYPASS_COKING||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||PROC_BYPASS_COKING||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coking Coal"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||PROC_BYPASS_PCI||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Pulverised Coal Injection"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||PROC_BYPASS_THERMAL||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Thermal Coal"
+											}
+										]
+									}
+								],
+								"SampleRelationships": [
+									{
+										"RelatedToSampleName": "||MINE_NAME|| Mine Process Stock ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+										"RelationshipType": "http://www.w3.org/ns/sosa/isSampleOf"
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"Name": "PRODUCTS_TRANSFERRED",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "||MINE_NAME|| PRODUCTION ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"Samples": [
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-product",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-sales",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/material-transfer",
+								"Name": "||MINE_NAME|| Product ||RAW(TRANSACTION_TYPE)|| with ||TRANSACTOR|| on ||TRANSFER_DATE||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": "||TRANSFER_DATE||",
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||TRANSFER_COKING||",
+								"SampleDetails": [
+									{
+										"Type": "http://linked.data.gov.au/def/sample-detail-type/sample-transactor",
+										"Value": "||TRANSACTOR||"
+									}
+								],
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationDate": "||TRANSFER_DATE||",
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||TRANSFER_COKING||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coking Coal",
+												"Qualifier": "||RAW(TRANSACTION_TYPE)||"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||TRANSFER_PCI||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Pulverised Coal Injection",
+												"Qualifier": "||RAW(TRANSACTION_TYPE)||"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||TRANSFER_THERMAL||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Thermal Coal",
+												"Qualifier": "||RAW(TRANSACTION_TYPE)||"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"Name": "SALEABLE_STOCKPILE",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "||MINE_NAME|| PRODUCTION ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"Samples": [
+							{
+								"Type": "http://linked.data.gov.au/def/sample-type/georesource-product",
+								"MaterialType": "http://linked.data.gov.au/def/sample-material/coal-sales",
+								"IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+								"MethodType": "http://linked.data.gov.au/def/sampling-method/stockpiling",
+								"Name": "||MINE_NAME|| Coal Stockpile ||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+								"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+								"AcquiredDate": {
+									"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+									"Calculation": "MONTH_END"
+								},
+								"AcquiredByName": "||MINE_OPERATOR||",
+								"FieldValue": "||SOH_COKING||",
+								"Observations": [
+									{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationDate": {
+											"Value": "||RAW(PRODUCTION_MONTH)|| ||PRODUCTION_YEAR||",
+											"Calculation": "MONTH_END"
+										},
+										"ObservationAgents": [{
+												"Organisation": "||MINE_OPERATOR||",
+												"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+											}
+										],
+										"Results": [
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||SOH_COKING||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Coking Coal"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||SOH_PCI||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Pulverised Coal Injection"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/mass",
+												"Value": "||SOH_THERMAL||",
+												"UOM": "http://qudt.org/vocab/unit/TON_M",
+												"Analyte": "Thermal Coal"
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"Name": "SALES",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "||MINE_NAME|| SALES ||REPORT_PERIOD_START|| TO ||REPORT_PERIOD_END||",
+						"Observations": [
+							{
+								"Type": "http://linked.data.gov.au/def/geological-observation-type/sale",
+								"JobNumber": "||TRANSACTION_ID||",
+								"Instrument": "||SHIP||",
+								"ObservationDate": "||TRANSACTION_DATE||",
+								"ObservationAgents": [{
+										"Organisation": "||MINE_OPERATOR||",
+										"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+									}
+								],
+								"Sale": 
+								{
+									"TransactionId": "||TRANSACTION_ID||",
+									"TransactionStatus": "||TRANSACTION_STATUS||",
+									"Trader": "||BUYER||",
+									"TraderIndustry": "||BUYER_INDUSTRY||",
+									"Country": "||COUNTRY||",
+									"State": "||AUSTRALIAN_STATE||",
+									"PortTerminal": "||ORIGIN_PORT_TERMINAL||",
+									"ShippingDate": "||SHIPPING_DATE||",
+									"ProductForm": "http://linked.data.gov.au/def/sample-material/coal-sales"
+								}, 
+								"ObservationDetails": [
+									{
+										"Type": "http://linked.data.gov.au/def/observation-detail-type/blended",
+										"Value": "||BLENDED||"
+									}
+								],
+								"Results": [
+									{
+										"Type": "http://linked.data.gov.au/def/result-type/mass",
+										"Value": "||TONNAGE||",
+										"UOM": "http://qudt.org/vocab/unit/TON_M",
+										"Analyte": "||RAW(COAL_TYPE)||"
+									},
+									{
+										"Type": "http://linked.data.gov.au/def/result-type/cost",
+										"Value": "||VALUE||",
+										"UOM": "http://linked.data.gov.au/def/geou/aud",
+										"Analyte": "||RAW(COAL_TYPE)||"
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

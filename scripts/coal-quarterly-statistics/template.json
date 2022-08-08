@@ -1,0 +1,1404 @@
+{
+	"version": "1.1",
+	"Last updated date": "19/04/2022",
+	"Last updated by": "B Nikoloff, SRA",
+	"ReportType": "http://linked.data.gov.au/def/georesource-report/coal-quarterly-statistics",
+	"NamingConvention": {
+		"xlsxRegex": "(?i)^.+_quarterly-coal-return-form_Q[1-4]-\\d{4}$",
+		"xlsxLabel": "[MINE_NAME]_quarterly-coal-return-form_Q[1-4]-[End Date Year(YYYY)]",
+		"csvRegex": "(?i)^.+_quarterly-coal-return-form_Q[1-4]-\\d{4}_.+$",
+		"csvLabel": "[MINE_NAME]_quarterly-coal-return-form_Q[1-4]-[End Date Year(YYYY)]_[COMPONENT_NAME]"
+	},
+	"DocumentProperties": {
+		"FileName": "{0}_coal-quarterly-return-data_Q{2}-{3}-submitted.xlsx",
+		"DocumentTitle": "{0} COAL QUARTERLY RETURN DATA Q{2} {3}",
+		"DocumentDescription": "Associated data submission to {0}",
+		"ThemeVocabUri": "http://linked.data.gov.au/def/gsq-dataset-theme/resource-statistics",
+		"EarthScienceCategoryVocabUri": "http://linked.data.gov.au/def/earth-science-data-category/coal-geology"
+	},
+	"MetadataMapping": {
+		"RelatedMineName": "MINE_DETAILS.MINE_NAME",
+		"RelatedOperatorName": "MINE_DETAILS.MINE_OPERATOR",
+		"RelatedPermitComponent": "TENEMENT_STATUS",
+		"RelatedRawCoalMinedComponent": "RAW_COAL_MINED_TRANSFERRED",
+		"RelatedSaleableStockpileComponent": "SALEABLE_STOCKPILE",
+		"RelatedProductTransferredComponent": "PRODUCTS_TRANSFERRED",
+		"RelatedProductProcessedComponent": "PRODUCTS_PROCESSED",
+		"RelatedYearColumn": "PRODUCTION_YEAR",
+		"RelatedMonthColumn": "PRODUCTION_MONTH",
+		"RelatedPermitTypeColumn": "TENEMENT_TYPE",
+		"RelatedPermitNumberColumn": "TENEMENT_TYPE_NO",
+		"RelatedPermitStatusColumn": "PRODUCTION_STATUS",
+		"ReportStartDate": "MINE_DETAILS.REPORT_PERIOD_START",
+		"ProductTransferredDate": "TRANSFER_DATE",
+		"ReportEndDate": "MINE_DETAILS.REPORT_PERIOD_END"
+	},
+	"components": [
+		{
+			"name": "MINE_DETAILS",
+			"requiredForFileUpload": true,
+			"webFormKey": "mineDetails",
+			"webFormPrimary": true,
+			"xlsxOffsets": {
+				"columnOffset": 2,
+				"rowOffset": 8
+			},
+			"minRows": 1,
+			"maxRows": 1,
+			"inputs": [
+				{
+					"name": "siteName",
+					"label": "Mine Name",
+					"columnHeader": "MINE_NAME",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Mine Name is required"
+								]
+							},
+							{
+								"name": "max",
+								"params": [
+									128,
+									"Mine Name cannot be more than 128 characters"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "relatedOperatorName",
+					"label": "Mine Operator",
+					"columnHeader": "MINE_OPERATOR",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Mine Operator is required"
+								]
+							},
+							{
+								"name": "max",
+								"params": [
+									128,
+									"Mine Operator cannot be more than 128 characters"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "startDate",
+					"label": "Report Period Start Date",
+					"columnHeader": "REPORT_PERIOD_START",
+					"isRequired": true,
+					"type": "calender",
+					"validations": {
+						"type": "date",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Report Period Start Date is required"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "endDate",
+					"label": "Report Period End Date",
+					"columnHeader": "REPORT_PERIOD_END",
+					"isRequired": true,
+					"type": "calender",
+					"validations": {
+						"type": "date",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Report Period End Date is required"
+								]
+							},
+							{
+								"name": "min",
+								"isComplex": true,
+								"params": [
+									"yup.ref('startDate')",
+									"The Report Period End Date must be greater than the Report Period Start Date"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "freightCost",
+					"label": "Freight Cost",
+					"columnHeader": "REPORT_PERIOD_FREIGHT_COST",
+					"isRequired": false,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Freight Cost must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "TENEMENT_STATUS",
+			"requiredForFileUpload": true,
+			"webFormKey": "permit",
+			"webFormPreloadIgnore": true,
+			"xlsxOffsets": {
+				"columnOffset": 2,
+				"rowOffset": 8
+			},
+			"minRows": 1,
+			"inputs": [
+				{
+					"name": "permitType",
+					"label": "Tenement Type",
+					"columnHeader": "TENEMENT_TYPE",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:notation ?displayText ; skos:inScheme <http://linked.data.gov.au/def/qld-resource-permit> }} ORDER BY LCASE(?displayText)",
+									"Tenement Type is invalid. Please refer to vocab qld-resource-permit"
+								]
+							},
+							{
+								"name": "required",
+								"params": [
+									"Tenement Type ML is required"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "permitNumber",
+					"label": "Tenement Number",
+					"columnHeader": "TENEMENT_TYPE_NO",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^[1-9]\\d{0,7}$/",
+									"Tenement Number must be a positive whole number with no more than 8 digits e.g. 12345678."
+								]
+							},
+							{
+								"name": "required",
+								"params": [
+									"Tenement Number is required"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "permitStatus",
+					"label": "Production Status",
+					"columnHeader": "PRODUCTION_STATUS",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE { <http://linked.data.gov.au/def/site-status/prodstat> skos:member ?id . ?id skos:prefLabel ?displayText . } ORDER BY LCASE(?displayText)",
+									"Production Status is not valid. Refer to vocab for Site Status (Production Site Status)."
+								]
+							},
+							{
+								"name": "required",
+								"params": [
+									"Production Status is required"
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "RAW_COAL_MINED_TRANSFERRED",
+			"webFormKey": "coalRawCoalMined",
+			"titleforReview": "Raw Coal Mined Transferred",
+			"xlsxOffsets": {
+				"columnOffset": 2,
+				"rowOffset": 8
+			},
+			"minRows": 1,
+			"inputs": [
+				{
+					"name": "productionMonth",
+					"label": "Production Month",
+					"columnHeader": "PRODUCTION_MONTH",
+					"isRequired": true,
+					"type": "text",
+					"preloadUseRaw": "true",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Production Month is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX time: <http://www.w3.org/2006/time#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:prefLabel ?displayText ; time:month ?seq; skos:inScheme <http://www.w3.org/ns/time/gregorian> FILTER( LANG( ?displayText ) = 'en' && LANG( ?displayText ) = 'en' ) }} ORDER BY ?seq",
+									"Month is not valid"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "productionYear",
+					"label": "Production Year",
+					"columnHeader": "PRODUCTION_YEAR",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Production Year is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(19|20)\\d{2}$/",
+									"Production Year must be a valid year between 1900-2099."
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "daysOnProduction",
+					"label": "Days on Production",
+					"columnHeader": "DAYS_ON_PRODUCTION",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Days on Production is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(\\d|[1-2]\\d?|3[0-1])$/",
+									"Days on Production must be a value between 1-31."
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "overburden",
+					"label": "Overburden (Bank Cubic Metres)",
+					"columnHeader": "OVERBURDEN",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Overburden is required, Report as 0 for underground mines"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Overburden must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "grossOutput",
+					"label": "Gross Output (Tonnes)",
+					"columnHeader": "GROSS_OUTPUT",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Gross Output is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Gross Output must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "rawTransfersIn",
+					"label": "Raw Transfers IN (Tonnes)",
+					"columnHeader": "RAW_TRANSFERS_IN",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Raw Transfers IN is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Raw Transfers IN must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "rawTransfersOut",
+					"label": "Raw Transfers OUT (Tonnes)",
+					"columnHeader": "RAW_TRANSFERS_OUT",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Raw Transfers OUT is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Raw Transfers OUT must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PRODUCTS_PROCESSED",
+			"webFormKey": "productsProcessed",
+			"titleforReview": "Products Processed",
+			"xlsxOffsets": {
+				"columnOffset": 2,
+				"rowOffset": 8
+			},
+			"minRows": 0,
+			"inputs": [
+				{
+					"name": "productionMonth",
+					"label": "Production Month",
+					"columnHeader": "PRODUCTION_MONTH",
+					"isRequired": true,
+					"type": "text",
+					"preloadUseRaw": "true",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Production Month is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX time: <http://www.w3.org/2006/time#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:prefLabel ?displayText ; time:month ?seq; skos:inScheme <http://www.w3.org/ns/time/gregorian> FILTER( LANG( ?displayText ) = 'en' && LANG( ?displayText ) = 'en' ) }} ORDER BY ?seq",
+									"Month is not valid"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "productionYear",
+					"label": "Production Year",
+					"columnHeader": "PRODUCTION_YEAR",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Production Year is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(19|20)\\d{2}$/",
+									"Production Year must be a valid year between 1900-2099."
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "processingTonnage",
+					"label": "Processing and Sortage Tonnage",
+					"columnHeader": "PROCESSING_TONNAGE",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Processing and Sort Tonnage is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Processing and Sort Tonnage must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "discardWash",
+					"label": "Discards (Tonnes)",
+					"columnHeader": "DISCARD_WASH",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Discards is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Discards must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "procWashedCoking",
+					"label": "Processed Washed Coking Coal (Tonnes)",
+					"columnHeader": "PROC_WASHED_COKING",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Processed Washed Coking Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Processed Washed Coking Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "procWashedPCI",
+					"label": "Processed Washed PCI Coal (Tonnes)",
+					"columnHeader": "PROC_WASHED_PCI",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Processed Washed PCI Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Processed Washed PCI Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "procWashedThermal",
+					"label": "Processed Washed Thermal Coal (Tonnes)",
+					"columnHeader": "PROC_WASHED_THERMAL",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Processed Washed Thermal Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Processed Washed Thermal Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "procBypassCoking",
+					"label": "Bypass and Unwashed Coking Coal (Tonnes)",
+					"columnHeader": "PROC_BYPASS_COKING",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Bypass and Unwashed Coking Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Bypass and Unwashed Coking Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "procBypassPCI",
+					"label": "Bypass and Unwashed PCI Coal (Tonnes)",
+					"columnHeader": "PROC_BYPASS_PCI",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Bypass and Unwashed PCI Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Bypass and Unwashed PCI Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "procBypassThermal",
+					"label": "Bypass and Unwashed Thermal Coal (Tonnes)",
+					"columnHeader": "PROC_BYPASS_THERMAL",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Bypass and Unwashed Thermal Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Bypass and Unwashed Thermal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PRODUCTS_TRANSFERRED",
+			"webFormKey": "productTransfers",
+			"titleforReview": "Products Transferred",
+			"xlsxOffsets": {
+				"columnOffset": 2,
+				"rowOffset": 8
+			},
+			"minRows": 0,
+			"inputs": [
+				{
+					"name": "transferDate",
+					"label": "Transfer Date",
+					"columnHeader": "TRANSFER_DATE",
+					"isRequired": true,
+					"type": "calender",
+					"validations": {
+						"type": "date",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transfer Date is required"
+								]
+							},
+							{
+								"name": "within",
+								"isComplex": true,
+								"params": [
+									"The Transfer Date does not fall within the 'Reporting Period'"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "transactionType",
+					"label": "Transfer Type",
+					"columnHeader": "TRANSACTION_TYPE",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transfer Type is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ <http://linked.data.gov.au/def/transaction-type/min-transfer> skos:member ?id . ?id skos:prefLabel ?displayText }} ORDER BY LCASE(?displayText)",
+									"Transfer Type is not valid. Please refer to vocab transaction-type."
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "TRANSACTOR",
+					"label": "Transactor",
+					"columnHeader": "TRANSACTOR",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transactor is required"
+								]
+							},
+							{
+								"name": "max",
+								"params": [
+									128,
+									"Transactor cannot be more than 128 characters"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "transferCoking",
+					"label": "Transferred Coking Coal",
+					"columnHeader": "TRANSFER_COKING",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transferred Coking Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Transferred Coking Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "transferPCI",
+					"label": "Transferred PCI Coal",
+					"columnHeader": "TRANSFER_PCI",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transferred PCI Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Transferred PCI Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "transferThermal",
+					"label": "Transferred Thermal Coal",
+					"columnHeader": "TRANSFER_THERMAL",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transferred Thermal Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Transferred Thermal Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "SALEABLE_STOCKPILE",
+			"webFormKey": "coalSaleableStockpile",
+			"titleforReview": "Saleable Stockpile",
+			"xlsxOffsets": {
+				"columnOffset": 2,
+				"rowOffset": 8
+			},
+			"minRows": 1,
+			"inputs": [
+				{
+					"name": "productionMonth",
+					"label": "Production Month",
+					"columnHeader": "PRODUCTION_MONTH",
+					"isRequired": true,
+					"type": "text",
+					"preloadUseRaw": "true",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Production Month is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX time: <http://www.w3.org/2006/time#> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:prefLabel ?displayText ; time:month ?seq; skos:inScheme <http://www.w3.org/ns/time/gregorian> FILTER( LANG( ?displayText ) = 'en' && LANG( ?displayText ) = 'en' ) }} ORDER BY ?seq",
+									"Month is not valid"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "productionYear",
+					"label": "Production Year",
+					"columnHeader": "PRODUCTION_YEAR",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Production Year is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(19|20)\\d{2}$/",
+									"Production Year must be a valid year between 1900-2099."
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "sohCoking",
+					"label": "Stockpile Coking Coal",
+					"columnHeader": "SOH_COKING",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Stockpile Coking Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Stockpile Coking Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "sohPCI",
+					"label": "Stockpile PCI Coal",
+					"columnHeader": "SOH_PCI",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Stockpile PCI Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Stockpile PCI Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "sohThermal",
+					"label": "Stockpile Thermal Coal",
+					"columnHeader": "SOH_THERMAL",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Stockpile Thermal Coal is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^(0|[1-9]\\d{0,9})$/",
+									"Stockpile Thermal Coal must be a positive whole number with no more than 10 digits e.g. 1234567890"
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "SALES",
+			"webFormKey": "sales",
+			"titleforReview": "Sales",
+			"xlsxOffsets": {
+				"columnOffset": 2,
+				"rowOffset": 8
+			},
+			"minRows": 0,
+			"inputs": [
+				{
+					"name": "transactionID",
+					"label": "Transaction ID",
+					"columnHeader": "TRANSACTION_ID",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transaction ID is required"
+								]
+							},
+							{
+								"name": "max",
+								"params": [
+									48,
+									"Transaction ID cannot be more than 48 characters"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "transactionStatus",
+					"label": "Transaction Status",
+					"columnHeader": "TRANSACTION_STATUS",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transaction Status is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:prefLabel ?displayText ; skos:inScheme <http://linked.data.gov.au/def/transaction-status> }} ORDER BY LCASE(?displayText)",
+									"Transaction Status is not valid"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "buyer",
+					"label": "Buyer",
+					"columnHeader": "BUYER",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Buyer is required"
+								]
+							},
+							{
+								"name": "max",
+								"params": [
+									96,
+									"Buyer cannot be more than 96 characters"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "buyerIndustry",
+					"label": "Buyer Industry",
+					"columnHeader": "BUYER_INDUSTRY",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "dependent",
+								"isComplex": true,
+								"params": [
+									"COUNTRY||Australia",
+									"Buyer Industry is required"
+								]
+							},
+							{
+								"name": "max",
+								"params": [
+									96,
+									"Buyer Industry cannot be more than 96 characters"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ <http://linked.data.gov.au/def/anzsic-2006/coal-buyer> skos:member ?id .?id skos:prefLabel ?displayText }} ORDER BY LCASE(?displayText)",
+									"Buyer Industry is not valid. Please refer to vocab Buyer Industry."
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "country",
+					"label": "Destination Country",
+					"columnHeader": "COUNTRY",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Country is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:prefLabel ?displayText ; skos:inScheme <http://linked.data.gov.au/def/countries> FILTER( LANG( ?displayText ) = 'en' && LANG( ?displayText ) = 'en' )}} ORDER BY LCASE(?displayText)",
+									"Country is not valid"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "ausState",
+					"label": "State",
+					"columnHeader": "AUSTRALIAN_STATE",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "dependent",
+								"isComplex": true,
+								"params": [
+									"COUNTRY||Australia",
+									"State is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:notation ?displayText ; skos:inScheme <http://linked.data.gov.au/def/australian-states-and-territories> }} ORDER BY LCASE(?displayText)",
+									"State is not valid. Please refer to vocab australian-states-and-territories."
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "coalType",
+					"label": "Coal Type",
+					"columnHeader": "COAL_TYPE",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Coal Type is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ VALUES (?sort ?pred) { (1 skos:prefLabel) (2 skos:altLabel) } <http://linked.data.gov.au/def/geo-commodities/qld-coal-sales> skos:member ?id . ?id ?pred ?displayText }} ORDER BY ?sort LCASE(?displayText)",
+									"Coal Type is not valid"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "tonnage",
+					"label": "Tonnage",
+					"columnHeader": "TONNAGE",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Tonnage is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^-?(0|[1-9]\\d{0,9})$/",
+									"Tonnage must be a whole number with no more than 10 digits e.g. -1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "value",
+					"label": "Value",
+					"columnHeader": "VALUE",
+					"isRequired": true,
+					"type": "integer",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Value is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^-?(0|[1-9]\\d{0,9})$/",
+									"Value must be a whole number with no more than 10 digits e.g. -1234567890"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "transactionDate",
+					"label": "Transaction Date",
+					"columnHeader": "TRANSACTION_DATE",
+					"isRequired": true,
+					"type": "calender",
+					"validations": {
+						"type": "date",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Transaction Date is required"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "ship",
+					"label": "Ship",
+					"columnHeader": "SHIP",
+					"isRequired": false,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "dependent",
+								"isComplex": true,
+								"params": [
+									"ORIGIN_PORT_TERMINAL||Abbot Point,Dalrymple Bay,Gladstone Port,Hay Point,Port of Brisbane",
+									"Ship is required"
+								]
+							},
+							{
+								"name": "max",
+								"params": [
+									48,
+									"Ship cannot be more than 48 characters"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "originPortTerminal",
+					"label": "Origin Port Terminal",
+					"columnHeader": "ORIGIN_PORT_TERMINAL",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Port Terminal is required"
+								]
+							},
+							{
+								"name": "vocab",
+								"isComplex": true,
+								"params": [
+									"PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{   <http://linked.data.gov.au/def/qld-export-terminals/coal-terminals> skos:member ?id .   ?id skos:prefLabel ?displayText }} ORDER BY LCASE(?displayText)",
+									"Port Terminal is not valid"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "shippingDate",
+					"label": "Shipping Date",
+					"columnHeader": "SHIPPING_DATE",
+					"isRequired": true,
+					"type": "calender",
+					"validations": {
+						"type": "date",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Shipping Date is required"
+								]
+							}
+						]
+					}
+				},
+				{
+					"name": "blended",
+					"label": "Blended",
+					"columnHeader": "BLENDED",
+					"isRequired": true,
+					"type": "text",
+					"validations": {
+						"type": "string",
+						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Blended is required"
+								]
+							},
+							{
+								"name": "matches",
+								"isComplex": true,
+								"params": [
+									"/^[yYnN]$/",
+									"Blended is not valid. Must be Y or N."
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}
