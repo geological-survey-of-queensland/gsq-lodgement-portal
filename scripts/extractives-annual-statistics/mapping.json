@@ -1,0 +1,130 @@
+{
+    "Components": [{
+            "Name": "QUARRY_DETAILS",
+            "Mapping": {
+                "Survey": [{
+                        "SurveyName": "||QUARRY_NAME|| EXTRACTIVE FUNC_FY_START[REPORT_PERIOD_END] TO ||REPORT_PERIOD_END||",
+                        "SurveyMethod": "http://linked.data.gov.au/def/survey-method/data-survey",
+                        "SurveyType": "http://linked.data.gov.au/def/survey-type/resource-extractives",
+                        "StartDate": {
+											"Value": "||REPORT_PERIOD_END||",
+											"Calculation": "FY_START"
+										},
+                        "EndDate": "||REPORT_PERIOD_END||",
+                        "CreatedBy": "||QUARRY_OPERATOR||",
+						"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+						"SurveyAgents": [{
+								"Organisation": "||QUARRY_OPERATOR||",
+								"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+							}
+						],
+						"SurveyStatuses": [{
+								"Status": "http://linked.data.gov.au/def/survey-status/completed",
+								"StartDate": {
+											"Value": "||REPORT_PERIOD_END||",
+											"Calculation": "FY_START"
+										},
+								"EndDate": "||REPORT_PERIOD_END||"
+							}
+						],
+                        "Observations": [{
+                                "Type": "http://linked.data.gov.au/def/geological-observation-type/sale",
+                                "ObservationDate": "||REPORT_PERIOD_END||",
+								"ObservationAgents": [{
+										"Organisation": "||QUARRY_OPERATOR||",
+										"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+									}
+								],
+                                "Results": [{
+                                        "Type": "http://linked.data.gov.au/def/result-type/cost",
+                                        "Value": "||REPORTING_PERIOD_SALES||",
+                                        "UOM": "http://linked.data.gov.au/def/geou/aud",
+                                        "Analyte": "Extractive Sales"
+                                    }
+                                ]
+                            }
+                        ],
+						"SurveyDetails": [{
+							"Type": "http://linked.data.gov.au/def/survey-detail-type/full-time-employees",
+							"Value": "||FTE_EQUIVALENT_EMPLOYEES||"
+						}, {
+							"Type": "http://linked.data.gov.au/def/survey-detail-type/full-time-contractors",
+							"Value": "||FTE_EQUIVALENT_CONTRACTORS||"
+						}
+					]}
+                ]
+            }
+        }, {
+            "Name": "PRODUCTION",
+            "Mapping": {
+                "Survey": [{
+                        "SurveyName": "||QUARRY_NAME|| EXTRACTIVE FUNC_FY_START[REPORT_PERIOD_END] TO ||REPORT_PERIOD_END||",
+                  "Samples": [
+                    {
+                      "Type": "http://linked.data.gov.au/def/sample-type/georesource-product",
+                      "MaterialType": "http://linked.data.gov.au/def/sample-material/earth-material",
+                      "IgsnObjectType": "http://vocabulary.odm2.org/specimentype/other",
+                      "MethodType": "http://linked.data.gov.au/def/sampling-method/mining",
+                      "Name": "||QUARRY_NAME|| ||RAW(MATERIAL_TYPE)|| ||MATERIAL_NUMBER|| ||REPORT_PERIOD_END||",
+                      "AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+                      "AcquiredDate": "||REPORT_PERIOD_END||",
+                      "AcquiredByName": "||QUARRY_OPERATOR||",
+                      "FieldValue": "||MATERIAL_QUANTITY||",
+                      "Observations": [
+                        {
+                          "Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+                          "ObservationDate": "||REPORT_PERIOD_END||",
+                          "ObservationAgents": [
+                            {
+                              "Organisation": "||QUARRY_OPERATOR||",
+                              "Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+                            }
+                          ],
+                          "Results": [
+                            {
+                              "Type": "http://linked.data.gov.au/def/result-type/mass",
+                              "Value": "||MATERIAL_QUANTITY||",
+                              "UOM": "||MATERIAL_UOM||",
+                              "Analyte": "||RAW(MATERIAL_TYPE)||",
+                              "Qualifier": "Extractives Production"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                    }
+                ]
+            }
+        }, {
+            "Name": "QUARRY_PLAN_DETAILS",
+            "Mapping": {
+                "Survey": [{
+                        "SurveyName": "||QUARRY_NAME|| EXTRACTIVE FUNC_FY_START[REPORT_PERIOD_END] TO ||REPORT_PERIOD_END||",
+                        "Observations": [{
+                                "Type": "http://linked.data.gov.au/def/geological-observation-type/quarry-plan",
+                                "ObservationDate": "||REPORT_PERIOD_END||",
+								"ObservationAgents": [{
+										"Organisation": "||QUARRY_OPERATOR||",
+										"Role": "http://linked.data.gov.au/def/gsq-roles/operator"
+									}
+								],
+                                "ObservationDetails": [{
+                                        "Type": "http://linked.data.gov.au/def/observation-detail-type/lot-number",
+                                        "Value": "||LOT_NUMBER||"
+                                    }, {
+                                        "Type": "http://linked.data.gov.au/def/observation-detail-type/plan-number",
+                                        "Value": "||PLAN_NUMBER||"
+                                    }, {
+                                        "Type": "http://linked.data.gov.au/def/observation-detail-type/lot-adjacent",
+                                        "Value": "||ADJACENT_TO_LOT||"
+									}
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

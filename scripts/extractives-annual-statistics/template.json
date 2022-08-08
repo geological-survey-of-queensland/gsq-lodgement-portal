@@ -10,7 +10,7 @@
         "csvLabel": "[QUARRY_NAME]_annual-extractive-return-form_[End Date Year(YYYY)]_[COMPONENT_NAME]"
     },
 	"DocumentProperties":{
-		"FileName": "{0}_extractives-annual-return-data_FY-{1}.xlsx",
+		"FileName": "{0}_extractives-annual-return-data_FY-{1}-submitted.xlsx",
 		"DocumentTitle": "{0} EXTRACTIVES ANNUAL RETURN DATA FY {1}",
 		"DocumentDescription": "Associated data submission to {0}",
 		"ThemeVocabUri": "http://linked.data.gov.au/def/gsq-dataset-theme/resource-statistics",
@@ -19,11 +19,12 @@
     "MetadataMapping": {
         "RelatedMineName": "QUARRY_DETAILS.QUARRY_NAME",
         "RelatedOperatorName": "QUARRY_DETAILS.QUARRY_OPERATOR",
-        "ReportStartDate": "QUARRY_DETAILS.REPORT_PERIOD_START",
-        "ReportEndDate": "QUARRY_DETAILS.REPORT_PERIOD_END"
+        "ReportEndDate": "QUARRY_DETAILS.REPORT_PERIOD_END",
+        "ReportQuarryStatus": "QUARRY_DETAILS.QUARRY_STATUS"
     },
     "components": [{
             "name": "QUARRY_DETAILS",
+			"requiredForFileUpload": true,
 			"webFormKey": "quarryDetails",
 			"webFormPrimary": true,
             "xlsxOffsets": {
@@ -77,22 +78,6 @@
                         ]
                     }
                 }, {
-                    "name": "startDate",
-                    "label": "Report Period Start Date",
-                    "columnHeader": "REPORT_PERIOD_START",
-                    "isRequired": true,
-                    "type": "calender",
-                    "validations": {
-                        "type": "date",
-                        "rules": [{
-                                "name": "required",
-                                "params": [
-                                    "Report Period Start Date is required"
-                                ]
-                            }
-                        ]
-                    }
-                }, {
                     "name": "endDate",
                     "label": "Report Period End Date",
                     "columnHeader": "REPORT_PERIOD_END",
@@ -105,19 +90,12 @@
                                 "params": [
                                     "Report Period End Date is required"
                                 ]
-                            }, {
-                                "name": "min",
-                                "isComplex": true,
-                                "params": [
-                                    "yup.ref('startDate')",
-                                    "The Report Period End Date must be greater than the Report Period Start Date"
-                                ]
                             }
                         ]
                     }
                 }, {
                     "name": "fteEquivalentEmployees",
-                    "label": "FTE Equivalent Employees",
+                    "label": "Full Time Equivalent Employees",
                     "columnHeader": "FTE_EQUIVALENT_EMPLOYEES",
                     "isRequired": true,
                     "type": "float",
@@ -128,7 +106,7 @@
                                 "isComplex": true,
                                 "params": [
                                     "/^\\d{1,10}(\\.\\d+)?$/",
-                                    "FTE Equivalent Employees must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                                    "Full Time Equivalent Employees must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
                                 ]
                             }, {
                                 "name": "required",
@@ -140,7 +118,7 @@
                     }
                 }, {
                     "name": "fteEquivalentContractors",
-                    "label": "FTE Equivalent Contractors",
+                    "label": "Full Time Equivalent Contractors",
                     "columnHeader": "FTE_EQUIVALENT_CONTRACTORS",
                     "isRequired": true,
                     "type": "float",
@@ -151,7 +129,7 @@
                                 "isComplex": true,
                                 "params": [
                                     "/^\\d{1,10}(\\.\\d+)?$/",
-                                    "FTE Equivalent Contractors must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                                    "Full Time Equivalent Contractors must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
                                 ]
                             }, {
                                 "name": "required",
@@ -201,7 +179,7 @@
                                 "name": "vocab",
                                 "isComplex": true,
                                 "params": [
-                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{   <http://linked.data.gov.au/def/site-status/quarry-status> skos:member ?id .   ?id skos:prefLabel ?displayText }} ORDER BY ?displayText",
+                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?id ?displayText WHERE {{ VALUES (?sort ?pred) { (1 skos:prefLabel) (2 skos:altLabel) (2 skos:hiddenLabel)(2 rdfs:label)(2 skos:notation)} <http://linked.data.gov.au/def/site-status/quarry-status> skos:member ?id . ?id ?pred ?displayText }} ORDER BY ?sort LCASE(?displayText)",
                                     "Status is not valid. Please refer to vocab Site Status."
                                 ]
                             }
@@ -211,12 +189,13 @@
             ]
         }, {
             "name": "PRODUCTION",
-			"webFormKey": "operationalDetails",  
+			"webFormKey": "extractiveSales",
+			"titleforReview": "Production and Sales",
             "xlsxOffsets": {
                 "columnOffset": 2,
                 "rowOffset": 8
             },
-            "minRows": 1,
+            "minRows": 0,
             "inputs": [{
                     "name": "materialNumber",
 					"label": "Material Number",
@@ -243,6 +222,7 @@
                 }, {
                     "name": "materialType",
                     "label": "Material Type",
+					"labelHyperlink": "https://vocabs.gsq.digital/object?uri=http%3A//linked.data.gov.au/def/geo-commodities/qld-extractive-sales",
                     "columnHeader": "MATERIAL_TYPE",
                     "isRequired": true,
                     "type": "text",
@@ -257,7 +237,7 @@
                                 "name": "vocab",
                                 "isComplex": true,
                                 "params": [
-                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{   <http://linked.data.gov.au/def/geo-commodities/qld-extractive-sales> skos:member ?id .   ?id skos:prefLabel ?displayText }} ORDER BY ?displayText",
+                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{   <http://linked.data.gov.au/def/geo-commodities/qld-extractive-sales> skos:member ?id .   ?id skos:prefLabel ?displayText }} ORDER BY LCASE(?displayText)",
                                     "Material Type is not valid. Please refer to vocab (prefered label) for Geoscience Commodities."
                                 ]
                             }
@@ -265,7 +245,7 @@
                     }
                 }, {
                     "name": "materialQuantity",
-                    "label": "Quantity",
+                    "label": "Material Quantity",
                     "columnHeader": "MATERIAL_QUANTITY",
                     "isRequired": true,
                     "type": "float",
@@ -288,7 +268,7 @@
                     }
                 }, {
                     "name": "materialUOM",
-                    "label": "Unit",
+                    "label": "Material Unit",
                     "columnHeader": "MATERIAL_UOM",
                     "isRequired": true,
                     "type": "text",
@@ -297,13 +277,13 @@
                         "rules": [{
                                 "name": "required",
                                 "params": [
-                                    "Material UoM is required"
+                                    "Material Unit is required"
                                 ]
                             }, {
                                 "name": "vocab",
                                 "isComplex": true,
                                 "params": [
-                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?id ?displayText WHERE  { VALUES ?pred { skos:prefLabel skos:altLabel skos:hiddenLabel rdfs:label skos:notation } ?id skos:inScheme <http://linked.data.gov.au/def/geou> . ?id ?pred ?displayText . } ORDER BY ?displayText ?concept",
+                                    "PREFIX skos:<http://www.w3.org/2004/02/skos/core#> PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?id ?displayText WHERE {{ VALUES (?sort ?pred) { (1 skos:prefLabel) (2 skos:altLabel) (2 skos:hiddenLabel)(2 rdfs:label)(2 skos:notation)} <http://linked.data.gov.au/def/geou/basic-resource-volumetrics> skos:member ?id . ?id ?pred ?displayText }} ORDER BY ?sort LCASE(?displayText)",
                                     "Unit of Measure is not valid. Please refer to vocab (preferred label) for Geoscience Profile of QUDT Units."
                                 ]
                             }
@@ -313,7 +293,8 @@
             ]
         }, {
             "name": "QUARRY_PLAN_DETAILS",
-			"webFormKey": "extractiveSales",  
+			"webFormKey": "operationalDetails",  
+			"titleforReview": "Operational Details",
             "xlsxOffsets": {
                 "columnOffset": 2,
                 "rowOffset": 8
@@ -348,6 +329,7 @@
                     "columnHeader": "LOT_NUMBER",
                     "isRequired": true,
                     "type": "text",
+					"keyfilter" : "alphanum",
                     "validations": {
                         "type": "string",
                         "rules": [{
@@ -361,6 +343,13 @@
                                     48,
                                     "Lot Number cannot be more than 48 characters"
                                 ]
+                            }, {
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+									"/^[a-zA-Z0-9]+$/",
+                                    "Lot Number must contain only alphanumeric characters."
+                                ]
                             }
                         ]
                     }
@@ -370,6 +359,7 @@
                     "columnHeader": "PLAN_NUMBER",
                     "isRequired": true,
                     "type": "text",
+					"keyfilter" : "alphanum",
                     "validations": {
                         "type": "string",
                         "rules": [{
@@ -384,6 +374,14 @@
                                     "Plan Number cannot be more than 48 characters"
                                 ]
                             }
+							, {
+                                "name": "matches",
+                                "isComplex": true,
+                                "params": [
+									"/^[a-zA-Z0-9]+$/",
+                                    "Plan Number must contain only alphanumeric characters."
+                                ]
+                            }
                         ]
                     }
                 }, {
@@ -391,10 +389,16 @@
                     "label": "Adjacent to Lot",
                     "columnHeader": "ADJACENT_TO_LOT",
                     "isRequired": false,
-                    "type": "text",
+                    "type": "text",					
                     "validations": {
                         "type": "string",
                         "rules": [{
+                                "name": "required",
+                                "params": [
+                                    "Adjacent to Lot is required"
+                                ]
+                            },
+							{
                                 "name": "max",
                                 "params": [
                                     48,
