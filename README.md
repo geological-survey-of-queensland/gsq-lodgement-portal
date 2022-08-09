@@ -10,6 +10,8 @@ These reports are highly valuable to the Geological Survey of Queensland (GSQ) s
 
 The [GSQ Lodgement Portal](https://geolodgement.dnrme.qld.gov.au/) establishes a single online portal for industry and GSQ to lodge Queensland georesources reports, as well as providing data validation at point of data entry. Data from submitted reports is automatically stored within [Amazon S3](https://aws.amazon.com/s3/), and associated metadata within the [GeoProperties Database](https://github.com/geological-survey-of-queensland/geological-properties-database). Both data and metadata are used internally for QGov business activities and, when the confidentality period lapses, published on the external-facing [Open Data Portal](https://geoscience.data.qld.gov.au/).
 
+All reports submitted are auto-assigned a Persistent Identifier (PID) that remains fixed over time. Specific report activities such asm but not limited to, geophysical surveys or boreholes are also assigned separate PIDs to more readily identify those specific data and metadata sources.  
+
 ### Character Limitations
 To ensure information entered into the Lodgement Portal can be stored and parsed effectively in the geoproperties database, certain character limitations are enforced.
 - Titles are limited to alphanumeric characters (A-Z a-z 0-9), spaces( ), dashes(-), fullstops(.), forward-slash(/) and commas(,)
@@ -24,13 +26,13 @@ To ensure information entered into the Lodgement Portal can be stored and parsed
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="70%"><br>
 Figure 1: MVP Lodgement Portal activity diagram</p>
 
-## MVP Lodgement Portal conceptual data model
+## Lodgement Portal conceptual data model
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-conceptual-design.png" width="100%"><br>
 Figure 2: Lodgement Portal conceptual data model</p>
 
-## MVP Lodgement Portal data elements
+## Lodgement Portal data elements
 
 |Element|Field name|Remarks|Source|
 |---|---|---|---|
@@ -106,178 +108,9 @@ The datasets submitted with the report, e.g. PDF files, wireline logs, CSV files
 |dct:byteSize|Byte size|The size of the resource in bytes|System|
 |dct:dateSubmitted|Date submitted|Date of submission of the resource|System|
 
-## Lodgement Form PID minting
+## Report Types 
 
-The Persistent Identifier (PID) is the unique identifier for a site or survey that is submitted to the department. GSQ needs industry to use this PID when submitting data to the department.
-
-### Minting a new PID
-
-Customers lodge _Notice of Intention_ forms to the department. This means that the borehole or the survey is proposed but not completed.
-
-We need to tell the submitter of the form what the PID is and what it is used for. We can do this by emailing the PID to the submitter after successful submission. We want to do this after the form submission so we don't get orphan PIDs, i.e. PIDs created without the accompanying lodgement metadata.
-
-<p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/pid-request-sequence-diagram.png" width="100%"><br>
-Figure 2: Lodgement Portal PID minting</p>
-
-### Matching an existing PID
-
-When the submitter submits a _Notice of completion (or abandonment, etc.)_ form, we need to tie this lodgement to the _proposed_ borehole or survey record in the GSQ database.
-
-For instance:
-
-* A customer earlier submitted a [PA-21A - Notice of intention to carry out seismic survey or scientific or technical survey](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0004/259897/pa-21a-notice-intention-survey.pdf)
-* The system gave them the PID of the Survey, e.g. SS36789
-* Now the customer lodges a [PA-22A - Notice of completion of seismic survey or scientific or technical survey](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0005/259898/pa-22a-notice-completion-survey.pdf)
-* The customer enters the PID of the Survey SS36789 so we can tie the _completion notice_ to the _intention notice_, i.e. tie to the completed survey to the proposed survey.
-* The _status_ of the Survey can now be changed to _completed_.
-* When the customer later lodges a _Seismic Survey Report - Final_, again they enter the PID so that the report is tied to Survey SS36789.
-
-<p align="center">
-<img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/pid-match-sequence-diagram.png" width="100%"><br>
-Figure 3: Lodgement Portal PID matching</p>
-
-## Report Types Covered by Petroleum & Gas Reporting Practice Direction
-
-The following reports will be submitted through the [Petroleum and Gas Reporting Template](https://www.dnrme.qld.gov.au/mining-resources/initiatives/pandg-reporting-guideline-2018) (.xls).
-
-* They will be lodged through the Lodgement Portal with the submitter completing the standard report metdata in the lodgement form.
-* The submitter will upload the **.xls reporting template** through the lodgement form.
-* The submitter will upload any additional data files through the lodgement form.
-* When submitted, the metadata is written to the Lodgement Portal database. The **.xls reporting template** and any additional files are stored in S3.
-* The .xls file is harvested with the data inserted into the Geoproperties database.
-* The report metadata is pushed through to CKAN as a **Report dataset** with links to the data objects in S3.
-
-|Report Type|Concept|Notation|QDEX Count|PID|
-|---|---|---|---|---|
-|Hydraulic Fracturing Activity Report|hydraulic-fracturing-activity-report |HFACR|1291|Match|
-|Petroleum Report - Petroleum Production Report|petroleum-report-production-information |PROINF|0|N/A|
-|Petroleum Report - Petroleum Resources and Reserves Report|petroleum-report-resource-and-reserves-information |RESINF|0|N/A|
-|Scientific or Technical Survey Report|scientific-or-technical-survey-report |STSURV|86|N/A|
-|Seismic Survey Report - Final|seismic-survey-report-final |SSFINL|820|Match|
-|Seismic Survey Report - Other|seismic-survey-report-other |SSOTHR|415|Match|
-|Seismic Survey Report - Reprocessing|seismic-survey-report-reprocessing |SSREPR|98|Match|
-|Well Completion Report|well-completion-report |WELCOM|14794|Match|
-|Well Production Testing Report|well-production-testing-report |WELTST|1927|Match|
-|Well or Bore Abandonment Report|well-or-bore-abandonment-report |WELAB|1141|Match|
-
-## Report Types Covered by Mineral & Coal Reporting Practice Direction
-
-The following reports will be submitted through the [Mineral Reporting Template](https://www.dnrme.qld.gov.au/mining-resources/initiatives/mineral-coal-reporting-guideline) _or_ [Coal Reporting Template](https://www.dnrme.qld.gov.au/mining-resources/initiatives/mineral-coal-reporting-guideline) (.xls files).
-
-* They will be lodged through the Lodgement Portal with the submitter completing the standard report metdata in the lodgement form.
-* The submitter will upload the **.xls reporting template** through the lodgement form.
-* The submitter will upload any additional data files through the lodgement form.
-* When submitted, the metadata is written to the Lodgement Portal database. The **.xls reporting template** and any additional files are stored in S3.
-* The .xls file is harvested with the data inserted into the Geoproperties database.
-* The report metadata is pushed through to CKAN as a **Report dataset** with links to the data objects in S3.
-* No PID minting or maching is required.
-
-|Report Type|Concept|Notation|QDEX Count|
-|---|---|---|---|
-|Permit Report - Annual|permit-report-annual |ANNUAL|37235|
-|Permit Report - Final|permit-report-final |FINAL|10240|
-|Permit Report - Partial Relinquishment|permit-report-partial-relinquishment |RELINQ|8860|
-|Permit Report - Surrender|permit-report-surrender |SURR|3|
-
-
-## Report Types Covered by Mineral & Coal Statistical Returns Practice Direction
-The following reports will be submitted through Statistical Return submission templates (.xlsx) or via an equivalent lodgement portal webform.
-
-* They will be lodged through the Lodgement Portal with the submitter completing the standard report metdata in the lodgement form.
-* The submitter will upload the **.xls reporting template** through the lodgement form or input data directly into the webform.
-* When submitted, the metadata is written to the Lodgement Portal database. The **.xls reporting template** and any additional files are stored in S3.
-* The .xls file is harvested with the data inserted into the Geoproperties database.
-* The report metadata is pushed through to CKAN as a **Report dataset** with links to the data objects in S3.
-
-|Report Type|Concept|Notation|QDEX Count|
-|---|---|---|---|
-|Coal Quarterly Statistical Return |coal-stats-return |COALQSR|-|
-|Mineral Annual Statistical Return |mineral-stats-return |MINASR|-|
-|Extractive Industry Annual Statistical Return|extractive-stats-return |EXTASR|-|
-
-
-## Report Types Not Covered by Reporting Practice Directions
-
-* They will be lodged through the Lodgement Portal with the submitter completing the standard report metdata in the lodgement form.
-* The submitter will upload any additional data files through the lodgement form.
-* When submitted, the metadata is written to the Lodgement Portal database. Any additional files are stored in S3.
-* There is no data automatically harvested into the Geoproperties database. This will be a manual process by GSQ staff.
-* The report metadata is pushed through to CKAN as a **Report dataset** with links to the data objects in S3.
-* No PID minting or maching is required.
-
-|Report Type|Concept|Notation|QDEX Count|
-|---|---|---|---|
-|Geophysical Survey Report - Acquisition|geophysical-survey-report-acquisition|-|0|
-|Geophysical Survey Report - Final|geophysical-survey-report-final|GEOPSR|10|
-|Geophysical Survey Report - Logistics|geophysical-survey-report-logistics|-|0|
-|Geothermal Report - Annual Reserves|geothermal-report-annual-reserves |GTHARR|1|
-|Geothermal Report - Injection|geothermal-report-injection |GTHIR|0|
-|Geothermal Report - Injection Testing|geothermal-report-injection-testing |GTHITR|0|
-|Geothermal Report - Production|geothermal-report-production |GTHPR|0|
-|Geothermal Report - Production Testing|geothermal-report-production-testing |GTHPT|0|
-|Greenhouse Gas Report - Injection|greenhouse-gas-report-injection |GHGIR|0|
-|Greenhouse Gas Report - Storage Capacity|greenhouse-gas-report-storage-injection |GHGSIR|0|
-|Greenhouse Gas Report - Storage Injection|greenhouse-gas-report-storage-capacity|GHGSSC|16|
-|Mine Plan Lodgement|mine-plan-lodgement|MPLODG|66|
-|Permit Report - Final Relinquishment|permit-report-final-relinquishment|FINREQ|634|
-|Permit Report - Mineral Associated Water|permit-report-mineral-associated-water|MINAW|1047|
-|Petroleum Report - Cumulative Water Production|petroleum-report-cumulative-water-production|CUMPRD|98|
-|Petroleum Report - Field Information|petroleum-report-field-information|PETFLD|116|
-|Petroleum Report - Infrastructure|petroleum-report-infrastructure|PETIR|505|
-|Petroleum Report - Non-Associated Water|petroleum-report-non-associated-water|PETNAW|17|
-|Water Report - Performance Review|water-report-performance-review|WATPRR|49|
-
-## Report Types lodged as PDF forms
-
-The following report types are PDF forms.
-
-* These will be lodged as PDF forms through the lodgement portal.
-* The submitter will complete the lodgement form metadata.
-* PID minting or PID matching will be performed as defined.
-
-|Report Type|Mint or Match|
-|---|---|
-|[PA-21A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0004/259897/pa-21a-notice-intention-survey.pdf) Notice of Intention to carry out seismic survey or scientific or technical survey|Mint survey|
-|[PA-22A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0005/259898/pa-22a-notice-completion-survey.pdf) Notice of Completion of seismic survey or scientific or technical survey|Match survey|
-|[PM 1/2013](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0003/289605/notification-geophysical-survey.pdf) Notification of geophysical survey|Mint survey|
-|[PA-42](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0008/259901/pa-42-notice-of-intention.pdf) Notice of intention to convert a petroleum well to a water observation bore or water supply bore|N/A|
-|[WRA-05A](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0006/259935/wra-05a-notification-completion-conversion.pdf) Notice of completion of conversion of petroleum well to water supply bore or water observation bore|N/A|
-|[MMOL-44](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0003/289605/notification-geophysical-survey.pdf) Notice of decommissioning a well, water observation bore, water monitoring bore or water supply bore|N/A|
-
-## Report Types that are deprecated or superseded - no longer lodged to the Department of Resources
-
-The following report types are no longer current.
-
-* However, the report metadata for these reports is to be migrated from QDEX Reports into the Lodgement Portal.
-* Any reports that have not already been published in the Open Data Portal need to be published into the relevant Open Data Portal or Private Data Portal based on the QDEX Reports confidentiality flag. Metadata into CKAN, data objects into S3.
-
-|Report Type|Concept|Notation|QDEX Count|
-|---|---|---|---|
-|Permit Report - Other|permit-report-other|-|3649|
-|Permit Report - Six Month|permit-report-six-month|6MTH|7183|
-|Petroleum Report - Other|petroleum-report-other |EPPOTH|784|
-|Petroleum Report - Transmission|petroleum-report-transmission |TRANS|233|
-|Water Report - Other|water-report-other |WATOTH|131|
-|Well Report Other|well-report-other |WELOTH |555|
-|Well proposal|well-proposal |WELPRO|4358|
-|Production (Petroleum)|production-petroleum|PROD|610|
-|Reserves (Petroleum)|reserves-petroleum|RESERV|741|
-
-## Report Types that will not be lodged through lodgement portal
-
-The following report types will be submitted directly to the department, not lodged through the lodgement portal.
-
-* However, the report metadata for these reports is to be migrated from QDEX Reports into the Lodgement Portal.
-* Any reports that have not already been published in the Open Data Portal need to be published into the relevant Open Data Portal or Private Data Portal based on the QDEX Reports confidentiality flag. Metadata into CKAN, data objects into S3.
-
-|Report Type|Concept|Notation|QDEX Count|
-|---|---|---|---|
-|Collaborative Drilling Initiative - Final|collaborative-drilling-initiative-final|CEIFIN|14|
-|Collaborative Drilling Initiative - Proposals|collaborative-drilling-initiative-proposals|CEIPRO|47|
-|Collaborative Exploration Initiative - Final|collaborative-exploration-initiative-final|CDIFIN|37|
-|Industry Consultative Report|industry-consultative-report|OTHER|31|
-|Industry Network Initiative - Final|industry-network-initiative-final|INIFIN|2|
+Those reports covered by the Lodgement Portal can be found in the [Petroleum & Gas Reporting Practice Direction](https://www.resources.qld.gov.au/__data/assets/pdf_file/0020/1512074/reporting-practice-direction-petroleum.pdf) and the [Mineral & Coal Reporting Practice Direction](https://www.resources.qld.gov.au/__data/assets/pdf_file/0019/1512073/reporting-practice-direction-minerals-coal.pdf). In addition to these report types, activity, production and statistical notices are also submitted through the Lodgement Portal.
 
 ## Lodgement Portal vocabularies
 
