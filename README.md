@@ -18,27 +18,7 @@ To ensure information entered into the Lodgement Portal can be stored and parsed
 - Non-standard characters can be identified using a UTF-8 decoder such as [UTF-8 Decoder](https://www.browserling.com/tools/utf8-decode).
 - To troubleshoot complex inputs, use a decoder and replace problem characters with a UTF-8 equivalent, such as changing ” to ".
 
-## Four versions of the Lodgement Portal
-
-There are 4 versions of lodgement portal to be built:
-
-1. Version 1 or MVP Lodgement Portal to replace the current lodgement functionality of QDEX reports - described on this page.
-2. Version 2 Lodgement Portal expands the MVP Lodgement Portal to Coal, Mineral, and Extractive Industry Production and Sales Statistical Returns. This stage establishes the system framework to parse the data lodged in the reporting templates (.xlsx and .csv) and to establsih simple modular reporting and direct input of report data via the lodgement portal webform- described on [Version2-portal-README.MD](/Version2-portal-README.MD)
-3. Roll-out of data extraction from all submission templates and enhanced data validation on lodgement [Version3-portal-README.MD](/Version3-portal-README.MD)
-4. Multipart lodgement form (per ModulrTech style) for selected reports - described on [Version4-portal-README.MD](/Version4-portal-README.MD)
-
-## Iterative delivery of the versions
-
-It is vital that GSQ exit QDEX Reports by June 30, 2020. Hence, we will iterate through the 4 versions:
-
-1. Analyse, design, build, and deploy Version 1 - the MVP Lodgement Portal. This portal replaces QDEX Reports.  
-  a. The MVP software (Version 1) provides the platform and "plumbing" for all future versions - i.e. web portal, authentication, authorisation, lodgement form, lodgement database, metadata, CKAN integration, S3 integration, spatial processing.  
-  b. The MVP software enables data migration out of QDEX Reports into the Lodgement Portal.  
-  c. The MVP software enables data migration out of QDEX Reports into the Data Catalogue (Open Data Portal, Private Data Portal, and Data Object Store (S3)).  
-2. Analyse, design, build, and deploy Version 2 - inheriting the functionality of the MVP and building the parsing functionality to populate the Geoproperties database.
-3. Analyse, design, build, and deploy Versions 3 and 4.
-
-## MVP Lodgement Portal activity diagram
+## Lodgement Portal activity diagram
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/MVP-report-lodgement-activity-diagram.png" width="70%"><br>
@@ -48,7 +28,7 @@ Figure 1: MVP Lodgement Portal activity diagram</p>
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-conceptual-design.png" width="100%"><br>
-Figure 4: Lodgement Portal conceptual data model</p>
+Figure 2: Lodgement Portal conceptual data model</p>
 
 ## MVP Lodgement Portal data elements
 
