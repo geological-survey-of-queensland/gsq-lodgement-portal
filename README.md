@@ -127,8 +127,8 @@ The vocabularies used in this profile are:
 
 The Lodgement Portal requires authentication using the Identity Broker:
 
-* External users authenticate using QGCIDM (QGov)
-* Internal users authenticate using ADFS
+* External users authenticate using their Queensland Government (QGov) login.
+* Internal users authenticate using Microsoft's Active Directory Federation Services (ADFS).
 
 The Lodgement Portal requires user authorisation:
 
