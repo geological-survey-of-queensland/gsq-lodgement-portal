@@ -1,22 +1,10 @@
 # GSQ Lodgement Portal
 
-## Purpose of this document
+## Context
 
-Provide a specification for the  GSQ Lodgement Portal that:  
-* Accurately defines the business requirements
-* Is a key input to software design for a software developer  
+Resource authority (RA, or "permit") holders need to submit a range of statutory reports on their activities to the Queensland Government (QGov). Reports cover all commodities, survey types and associated infrastructure, at every stage of the project lifecycle from planning and exploration, through to production and operations, and finally closure and abdaonment. When QGov issues a permit, the legislation requires the permit holder to submit reports to the Department when certain activities are performed under the conditions of the permit. The style and contents of the report to QGov varies depending on the nature of the activity being reporting upon. 
 
-The primary input into this document is the data model defined in the [Resources Industry Report Profile](https://github.com/geological-survey-of-queensland/industry-report-profile).
-
-## Background
-
-Resource authority holders need to submit a range of statutory reports on their activities. Reports include all mineral exploration, geothermal exploration, greenhouse gas exploration, petroleum exploration, petroleum well, seismic survey or airborne geophysical survey, mineral development licence, petroleum lease, and petroleum pipeline licence reports and some other exploration related reporting.
-
-When government issues a permit to a holder, the legislation requires a permit holder to submit reports to the Department when certain activities are performed under the conditions of the permit.  
-* The reports contain knowledge of the geological resource. 
-* Historically, industry reports have been lodged through [QDEX Reports](https://qdexguest.dnrm.qld.gov.au/portal/site/qdex/search).  
-* A new GSQ lodgement portal to replace QDEX Reports was delivered as part of the Geoscience Data modernisation Project (GDMP).  
-* Most industry reports have a confidentiality period before becoming open file.  
+These reports are highly valuable to the Geological Survey of Queensland (GSQ) since they provide oversight of geoscience-related activities within Queensland, with an especial focus on knowledge of geological resources. Most industry reports have a confidentiality period before becoming open file, which then allows any member of the public anywhere in the world to access, discover, view, and utilise this information for their own activities, thus building upon the geoscientific knwoledge of Queensland.    
 
 ## The Lodgement Portal
 
