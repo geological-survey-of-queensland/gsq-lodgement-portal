@@ -142,9 +142,7 @@ Figure 3: Lodgement Portal external user authentication and authorisation</p>
 ## See also
 
 * [Industry report profile](https://github.com/geological-survey-of-queensland/industry-report-profile)  
-* [Queensland Digital Exploration Reports System Report Lodger User Guide](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0004/188626/qdex-report-lodger-user-guide.pdf)  
-* [Queensland Digital Exploration Reports System Report Lodger User Guide For mining associated and non-associated water reports – Taking of water](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0005/188627/qdex-report-lodger-user-guide-water-act.pdf)  
-* [Queensland Digital Exploration Reports System Reporting Guidelines ](https://www.dnrme.qld.gov.au/__data/assets/pdf_file/0010/188623/qdex-guidelines-digital-company-reports.pdf)
+
 
 ## License
 
