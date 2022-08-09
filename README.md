@@ -120,8 +120,8 @@ The vocabularies used in this profile are:
 2. [Earth Science Data Category](https://vocabs.gsq.digital/vocabulary/earth-science-data-category) - the category(s) of data contained in the report
 3. [Data Access Rights](https://vocabs.gsq.digital/vocabulary/data-access-rights)
 4. [Commodity](https://vocabs.gsq.digital/vocabulary/gsq-commodity)
-5. Report detail type.
-6. Report status.
+5. [Report detail type](https://vocabs.gsq.digital/object?uri=http://linked.data.gov.au/def/report-detail-type)
+6. [Report status](https://vocabs.gsq.digital/object?uri=http://linked.data.gov.au/def/report-status)
 
 ## Lodgement Portal authentication and authorisation
 
