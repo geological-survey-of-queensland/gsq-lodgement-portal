@@ -2,31 +2,16 @@
 
 ## Context
 
-Resource authority (RA, or "permit") holders need to submit a range of statutory reports on their activities to the Queensland Government (QGov). Reports cover all commodities, survey types and associated infrastructure, at every stage of the project lifecycle from planning and exploration, through to production and operations, and finally closure and abdaonment. When QGov issues a permit, the legislation requires the permit holder to submit reports to the Department when certain activities are performed under the conditions of the permit. The style and contents of the report to QGov varies depending on the nature of the activity being reporting upon. 
+Resource authority (RA, or "permit") holders need to submit a range of statutory reports on their activities to the Queensland Government (QGov). Reports cover all commodities, survey types and associated infrastructure, at every stage of the project lifecycle from planning and exploration, through to production and operations, and finally closure and abandonment. When QGov issues a permit, the legislation requires the permit holder to submit reports to the Department when certain activities are performed under the conditions of the permit. The style and contents of the report to QGov varies depending on the nature of the activity being reporting upon. 
 
-These reports are highly valuable to the Geological Survey of Queensland (GSQ) since they provide oversight of geoscience-related activities within Queensland, with an especial focus on knowledge of geological resources. Most industry reports have a confidentiality period before becoming open file, which then allows any member of the public anywhere in the world to access, discover, view, and utilise this information for their own activities, thus building upon the geoscientific knwoledge of Queensland.    
+These reports are highly valuable to the Geological Survey of Queensland (GSQ) since they provide oversight of geoscience-related activities within Queensland, with an especial focus on knowledge of georesources. Most industry reports have a confidentiality period before becoming open file, which then allows any member of the public anywhere in the world to access, discover, view, and utilise this information for their own activities, thus building upon the geoscientific knowledge of Queensland.    
 
 ## The Lodgement Portal
 
-### Objectives of the Lodgement Portal
-
-1. Provide a single portal for industry and GSQ to lodge Queensland georesources reports.
-2. Provide data validation at point of data entry.
-3. Provide a database store to store in-progress and submitted reports.
-4. Harvest the submitted metadata, data and datasets for insertion into CKAN, S3 and the [GeoProperties Database](https://github.com/geological-survey-of-queensland/ssor-database).
-5. Provide search functionality for GSQ staff to search for reports.
-6. Replace QDEX Reports.
-
-### Vendor deliverables
-
-1. An online lodgement portal to allow industry users to submit reports and upload associated geoscience data files in a structured, itemised format.  
-    a.Data must be able to be submitted through a human-computer interface  
-    b.Data must be able to be submitted through a computer-computer interface  
-2. Automated workflows to process the geoscience data submitted to the geological properties database, and data catalogue and data object store.
-3. A method of enabling the upload of large geoscience data files to the data object store.
+The [GSQ Lodgement Portal](https://geolodgement.dnrme.qld.gov.au/) establishes a single online portal for industry and GSQ to lodge Queensland georesources reports, as well as providing data validation at point of data entry. Data from submitted reports is automatically stored within [Amazon S3](https://aws.amazon.com/s3/), and associated metadata within the [GeoProperties Database](https://github.com/geological-survey-of-queensland/geological-properties-database). Both data and metadata are used internally for QGov business activities and, when the confidentality period lapses, published on the external-facing [Open Data Portal](https://geoscience.data.qld.gov.au/).
 
 ### Character Limitations
-To ensure information entered into the lodgement portal can be stored and parsed effectively in the geoproperties database, certain character limitations are enforced.
+To ensure information entered into the Lodgement Portal can be stored and parsed effectively in the geoproperties database, certain character limitations are enforced.
 - Titles are limited to alphanumeric characters (A-Z a-z 0-9), spaces( ), dashes(-), fullstops(.), forward-slash(/) and commas(,)
 - Descriptions are limited to alphanumeric characters (A-Z a-z 0-9), spaces( ), line breaks and common punctuation [].,!@?'$%()*=-_–~;:/&+"\
 - To insert a new line in the description, a double line break (double enter) must be used during input
