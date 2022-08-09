@@ -127,7 +127,7 @@ The vocabularies used in this profile are:
 
 The Lodgement Portal requires authentication using the Identity Broker:
 
-* External users authenticate using QGCIDM (QGOV)
+* External users authenticate using QGCIDM (QGov)
 * Internal users authenticate using ADFS
 
 The Lodgement Portal requires user authorisation:
@@ -137,63 +137,7 @@ The Lodgement Portal requires user authorisation:
 
 <p align="center">
 <img src="https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/lodgement-portal-authentication-authorisation.png" width="60%"><br>
-Figure 5: Lodgement Portal external user authentication and authorisation</p>
-
-## Alignment to QDEX Reports Metadata
-|QDEX Reports Field|Lodgement Portal Metadata Field|Notes|
-|----|----|----|
-| Report Number|report_id|Continue numbering sequence from 120,000|
-| Report Title|report_title||
-| Report Status|report_access_rights|From [vocabulary](https://vocabs.gsq.digital/vocabulary/data-access-rights)|
-| Report Type|report_type|From [vocabulary](https://vocabs.gsq.digital/vocabulary/qld-resource-permit)|
-| Author Name|report_author|Free text|
-| Lodger|report_submitter|The logged in user. [Concept link](https://vocabs.gsq.digital/object?vocab_id=gsq-roles&uri=http%3A//linked.data.gov.au/def/iso11179-6/RolesAndResponsibilities/Submitter)|
-| Submitter|report_owner|Authorised holder of the permit. [Concept link](https://vocabs.gsq.digital/object?vocab_id=gsq-roles&uri=http%3A//linked.data.gov.au/def/iso19115-1/RoleCode/owner)|
-| Locality|Goes into JSON||
-| Map References|Goes into JSON||
-| Commodity|report_commodity|From [vocabulary](https://vocabs.gsq.digital/vocabulary/geo-commodities)|
-| Keywords|Goes into JSON|In future, we may use to map to Earth science data category|
-| Tenure|report_permit|Permit service lookup for new lodgements|
-| Tenure Holder|Goes in JSON|Can infer from permit lookup for new lodgements|
-| Tectonic|report_is_of_feature|To be mapped to Geologic Features vocabulary|
-| Stratigraphy|report_is_of_feature|To be mapped to Geologic Features vocabulary|
-| Age|Goes into JSON||
-| Date of Report|report_start_time & report_end_time|Same date in both fields for migration|
-| Date of Review|Goes into JSON|Not used in future|
-| Date of Receipt|report_lodged_date||
-| Date Due for Open|report_open_file_date||
-| Date of Open|Goes into JSON||
-| Project Names|report_details|Key-value pair in details|
-| Mines/Prospect Names|report_is_of_site|Lookup site in Geoproperties|
-| Well Names|report_is_of_site|Lookup site (borehole) in Geoproperties|
-| Seismic Survey Names|report_is_of_survey|Lookup survey in Geoproperties|
-| Document Source |Goes into JSON|If value is not null|
-| BRN |Goes into JSON|If value is not null|
-
-> **NOTE**: Remainder of QDEX metadata to go into JSON metadata file. File name to be cr\<report-id\>-metadata.json, e.g. cr12345-metadata.json
-
-## Report "collections" that will be migrated to the Lodgement Portal vs Reports that will be migrated into the Open Data Portal
-
-The following data is to be migrated from QDEX Reports. Historically, QDEX Reports has been used to publish other types of publications.
-
-* The new lodgement portal will focus on reports lodged by industry (Exploration Reports and Industry Consultative Reports).
-* Other types of publications will be published directly through the Open Data Portal - i.e. GSQ staff will use the CKAN Open Data Portal to publish, not lodge them through the Lodgement Portal.
-
-|Name|Description|QDEX Count|Migrate metadata to|Migrate data objects to|
-|---|---|---|---|---|
-|QDEX - Exploration Reports|The result of mandatory reporting requirements to the government by mineral, coal and petroleum explorers in Queensland. The collection commenced with the introduction of the exploration permitting system in Queensland in the 1950's and continues to the present day with several hundred reports added annually.|97065|Lodgement Portal + CKAN|Confidential to Private S3/<br>Open to Open S3|
-|Industry Consultative Reports|Reports created by external parties and of geological significance that are submitted to DNRM and associated with the exploration industry, but not tied to tenure or legislation|31|Lodgement Portal + CKAN|Confidential to Private S3/<br>Open to Open S3|
-|Queensland Geological Maps|A collection of current Geological Maps published by the Geological Survey of Queensland. The collection also includes Geology Compilation Plots compiled from recent project work.|419|Open Data Portal|Open Data S3|
-|GSQ Record Series|Publications produced as part of the record series by the Geological Survey of Queensland.|1299|Open Data Portal CKAN|Open Data S3|
-|Soils and Land Resources Reports|Information on Queensland soils, acid sulfate soils, land systems, agricultural land suitability, agricultural land capability, available in land resources reports and maps and land management manuals.|390|No migration - take archive snapshot|No migration - take archive snapshot|
-|Exploration Reports|Exploration Reports specifically related to drilling and non-drilling carried out by recipients of Queensland Government exploration grants, including the Collaborative Exploration Initiative grants under the Strategic Resources Exploration Program.|119|Open Data Portal CKAN|Open Data S3|
-|Departmental Publications|Departmental Publications including Queensland Government Mining Journal (QGMJ).|2075|Open Data Portal CKAN|Open Data S3|
-|GSQ-Commissioned Industry Studies/Reports|Reports on Studies undertaken by Industry, but commissioned by the Geological Survey of Queensland.|15|Open Data Portal CKAN|Open Data S3|
-
-## QDEX Reports Lodgement Screen
-![QDEX Reports lodgement screen](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/QDEX-reports-lodgement-screen.png)
-
-![QDEX Reports file upload screen](https://github.com/geological-survey-of-queensland/gsq-lodgement-portal/blob/master/images/QDEX-reports-file-upload.png)
+Figure 3: Lodgement Portal external user authentication and authorisation</p>
 
 ## See also
 
