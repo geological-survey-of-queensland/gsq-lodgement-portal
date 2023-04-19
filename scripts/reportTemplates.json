@@ -1,7 +1,7 @@
 {
 	"version": "0.7",
-	"Last updated date": "05/01/2022",
-	"Last updated by": "B Shrestha, SRA",
+	"Last updated date": "10/03/2023",
+	"Last updated by": "B Talebi, GSQ",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
 			"geoconfig": {
@@ -4046,7 +4046,7 @@
 			},
 			"steps": [
 				{
-					"title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment (End of Tenure)",
+					"title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment (End of Tenure - EPC/EPM)",
 					"subTitle": "Report Details",
 					"name": "metadata",
 					"inputs": [
@@ -4236,7 +4236,7 @@
 			},
 			"steps": [
 				{
-					"title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment (Grant of higher tenure)",
+					"title": "Lodge a Coal or Mineral Permit Report - Partial Relinquishment (Grant of higher tenure - EPC/EPM)",
 					"subTitle": "Report Details",
 					"name": "metadata",
 					"inputs": [
@@ -4426,13 +4426,13 @@
 			},
 			"steps": [
 				{
-					"title": "Lodge a Coal or Mineral Permit Report - Surrender (End of Tenure)",
+					"title": "Lodge a Coal or Mineral Permit Report - Partial Surrender (End of Tenure - MDL/ML)",
 					"subTitle": "Report Details",
 					"name": "metadata",
 					"inputs": [
 						{
 							"name": "title",
-							"format": "[permit] [title] SURRENDER REPORT FOR PERIOD ENDING [endDate]",
+							"format": "[permit] [title] PARTIAL SURRENDER REPORT FOR PERIOD ENDING [endDate]",
 							"viewLabel": "Title of the Report",
 							"label": "Project Name",
 							"placeholder": "e.g. Norwich Park, Monto West, Ernestine",
@@ -13150,13 +13150,13 @@
 			},
 			"steps": [
 				{
-					"title": "Lodge a Coal or Mineral Permit Report - Surrender (Grant of higher tenure)",
+					"title": "Lodge a Coal or Mineral Permit Report - Partial Surrender (Grant of higher tenure - MDL/ML)",
 					"subTitle": "Report Details",
 					"name": "metadata",
 					"inputs": [
 						{
 							"name": "title",
-							"format": "[permit] [title] SURRENDER REPORT FOR PERIOD ENDING [endDate]",
+							"format": "[permit] [title] PARTIAL SURRENDER REPORT FOR PERIOD ENDING [endDate]",
 							"viewLabel": "Title of the Report",
 							"label": "Project Name",
 							"placeholder": "e.g. Norwich Park, Monto West, Ernestine",
