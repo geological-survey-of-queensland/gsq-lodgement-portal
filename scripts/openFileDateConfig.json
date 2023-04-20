@@ -1,7 +1,7 @@
 {
   "version": "0.7",
-  "Last updated date": "25/05/2022",
-  "Last updated by": "D Armstrong, GSQ",
+  "Last updated date": "20/04/2023",
+  "Last updated by": "B Talebi, GSQ",
   "reportCalculations": [
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/geophysical-survey-report-acquisition",
@@ -109,7 +109,7 @@
           "period": {
             "years": 5,
             "months": 0,
-            "days": 0
+            "days": 1
           }
         },
         {
@@ -117,9 +117,9 @@
             "http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGeothermal"
           ],
           "period": {
-            "years": 2,
+            "years": 3,
             "months": 0,
-            "days": 0
+            "days": 1
           }
         }
       ]
