@@ -1,6 +1,6 @@
 {
 	"version": "0.7",
-	"Last updated date": "10/03/2023",
+	"Last updated date": "03/05/2023",
 	"Last updated by": "B Talebi, GSQ",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
@@ -10609,9 +10609,10 @@
 							"isRequired": false
 						},
 						{
-							"name": "borehole",
 							"type": "component",
-							"isRequired": false
+							"name": "borehole",
+							"isRequired": false,
+							"isMultiSelect": true
 						},
 						{
 							"type": "component",
@@ -10748,9 +10749,10 @@
 							"isRequired": false
 						},
 						{
-							"name": "borehole",
 							"type": "component",
-							"isRequired": false
+							"name": "borehole",
+							"isRequired": false,
+							"isMultiSelect": true
 						},
 						{
 							"name": "startDate",
@@ -10918,9 +10920,10 @@
 							"isRequired": false
 						},
 						{
-							"name": "borehole",
 							"type": "component",
-							"isRequired": false
+							"name": "borehole",
+							"isRequired": false,
+							"isMultiSelect": true
 						},
 						{
 							"name": "startDate",
