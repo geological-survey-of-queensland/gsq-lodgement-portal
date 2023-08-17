@@ -241,6 +241,18 @@
       "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-end-tenure",
       "calculationType": "IMMEDIATE"
     },
+		{
+			"reportType": "http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics",
+			"calculationType": "Confidential"
+		},
+		{
+			"reportType": "http://linked.data.gov.au/def/georesource-report/coal-quarterly-statistics",
+			"calculationType": "Confidential"
+		},
+		{
+			"reportType": "http://linked.data.gov.au/def/georesource-report/extractives-annual-statistics",
+			"calculationType": "Confidential"
+		},
     {
       "reportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-annual",
       "calculationType": "STANDARD",
