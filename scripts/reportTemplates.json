@@ -1,6 +1,6 @@
 {
-	"version": "0.7",
-	"Last updated date": "03/05/2023",
+	"version": "0.9",
+	"Last updated date": "15/08/2023",
 	"Last updated by": "B Talebi, GSQ",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
@@ -8979,7 +8979,6 @@
 							"name": "title",
 							"format": "[title]",
 							"viewLabel": "Title of the Report",
-							"readOnly": true,
 							"label": "Title of the Report",
 							"type": "component"
 						},
@@ -10165,7 +10164,7 @@
 						{
 							"name": "boreholeAlteration",
 							"type": "component",
-							"isRequired": false
+							"isRequired": true
 						},
 						{
 							"type": "component",
