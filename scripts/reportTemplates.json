@@ -10678,7 +10678,7 @@
 					"inputs": [
 						{
 							"name": "title",
-							"format": "COLLABORATIVE EXPLORATION INITIATIVE [title] - [permit] FINAL REPORT",
+							"format": "COLLABORATIVE EXPLORATION INITIATIVE [title]",
 							"viewLabel": "Title of the Report",
 							"label": "ROUND # - CEI# PROJECT NAME - CEI ACTIVITY",
 							"placeholder": "e.g. Round 2 : CEI0027 ERNEST HENRY SOUTH PROJECT - MIMDAS SURVEY",
