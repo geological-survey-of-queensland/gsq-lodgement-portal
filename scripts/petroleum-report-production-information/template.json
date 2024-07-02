@@ -1,0 +1,829 @@
+{
+    "version": "1.0",
+    "Last updated date": "24/06/2024",
+    "Last updated by": "S Bowden, GSQ",
+    "ReportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-production-information",
+    "NamingConvention": {
+      "bypassNamingValidation":true,
+      "xlsxRegexSingleSite": "(?i)^.+_data-submission-template-petroleum_\\d{4}$",
+      "xlsxRegexMultiSite": "^.*$",
+      "xlsxLabelSingleSite": "MineName_data-submission-template-petroleum_[End Data Year(YYYY)]",
+      "xlsxLabelMultiSite": "filename not controlled",
+      "csvRegexSingleSite": "(?i)^.+_data-submission-template-petroleum_\\d{4}_.+$",
+      "csvLabelSingleSite": "MineName_data-submission-template-petroleum_[End Data Year(YYYY)]_ComponentID",
+      "csvRegexMultiSite": "^.*_.*$",
+      "csvLabelMultiSite": "your-filename_ComponentID"
+    },
+    "DocumentProperties": {
+      "FileName": "{0}_petroleum_production_statistics_FY-{1}-submitted.xlsx",
+      "DocumentTitle": "{0} PETROLEUM PRODUCTION STATISTICS FY {1}",
+      "DocumentDescription": "Associated data submission to {0}",
+      "ThemeVocabUri": "http://linked.data.gov.au/def/gsq-dataset-theme/resource-statistics",
+      "EarthScienceCategoryVocabUri": "http://linked.data.gov.au/def/earth-science-data-category/reservoir-engineering"
+    },
+    "MetadataMapping": {
+      "RelatedPermitComponent": "PERMIT_PRODUCTION",
+      "RelatedPermitTypeColumn": "LEASE_NAME",
+      "RelatedPermitNumberColumn": "LEASE_NUM",
+      "RelatedPermitIsBulkLoad": true,
+      "ReportStartDate": "PERMIT_PRODUCTION.START_DATE",
+      "ReportEndDate": "PERMIT_PRODUCTION.END_DATE"
+    },
+    "components": [
+      {
+        "name": "PERMIT_PRODUCTION",
+		"webFormKey": "permit",
+        "requiredForFileUpload": false,
+        "xlsxOffsets": {
+          "columnOffset": 2,
+          "rowOffset": 8
+        },
+        "inputs": [
+          {
+            "name": "permitType",
+            "label": "LEASE_NAME",
+            "columnHeader": "LEASE_NAME",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Lease type is required"
+                  ]
+                },
+                {
+                  "name": "vocab",
+                  "isComplex": true,
+                  "params": [
+                    "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> SELECT DISTINCT ?id ?displayText WHERE {{ ?id a skos:Concept ; skos:notation ?displayText ; skos:inScheme <http://linked.data.gov.au/def/qld-resource-permit> }} ORDER BY LCASE(?displayText)",
+                    "Permit Type is not valid. Refer to vocab Queensland Resource Permit."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "permitNumber",
+            "label": "LEASE_NUM",
+            "columnHeader": "LEASE_NUM",
+            "isRequired": true,
+            "type": "integer",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Lease Number is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,4}$/",
+                    "Lease Number must be a number up to 4 digits in length."
+                  ]
+                },
+                {
+                  "name": "grouping",
+                  "isComplex": true,
+                  "params": [
+                    "LEASE_NAME",
+                    "Invalid grouping for Permit number {0}. For a Permit number, the following fields must be the same for all rows in that group: LEASE_NAME, LEASE_NUM"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "START_DATE",
+            "label": "START_DATE",
+            "columnHeader": "START_DATE",
+            "isRequired": true,
+            "type": "calender",
+            "validations": {
+              "type": "date",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Report start date is required"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "END_DATE",
+            "label": "END_DATE",
+            "columnHeader": "END_DATE",
+            "isRequired": true,
+            "type": "calender",
+            "validations": {
+              "type": "date",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Report Period End is required"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "RESERVOIR_UNIT_NAME",
+            "label": "RESERVOIR_UNIT_NAME",
+            "columnHeader": "RESERVOIR_UNIT_NAME",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Reservoir unit name is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Reservoir unit name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "STRAT_UNIT_NAME",
+            "label": "STRAT_UNIT_NAME",
+            "columnHeader": "STRAT_UNIT_NAME",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Stratigraphic unit name is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Stratigraphic unit name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "SECONDARY_STRAT_UNIT_NAME",
+            "label": "SECONDARY_STRAT_UNIT_NAME",
+            "columnHeader": "SECONDARY_STRAT_UNIT_NAME",
+            "isRequired": false,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Secondary stratigraphic unit name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "FIELD_NAME",
+            "label": "FIELD_NAME",
+            "columnHeader": "FIELD_NAME",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Petroleum field name is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Petroleum field name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "GAS_CUM_VOLUME",
+            "label": "GAS_CUM_VOLUME",
+            "columnHeader": "GAS_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Gas cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Gas cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "GAS_FLARED_CUM_VOLUME",
+            "label": "GAS_FLARED_CUM_VOLUME",
+            "columnHeader": "GAS_FLARED_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Gas flared cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Gas flared cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "GAS_VENTED_CUM_VOLUME",
+            "label": "GAS_VENTED_CUM_VOLUME",
+            "columnHeader": "GAS_VENTED_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Hydrocarbon vented cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Hydrocarbon vented cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "GAS_USED_CUM_VOLUME",
+            "label": "GAS_USED_CUM_VOLUME",
+            "columnHeader": "GAS_USED_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Gas used cumulative volume "
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Gas used cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "OIL_CUM_VOLUME",
+            "label": "OIL_CUM_VOLUME",
+            "columnHeader": "OIL_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Oil cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Oil cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "OIL_USED_CUM_VOLUME",
+            "label": "OIL_USED_CUM_VOLUME",
+            "columnHeader": "OIL_USED_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Oil used cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Oil used cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "LPG_CUM_VOLUME",
+            "label": "LPG_CUM_VOLUME",
+            "columnHeader": "LPG_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "LPG cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "LPG cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "LPG_USED_CUM_VOLUME",
+            "label": "LPG_USED_CUM_VOLUME",
+            "columnHeader": "LPG_USED_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "LPG used cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "LPG used cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "CONDENSATE_CUM_VOLUME",
+            "label": "CONDENSATE_CUM_VOLUME",
+            "columnHeader": "CONDENSATE_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Condensate cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Condensate cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "WATER_CUM_VOLUME",
+            "label": "WATER_CUM_VOLUME",
+            "columnHeader": "WATER_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Water cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Water cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "WATER_TOTAL_VOLUME",
+            "label": "WATER_TOTAL_VOLUME",
+            "columnHeader": "WATER_TOTAL_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Water total volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Gross Output must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "WELLS_ON_PROD",
+            "label": "WELLS_ON_PROD",
+            "columnHeader": "WELLS_ON_PROD",
+            "isRequired": true,
+            "type": "integer",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Wells on production is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d+$/",
+                    "Wells on production must be a positive integer"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "REMARK",
+            "label": "REMARK",
+            "columnHeader": "REMARK",
+            "isRequired": false,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "max",
+                  "params": [
+                    2000,
+                    "Remark cannot be more than 2000 characters"
+                  ]
+                }
+              ]
+            }
+          }
+
+        ]
+		      
+        
+ 
+      },
+      {
+        "name": "WELL_PRODUCTION",
+		"webFormKey": "wellProduction",
+        "requiredForFileUpload": false,
+        "xlsxOffsets": {
+          "columnOffset": 2,
+          "rowOffset": 8
+        },
+        "inputs": [
+          {
+            "name": "WELL_NAME",
+            "label": "WELL_NAME",
+            "columnHeader": "WELL_NAME",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Well name is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Well name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "CURRENT_OPERATOR",
+            "label": "CURRENT_OPERATOR",
+            "columnHeader": "CURRENT_OPERATOR",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Current operator is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Current operator cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "START_DATE",
+            "label": "START_DATE",
+            "columnHeader": "START_DATE",
+            "isRequired": true,
+            "type": "calender",
+            "validations": {
+              "type": "date",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Report start date is required"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "END_DATE",
+            "label": "END_DATE",
+            "columnHeader": "END_DATE",
+            "isRequired": true,
+            "type": "calender",
+            "validations": {
+              "type": "date",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Report Period End is required"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "RESERVOIR_UNIT_NAME",
+            "label": "RESERVOIR_UNIT_NAME",
+            "columnHeader": "RESERVOIR_UNIT_NAME",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Reservoir unit name is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Reservoir unit name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "STRAT_UNIT_NAME",
+            "label": "STRAT_UNIT_NAME",
+            "columnHeader": "STRAT_UNIT_NAME",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Stratigraphic unit name is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Stratigraphic unit name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "SECONDARY_STRAT_UNIT_NAME",
+            "label": "SECONDARY_STRAT_UNIT_NAME",
+            "columnHeader": "SECONDARY_STRAT_UNIT_NAME",
+            "isRequired": false,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Secondary stratigraphic unit name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "FIELD_NAME",
+            "label": "FIELD_NAME",
+            "columnHeader": "FIELD_NAME",
+            "isRequired": false,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Petroleum field name cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "WATER_CUM_VOLUME",
+            "label": "WATER_CUM_VOLUME",
+            "columnHeader": "WATER_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Water cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Water cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "VOLUME_METHOD",
+            "label": "VOLUME_METHOD",
+            "columnHeader": "VOLUME_METHOD",
+            "isRequired": true,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Volume method is required"
+                  ]
+                },
+                {
+                  "name": "max",
+                  "params": [
+                    128,
+                    "Volume method cannot be more than 128 characters"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "REMARK",
+            "label": "REMARK",
+            "columnHeader": "REMARK",
+            "isRequired": false,
+            "type": "text",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "max",
+                  "params": [
+                    2000,
+                    "Remark cannot be more than 2000 characters"
+                  ]
+                }
+              ]
+            }
+          }
+
+        ]
+		      
+        
+ 
+      }
+    ]
+  }

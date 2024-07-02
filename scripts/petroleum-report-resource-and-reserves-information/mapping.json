@@ -1,0 +1,200 @@
+{
+	"Components": [
+		{
+			"Name": "RESERVE_AND_RESOURCE",
+			"Mapping": {
+				"Survey": [
+					{
+						"SurveyName": "PETROLEUM RESERVES AND RESOURCES STATISTICS AS AT ||EFFECTIVE_DATE||",
+                        "SurveyMethod": "http://linked.data.gov.au/def/survey-method/data-survey",
+                        "SurveyType": "http://linked.data.gov.au/def/survey-type/resource-reserves",
+						"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+						"SurveyPermits": [
+							{
+								"PermitType": "||LEASE_NAME||",
+								"PermitNumber": "||LEASE_NUM||"
+							}
+						],
+						"StartDate": "||EFFECTIVE_DATE||",
+						"SurveyStatuses": [{
+							"Status": "http://linked.data.gov.au/def/survey-status/completed",
+							"StartDate": "||EFFECTIVE_DATE||"
+						}
+						],
+						"Observations": [
+					{
+										"Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+										"ObservationDate": "||EFFECTIVE_DATE||",
+										"Results": [
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "RESERVE_AND_RESOURCE",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "aggregation type",
+												"Qualifier": "constant"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||LEASE_NAME||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "lease name",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||RAW(LEASE_NAME)||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "raw lease name",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||LEASE_NUM||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "lease number",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||FIELD_NAME||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "petroleum field name",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||REPORTING_YEAR||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "reporting year",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||EFFECTIVE_DATE||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "effective date",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||RESERVOIR_UNIT_CLASS||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "reservoir unit class",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||PDEN_PRODUCT_TYPE||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "pden product type",
+												"Qualifier": "supplied"
+					},
+					{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||SALES_UNIT||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "sales unit",
+												"Qualifier": "supplied"
+					},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||1P_DEVELOPED||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "1P",
+												"Qualifier": "developed"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||1P_DEVELOPED||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "1P",
+												"Qualifier": "developed"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||1P_UNDEVELOPED||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "1P",
+												"Qualifier": "undeveloped"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||1P_TOTAL||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "1P",
+												"Qualifier": "total"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||2P_DEVELOPED||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "2P",
+												"Qualifier": "developed"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||2P_UNDEVELOPED||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "2P",
+												"Qualifier": "undeveloped"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||2P_TOTAL||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "2P",
+												"Qualifier": "total"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||3P_DEVELOPED||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "3P",
+												"Qualifier": "developed"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||3P_UNDEVELOPED||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "3P",
+												"Qualifier": "undeveloped"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||3P_TOTAL||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "3P",
+												"Qualifier": "total"
+											},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/sales-volumetric",
+												"Value": "||2C_TOTAL||",
+												"UOM": "||SALES_UNIT||",
+												"Analyte": "2C",
+												"Qualifier": "total"
+											},
+						{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||VOLUME_METHOD||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "volume method",
+												"Qualifier": "supplied"
+						},
+											{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||REMARK||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "remark",
+												"Qualifier": "supplied"
+						}
+										]
+									}
+								]
+							
+						
+					}
+				]
+			}
+		}
+	]
+}
