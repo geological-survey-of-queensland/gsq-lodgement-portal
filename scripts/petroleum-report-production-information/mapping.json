@@ -1,0 +1,291 @@
+{
+  "Components": [
+    {
+      "Name": "PERMIT_PRODUCTION",
+      "Mapping": {
+        "Survey": [
+          {
+            "SurveyName": "PETROLEUM PRODUCTION STATISTICS - PERMIT PRODUCTION FOR PERIOD ENDING ||END_DATE||",
+			"SurveyType": "http://linked.data.gov.au/def/survey-type/resource-production",
+			"SurveyMethod": "http://linked.data.gov.au/def/survey-method/ground",
+			"AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+			"SurveyPermits": [
+				{
+					"PermitType": "||LEASE_NAME||",
+					"PermitNumber": "||LEASE_NUM||"
+				}
+			],
+			"StartDate": "||START_DATE||",
+			"EndDate": "||END_DATE||",
+			"SurveyStatuses": [{
+				"Status": "http://linked.data.gov.au/def/survey-status/completed",
+				"StartDate": "||START_DATE||",
+				"EndDate": "||END_DATE||"
+			}
+			],
+                "Observations": [
+                  {
+                    "Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+                    "ObservationDate": "||END_DATE||",
+			  		
+
+                    "Results": [
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "PERMIT_PRODUCTION",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "aggregation type",
+													"Qualifier": "constant"
+						},
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||LEASE_NAME||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "lease name",
+													"Qualifier": "supplied"
+						},
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||RAW(LEASE_NAME)||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "raw lease name",
+													"Qualifier": "supplied"
+						},
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||LEASE_NUM||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "lease number",
+													"Qualifier": "supplied"
+						},
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||FIELD_NAME||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "petroleum field name",
+													"Qualifier": "supplied"
+						},
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||RESERVOIR_UNIT_NAME||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "reservoir unit name",
+													"Qualifier": "supplied"
+						},
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||STRAT_UNIT_NAME||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "stratigraphic unit name",
+													"Qualifier": "supplied"
+						},
+						{
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||SECONDARY_STRAT_UNIT_NAME||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "secondary stratigraphic unit name",
+													"Qualifier": "supplied"
+						},
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||GAS_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaM3",
+												"Analyte": "gas",
+												"Qualifier": "cumulative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||GAS_FLARED_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaM3",
+												"Analyte": "gas",
+												"Qualifier": "flared cululative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||GAS_VENTED_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaM3",
+												"Analyte": "gas",
+												"Qualifier": "vented cumulative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||GAS_USED_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaM3",
+												"Analyte": "gas",
+												"Qualifier": "used cululative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||OIL_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaBBL",
+												"Analyte": "oil",
+												"Qualifier": "cumulative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||OIL_USED_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaBBL",
+												"Analyte": "oil",
+												"Qualifier": "used cululative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||LPG_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/kiloTON_M",
+												"Analyte": "LPG",
+												"Qualifier": "cumulative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||LPG_USED_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/kiloTON_M",
+												"Analyte": "LPG",
+												"Qualifier": "used cumulative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||CONDENSATE_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaBBL",
+												"Analyte": "condendsate",
+												"Qualifier": "used cumulative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||WATER_CUM_VOLUME||",
+												"UOM": "http://qudt.org/vocab/unit/MegaL",
+												"Analyte": "water",
+												"Qualifier": "cumulative"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||WATER_TOTAL_VOLUME||",
+												"UOM": "http://qudt.org/vocab/unit/MegaL",
+												"Analyte": "water",
+												"Qualifier": "total"
+                      },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/count",
+												"Value": "||WELLS_ON_PROD||",
+												"UOM": "http://linked.data.gov.au/def/geou/COUNT",
+												"Analyte": "contributing wells",
+												"Qualifier": "total"
+                      },
+					  {
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||REMARK||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "remark",
+												"Qualifier": "supplied"
+					  }
+                    ]
+                  }
+                ]
+
+          }
+        ]
+      }
+	},
+    {
+		"Name": "WELL_PRODUCTION",
+		"Mapping": {
+		  "Survey": [
+			{
+			  "SurveyName": "PETROLEUM PRODUCTION STATISTICS - WELL PRODUCTION FOR PERIOD ENDING ||END_DATE||",
+			  "SurveyType": "http://linked.data.gov.au/def/survey-type/resource-production",
+			  "SurveyMethod": "http://linked.data.gov.au/def/survey-method/ground",
+			  "AccessRights": "http://linked.data.gov.au/def/data-access-rights/restricted",
+			  "StartDate": "||START_DATE||",
+			  "EndDate": "||END_DATE||",
+			  "SurveyStatuses": [{
+				  "Status": "http://linked.data.gov.au/def/survey-status/completed",
+				  "StartDate": "||START_DATE||",
+				  "EndDate": "||END_DATE||"
+			  }
+			  ],
+				  "Observations": [
+					{
+					  "Type": "http://linked.data.gov.au/def/geological-observation-type/physical",
+					  "ObservationDate": "||END_DATE||",
+						
+  
+					  "Results": [
+						  {
+													  "Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													  "Value": "WELL_PRODUCTION",
+													  "UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													  "Analyte": "aggregation type",
+													  "Qualifier": "constant"
+						  },
+						  {
+													  "Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													  "Value": "||WELL_NAME||",
+													  "UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													  "Analyte": "well name",
+													  "Qualifier": "supplied"
+						  },
+						  {
+													  "Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													  "Value": "||CURRENT_OPERATOR||",
+													  "UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													  "Analyte": "current operator",
+													  "Qualifier": "supplied"
+						  },
+						  {
+													  "Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													  "Value": "||RESERVOIR_UNIT_NAME||",
+													  "UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													  "Analyte": "reservoir unit name",
+													  "Qualifier": "supplied"
+						  },
+						  {
+													  "Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													  "Value": "||STRAT_UNIT_NAME||",
+													  "UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													  "Analyte": "stratigraphic unit name",
+													  "Qualifier": "supplied"
+						  },
+						  {
+													  "Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													  "Value": "||SECONDARY_STRAT_UNIT_NAME||",
+													  "UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													  "Analyte": "secondary stratigraphic unit name",
+													  "Qualifier": "supplied"
+						  },
+						  {
+													"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+													"Value": "||FIELD_NAME||",
+													"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+													"Analyte": "petroleum field name",
+													"Qualifier": "supplied"
+						},
+						{
+												  "Type": "http://linked.data.gov.au/def/result-type/volume",
+												  "Value": "||WATER_CUM_VOLUME||",
+												  "UOM": "http://qudt.org/vocab/unit/MegaL",
+												  "Analyte": "water",
+												  "Qualifier": "cumulative"
+						},
+						{
+												"Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												"Value": "||VOLUME_METHOD||",
+												"UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												"Analyte": "volume method",
+												"Qualifier": "supplied"
+						},
+						{
+												  "Type": "http://linked.data.gov.au/def/result-type/descriptive",
+												  "Value": "||REMARK||",
+												  "UOM": "http://qudt.org/vocab/unit/UNITLESS",
+												  "Analyte": "remark",
+												  "Qualifier": "supplied"
+						}
+					  ]
+					}
+				  ]
+  
+			}
+		  ]
+		}
+	  }
+]
+}
