@@ -464,6 +464,32 @@
             }
           },
           {
+            "name": "CONDENSATE_USED_CUM_VOLUME",
+            "label": "CONDENSATE_USED_CUM_VOLUME",
+            "columnHeader": "CONDENSATE_USED_CUM_VOLUME",
+            "isRequired": true,
+            "type": "float",
+            "validations": {
+              "type": "string",
+              "rules": [
+                {
+                  "name": "required",
+                  "params": [
+                    "Condensate used cumulative volume is required"
+                  ]
+                },
+                {
+                  "name": "matches",
+                  "isComplex": true,
+                  "params": [
+                    "/^\\d{1,10}(\\.\\d+)?$/",
+                    "Condensate used cumulative volume must be a decimal, with no more than 10 digits before the decimal point e.g. 1234567890.1234"
+                  ]
+                }
+              ]
+            }
+          },
+          {
             "name": "WATER_CUM_VOLUME",
             "label": "WATER_CUM_VOLUME",
             "columnHeader": "WATER_CUM_VOLUME",
