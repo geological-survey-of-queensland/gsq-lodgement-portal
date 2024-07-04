@@ -882,11 +882,17 @@
 					"name": "FIELD_NAME",
 					"label": "FIELD_NAME",
 					"columnHeader": "FIELD_NAME",
-					"isRequired": false,
+					"isRequired": true,
 					"type": "text",
 					"validations": {
 						"type": "string",
 						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Field name is required"
+								]
+							},
 							{
 								"name": "max",
 								"params": [
