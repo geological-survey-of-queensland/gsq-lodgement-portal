@@ -507,17 +507,11 @@
 					"name": "VOLUME_METHOD",
 					"label": "VOLUME_METHOD",
 					"columnHeader": "VOLUME_METHOD",
-					"isRequired": true,
+					"isRequired": false,
 					"type": "text",
 					"validations": {
 						"type": "string",
 						"rules": [
-							{
-								"name": "required",
-								"params": [
-									"Volume method is required"
-								]
-							},
 							{
 								"name": "max",
 								"params": [
@@ -888,11 +882,17 @@
 					"name": "FIELD_NAME",
 					"label": "FIELD_NAME",
 					"columnHeader": "FIELD_NAME",
-					"isRequired": false,
+					"isRequired": true,
 					"type": "text",
 					"validations": {
 						"type": "string",
 						"rules": [
+							{
+								"name": "required",
+								"params": [
+									"Field name is required"
+								]
+							},
 							{
 								"name": "max",
 								"params": [
