@@ -98,7 +98,7 @@
 												"Value": "||GAS_FLARED_CUM_VOLUME||",
 												"UOM": "http://linked.data.gov.au/def/geou/MegaM3",
 												"Analyte": "gas",
-												"Qualifier": "flared cululative"
+												"Qualifier": "flared cumulative"
                       },
                       {
 												"Type": "http://linked.data.gov.au/def/result-type/volume",
@@ -112,7 +112,7 @@
 												"Value": "||GAS_USED_CUM_VOLUME||",
 												"UOM": "http://linked.data.gov.au/def/geou/MegaM3",
 												"Analyte": "gas",
-												"Qualifier": "used cululative"
+												"Qualifier": "used cumulative"
                       },
                       {
 												"Type": "http://linked.data.gov.au/def/result-type/volume",
@@ -126,7 +126,7 @@
 												"Value": "||OIL_USED_CUM_VOLUME||",
 												"UOM": "http://linked.data.gov.au/def/geou/MegaBBL",
 												"Analyte": "oil",
-												"Qualifier": "used cululative"
+												"Qualifier": "used cumulative"
                       },
                       {
 												"Type": "http://linked.data.gov.au/def/result-type/volume",
@@ -146,9 +146,16 @@
 												"Type": "http://linked.data.gov.au/def/result-type/volume",
 												"Value": "||CONDENSATE_CUM_VOLUME||",
 												"UOM": "http://linked.data.gov.au/def/geou/MegaBBL",
-												"Analyte": "condendsate",
-												"Qualifier": "used cumulative"
+												"Analyte": "condensate",
+												"Qualifier": "cumulative"
                       },
+                      {
+												"Type": "http://linked.data.gov.au/def/result-type/volume",
+												"Value": "||CONDENSATE_USED_CUM_VOLUME||",
+												"UOM": "http://linked.data.gov.au/def/geou/MegaBBL",
+												"Analyte": "condensate",
+												"Qualifier": "used cumulative"
+						},
                       {
 												"Type": "http://linked.data.gov.au/def/result-type/volume",
 												"Value": "||WATER_CUM_VOLUME||",
@@ -289,3 +296,4 @@
 	  }
 ]
 }
+    
