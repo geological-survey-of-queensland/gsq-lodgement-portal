@@ -78,9 +78,9 @@
             "http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGeothermal"
           ],
           "period": {
-            "years": 2,
+            "years": 3,
             "months": 0,
-            "days": 0
+            "days": 1
           }
         }
       ]
@@ -143,9 +143,9 @@
             "http://linked.data.gov.au/def/qld-resource-permit/ExplorationPermitGreenhouseGas"
           ],
           "period": {
-            "years": 2,
+            "years": 3,
             "months": 0,
-            "days": 0
+            "days": 1
           }
         }
       ]
