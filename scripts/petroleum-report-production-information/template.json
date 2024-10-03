@@ -1,6 +1,6 @@
 {
     "version": "1.0",
-    "Last updated date": "24/06/2024",
+    "Last updated date": "03/10/2024",
     "Last updated by": "S Bowden, GSQ",
     "ReportType": "http://linked.data.gov.au/def/georesource-report/petroleum-report-production-information",
     "NamingConvention": {
@@ -25,9 +25,7 @@
       "RelatedPermitComponent": "PERMIT_PRODUCTION",
       "RelatedPermitTypeColumn": "LEASE_NAME",
       "RelatedPermitNumberColumn": "LEASE_NUM",
-      "RelatedPermitIsBulkLoad": true,
-      "ReportStartDate": "PERMIT_PRODUCTION.START_DATE",
-      "ReportEndDate": "PERMIT_PRODUCTION.END_DATE"
+      "RelatedPermitIsBulkLoad": true
     },
     "components": [
       {
