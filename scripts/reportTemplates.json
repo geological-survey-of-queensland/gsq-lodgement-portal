@@ -1,7 +1,7 @@
 {
-	"version": "0.9",
-	"Last updated date": "15/08/2023",
-	"Last updated by": "B Talebi, GSQ",
+	"version": "0.91",
+	"Last updated date": "24/02/2025",
+	"Last updated by": "GSQAI",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
 			"geoconfig": {
