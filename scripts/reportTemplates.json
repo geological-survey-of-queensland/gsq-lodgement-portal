@@ -1,7 +1,7 @@
 {
-	"version": "0.9",
-	"Last updated date": "15/08/2023",
-	"Last updated by": "B Talebi, GSQ",
+	"version": "0.91",
+	"Last updated date": "24/02/2025",
+	"Last updated by": "GSQAI",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
 			"geoconfig": {
@@ -13123,6 +13123,185 @@
 							"name": "reportingTemplateDocuments",
 							"type": "component",
 							"isRequired": false
+						},
+						{
+							"name": "spatialDocuments",
+							"type": "component",
+							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Review and Submit",
+					"subTitle": "Review & Submit",
+					"name": "submit",
+					"inputs": [
+						{
+							"name": "review",
+							"type": "component",
+							"isRequired": true
+						}
+					]
+				}
+			]
+		},
+		
+		"http://linked.data.gov.au/def/georesource-report/key-resource-area-report": {
+			"geoconfig": {
+				"primarysource": "spatial_file",
+				"secondarysource": "existing",
+				"secondaryobject": "borehole/Survey",
+				"permitRelationshipObject": "intersects"
+			},
+			"steps": [
+				{
+					"title": "Lodge a Report",
+					"subTitle": "Report Details",
+					"name": "metadata",
+					"inputs": [
+						{
+							"name": "title",
+							"format": "[title]",
+							"viewLabel": "Title of the Report",
+							"label": "Title of the Report",
+							"placeholder": "i.e. KRA 1 Ravensbourne",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "alias",
+							"label": "Aliases",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"name": "description",
+							"viewLabel": "Description",
+							"label": "Report Description",
+							"placeholder": "Describe the contents of the report and its associated documents, including a summary of activities, significant results, conclusions, main methods used, areas of interest etc.",
+							"subLabelAtTop": "Allowable characters are alphanumeric A-Z, a-z and 0-9 ; and standard punctuation [].,!@?'$%()*=-_–~;:/&+\"\\ ; all new lines must be separated by a double line break (double enter). <br /> For guidance and troubleshooting on allowable character inputs <a href='https://github.com/geological-survey-of-queensland/gsq-lodgement-portal#character-limitations' target='_blank'>click here</a> .",
+							"type": "textArea",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=\\-_—–~;:/&+\\\"\\\\\\s]+$/",
+											"Description cannot include non-standard characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": false,
+							"populateOwner": true
+						},
+						{
+							"name": "reportAuthor",
+							"label": "Report Author",
+							"subLabelAtTop": "Please enter the name of the person who has authored this report",
+							"type": "text",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Author is required"
+										]
+									},
+									{
+										"name": "max",
+										"params": [
+											256,
+											"The Report Author cannot be more than 256 characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "survey",
+							"type": "component",
+							"isRequired": false
+						},
+						{
+							"name": "startDate",
+							"label": "Report Period Start Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "nullable",
+										"params": [
+											""
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period Start Date is invalid"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "calender",
+							"name": "endDate",
+							"label": "Report Period End Date",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "nullable",
+										"params": [
+											""
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period End Date is invalid"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "commodity",
+							"isRequired": false
+						},
+						{
+							"type": "component",
+							"name": "earthScienceData",
+							"isRequired": true
+						},
+						{
+							"type": "component",
+							"label": "Access Rights",
+							"name": "accessRight",
+							"readOnly": true
+						}
+					]
+				},
+				{
+					"title": "Documents and Data",
+					"subTitle": "Document Uploads",
+					"name": "document",
+					"inputs": [
+						{
+							"name": "associatedDocuments",
+							"label": "associated document",
+							"type": "component",
+							"isRequired": true
 						},
 						{
 							"name": "spatialDocuments",
