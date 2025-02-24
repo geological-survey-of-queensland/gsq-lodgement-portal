@@ -632,6 +632,10 @@
       "calculationType": "IMMEDIATE"
     },
     {
+      "reportType": "http://linked.data.gov.au/def/georesource-report/key-resource-area-report",
+      "calculationType": "IMMEDIATE"
+    },
+    {
       "reportType": "http://linked.data.gov.au/def/georesource-report/geothermal-report-surrender",
       "calculationType": "IMMEDIATE"
     }
