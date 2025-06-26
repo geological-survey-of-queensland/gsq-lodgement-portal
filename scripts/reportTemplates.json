@@ -1,7 +1,7 @@
 {
 	"version": "0.91",
-	"Last updated date": "24/02/2025",
-	"Last updated by": "GSQAI",
+	"Last updated date": "26/06/2025",
+	"Last updated by": "S Bowden, GSQ",
 	"templates": {
 		"http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
 			"geoconfig": {
@@ -28,19 +28,14 @@
 							"label": "Mine",
 							"name": "site",
 							"isRequired": true,
-							"isMultiSelect": false
+							"isMultiSelect": false,
+							"filterOnConcept": "http://linked.data.gov.au/def/geological-sites/mine"
 						},
 						{
 							"type": "component",
 							"label": "Mine Operator",
 							"name": "relatedOperator",
 							"isRequired": true
-						},
-						{
-							"type": "component",
-							"name": "permit",
-							"isRequired": true,
-							"populateOwner": true
 						},
 						{
 							"name": "reportAuthor",
@@ -50,6 +45,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -131,6 +134,20 @@
 					]
 				},
 				{
+					"title": "Permits",
+					"subTitle": "Permits",
+					"name": "Permits",
+					"inputs": [
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true,
+							"productionStatusCollection": "http://linked.data.gov.au/def/site-status/minprodstat"
+						}
+					]
+				},
+				{
 					"title": "Raw Material Mined",
 					"subTitle": "Raw Material Mined",
 					"name": "rawMaterialMined",
@@ -159,7 +176,6 @@
 					"title": "Raw Material Transferred",
 					"subTitle": "Raw Material Transferred",
 					"name": "mineralsRawMaterialTransferred",
-					"subTitleSideLabel": "Optional",
 					"inputs": [
 						{
 							"name": "rawMaterialTransferred",
@@ -172,7 +188,6 @@
 					"title": "Products Processed",
 					"subTitle": "Products Processed",
 					"name": "productProcessed",
-					"subTitleSideLabel": "Optional",
 					"inputs": [
 						{
 							"name": "mineralsProductsProcessed",
@@ -184,7 +199,6 @@
 					"title": "Raw Commodity Stockpile",
 					"subTitle": "Raw Commodity Stockpile",
 					"name": "mineralsRawCommodityStockpile",
-					"subTitleSideLabel": "Optional",
 					"inputs": [
 						{
 							"name": "rawCommodityStockpile",
@@ -197,7 +211,6 @@
 					"title": "Sales",
 					"subTitle": "Sales",
 					"name": "sales",
-					"subTitleSideLabel": "Optional",
 					"inputs": [
 						{
 							"name": "mineralsSales",
@@ -246,7 +259,8 @@
 							"label": "Quarry",
 							"name": "site",
 							"isRequired": true,
-							"isMultiSelect": false
+							"isMultiSelect": false,
+							"filterOnConcept": "http://linked.data.gov.au/def/geological-sites/quarry"
 						},
 						{
 							"name": "quarryStatus",
@@ -274,6 +288,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -377,7 +399,7 @@
 				},
 				{
 					"title": "Production and Sales",
-					"subTitle": "Production and Sales",					
+					"subTitle": "Production and Sales",
 					"subTitleSideLabel": "Optional",
 					"name": "extractiveSales",
 					"inputs": [
@@ -435,19 +457,14 @@
 							"label": "Mine",
 							"name": "site",
 							"isRequired": true,
-							"isMultiSelect": false
+							"isMultiSelect": false,
+							"filterOnConcept": "http://linked.data.gov.au/def/geological-sites/mine"
 						},
 						{
 							"type": "component",
 							"label": "Mine Operator",
 							"name": "relatedOperator",
 							"isRequired": true
-						},
-						{
-							"type": "component",
-							"name": "permit",
-							"isRequired": true,
-							"populateOwner": true
 						},
 						{
 							"name": "reportAuthor",
@@ -457,6 +474,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -583,6 +608,20 @@
 					]
 				},
 				{
+					"title": "Permits",
+					"subTitle": "Permits",
+					"name": "Permits",
+					"inputs": [
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true,
+							"productionStatusCollection": "http://linked.data.gov.au/def/site-status/prodstat"
+						}
+					]
+				},
+				{
 					"title": "Raw Coal Mined Transferred",
 					"subTitle": "Raw Coal Mined Transferred",
 					"name": "coalRawCoalMined",
@@ -659,6 +698,184 @@
 				}
 			]
 		},
+		"http://linked.data.gov.au/def/georesource-report/key-resource-area-report": {
+			"geoconfig": {
+				"primarysource": "spatial_file",
+				"secondarysource": "existing",
+				"secondaryobject": "borehole/Survey",
+				"permitRelationshipObject": "intersects"
+			},
+			"steps": [
+				{
+					"title": "Lodge a Report",
+					"subTitle": "Report Details",
+					"name": "metadata",
+					"inputs": [
+						{
+							"name": "title",
+							"format": "[title]",
+							"viewLabel": "Title of the Report",
+							"label": "Title of the Report",
+							"placeholder": "i.e. KRA 1 Ravensbourne",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "alias",
+							"label": "Aliases",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"name": "description",
+							"viewLabel": "Description",
+							"label": "Report Description",
+							"placeholder": "Describe the contents of the report and its associated documents, including a summary of activities, significant results, conclusions, main methods used, areas of interest etc.",
+							"subLabelAtTop": "Allowable characters are alphanumeric A-Z, a-z and 0-9 ; and standard punctuation [].,!@?'$%()*=-_–~;:/&+\"\\ ; all new lines must be separated by a double line break (double enter). <br /> For guidance and troubleshooting on allowable character inputs <a href='https://github.com/geological-survey-of-queensland/gsq-lodgement-portal#character-limitations' target='_blank'>click here</a> .",
+							"type": "textArea",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=\\-_—–~;:/&+\\\"\\\\\\s]+$/",
+											"Description cannot include non-standard characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": false,
+							"populateOwner": true
+						},
+						{
+							"name": "reportAuthor",
+							"label": "Report Author",
+							"subLabelAtTop": "Please enter the name of the person who has authored this report",
+							"type": "text",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Author is required"
+										]
+									},
+									{
+										"name": "max",
+										"params": [
+											256,
+											"The Report Author cannot be more than 256 characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "survey",
+							"type": "component",
+							"isRequired": false
+						},
+						{
+							"name": "startDate",
+							"label": "Report Period Start Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "nullable",
+										"params": [
+											""
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period Start Date is invalid"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "calender",
+							"name": "endDate",
+							"label": "Report Period End Date",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "nullable",
+										"params": [
+											""
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period End Date is invalid"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "commodity",
+							"isRequired": false
+						},
+						{
+							"type": "component",
+							"name": "earthScienceData",
+							"isRequired": true
+						},
+						{
+							"type": "component",
+							"label": "Access Rights",
+							"name": "accessRight",
+							"readOnly": true
+						}
+					]
+				},
+				{
+					"title": "Documents and Data",
+					"subTitle": "Document Uploads",
+					"name": "document",
+					"inputs": [
+						{
+							"name": "associatedDocuments",
+							"label": "associated document",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "spatialDocuments",
+							"type": "component",
+							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Review and Submit",
+					"subTitle": "Review & Submit",
+					"name": "submit",
+					"inputs": [
+						{
+							"name": "review",
+							"type": "component",
+							"isRequired": true
+						}
+					]
+				}
+			]
+		},
 		"http://linked.data.gov.au/def/georesource-report/geothermal-report-surrender": {
 			"steps": [
 				{
@@ -716,6 +933,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -897,6 +1122,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -1076,6 +1309,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -1399,7 +1640,7 @@
 			"geoconfig": {
 				"primarysource": "spatial_file",
 				"secondarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -1444,12 +1685,6 @@
 							}
 						},
 						{
-							"type": "component",
-							"name": "permit",
-							"isRequired": true,
-							"populateOwner": true
-						},
-						{
 							"name": "reportAuthor",
 							"label": "Report Author",
 							"subLabelAtTop": "Please enter the name of the person who has authored this report",
@@ -1457,6 +1692,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -1552,8 +1795,15 @@
 				{
 					"title": "Documents and Data",
 					"subTitle": "Document Uploads",
+					"subTitleMainLabel": "The data within the submission template will be validated. Permits will autopopulate on the next page based on the permits listed in the data submission template.",
 					"name": "document",
 					"inputs": [
+						{
+							"name": "reportingTemplateDocuments",
+							"type": "component",
+							"readOnly": true,
+							"isRequired": false
+						},
 						{
 							"name": "associatedDocuments",
 							"label": "associated document",
@@ -1561,7 +1811,7 @@
 							"isRequired": false
 						},
 						{
-							"name": "reportingTemplateDocuments",
+							"name": "statisticalReportingDocuments",
 							"type": "component",
 							"isRequired": true
 						},
@@ -1569,6 +1819,232 @@
 							"name": "spatialDocuments",
 							"type": "component",
 							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Permits",
+					"subTitle": "Permits",
+					"name": "Permits",
+					"inputs": [
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true
+						}
+					]
+				},
+				{
+					"title": "Review and Submit",
+					"subTitle": "Review & Submit",
+					"name": "submit",
+					"inputs": [
+						{
+							"name": "review",
+							"type": "component",
+							"isRequired": true
+						}
+					]
+				}
+			]
+		},
+		"http://linked.data.gov.au/def/georesource-report/petroleum-report-production-information-public": {
+			"geoconfig": {
+				"primarysource": "spatial_file",
+				"secondarysource": "permit",
+				"permitRelationshipObject": "within"
+			},
+			"steps": [
+				{
+					"title": "Lodge a Petroleum Report - Petroleum Production Report - Public",
+					"subTitle": "Report Details",
+					"name": "metadata",
+					"inputs": [
+						{
+							"name": "title",
+							"format": "[authorizedHolder] - [title] PETROLEUM PRODUCTION REPORT FOR PERIOD ENDING [endDate]",
+							"viewLabel": "Title of the Report",
+							"label": "Coverage Of Report",
+							"placeholder": "e.g. ALL QUEENSLAND, BOWEN BASIN, BIG HILL PROJECT, FAIR GULLY FIELD, PL 1",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "alias",
+							"label": "Aliases",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"name": "description",
+							"viewLabel": "Description",
+							"label": "Report Description",
+							"placeholder": "Describe the contents of the report and its associated documents, including a summary of activities, significant results, conclusions, areas of interest etc ",
+							"subLabelAtTop": "Allowable characters are alphanumeric A-Z, a-z and 0-9 ; and standard punctuation [].,!@?'$%()*=-_–~;:/&+\"\\ ; all new lines must be separated by a double line break (double enter). <br /> For guidance and troubleshooting on allowable character inputs <a href='https://github.com/geological-survey-of-queensland/gsq-lodgement-portal#character-limitations' target='_blank'>click here</a> .",
+							"type": "textArea",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=\\-_—–~;:/&+\\\"\\\\\\s]+$/",
+											"Description cannot include non-standard characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "reportAuthor",
+							"label": "Report Author",
+							"subLabelAtTop": "Please enter the name of the person who has authored this report",
+							"type": "text",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
+										"name": "required",
+										"params": [
+											"Report Author is required"
+										]
+									},
+									{
+										"name": "max",
+										"params": [
+											256,
+											"The Report Author cannot be more than 256 characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "startDate",
+							"label": "Report Period Start Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "endDate",
+							"label": "Report Period End Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period End Date is required"
+										]
+									},
+									{
+										"name": "min",
+										"isComplex": true,
+										"params": [
+											"yup.ref('startDate')",
+											"The Report Period End Date must be greater than the Report Period Start Date"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period End Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "commodity",
+							"isRequired": true
+						},
+						{
+							"type": "component",
+							"name": "earthScienceData",
+							"isRequired": true
+						},
+						{
+							"name": "detail",
+							"label": "Details",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"type": "component",
+							"label": "Access Rights",
+							"name": "accessRight",
+							"readOnly": true
+						}
+					]
+				},
+				{
+					"title": "Documents and Data",
+					"subTitle": "Document Uploads",
+					"subTitleMainLabel": "The data within the submission template will be validated. Permits will autopopulate on the next page based on the permits listed in the data submission template.",
+					"name": "document",
+					"inputs": [
+						{
+							"name": "reportingTemplateDocuments",
+							"type": "component",
+							"readOnly": true,
+							"isRequired": false
+						},
+						{
+							"name": "associatedDocuments",
+							"label": "associated document",
+							"type": "component",
+							"isRequired": false
+						},
+						{
+							"name": "statisticalReportingDocuments",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "spatialDocuments",
+							"type": "component",
+							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Permits",
+					"subTitle": "Permits",
+					"name": "Permits",
+					"inputs": [
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true
 						}
 					]
 				},
@@ -1643,6 +2119,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -1776,7 +2260,7 @@
 			"geoconfig": {
 				"primarysource": "spatial_file",
 				"secondarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -1821,12 +2305,6 @@
 							}
 						},
 						{
-							"type": "component",
-							"name": "permit",
-							"isRequired": true,
-							"populateOwner": true
-						},
-						{
 							"name": "reportAuthor",
 							"label": "Report Author",
 							"subLabelAtTop": "Please enter the name of the person who has authored this report",
@@ -1834,6 +2312,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "max",
 										"params": [
@@ -1923,8 +2409,15 @@
 				{
 					"title": "Documents and Data",
 					"subTitle": "Document Uploads",
+					"subTitleMainLabel": "The data within the submission template will be validated. Permits will autopopulate on the next page based on the permits listed in the data submission template.",
 					"name": "document",
 					"inputs": [
+						{
+							"name": "reportingTemplateDocuments",
+							"type": "component",
+							"readOnly": true,
+							"isRequired": false
+						},
 						{
 							"name": "associatedDocuments",
 							"label": "associated document",
@@ -1932,7 +2425,7 @@
 							"isRequired": false
 						},
 						{
-							"name": "reportingTemplateDocuments",
+							"name": "statisticalReportingDocuments",
 							"type": "component",
 							"isRequired": true
 						},
@@ -1940,6 +2433,226 @@
 							"name": "spatialDocuments",
 							"type": "component",
 							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Permits",
+					"subTitle": "Permits",
+					"name": "Permits",
+					"inputs": [
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true
+						}
+					]
+				},
+				{
+					"title": "Review and Submit",
+					"subTitle": "Review & Submit",
+					"name": "submit",
+					"inputs": [
+						{
+							"name": "review",
+							"type": "component",
+							"isRequired": true
+						}
+					]
+				}
+			]
+		},
+		"http://linked.data.gov.au/def/georesource-report/petroleum-report-resource-and-reserves-information-public": {
+			"geoconfig": {
+				"primarysource": "spatial_file",
+				"secondarysource": "permit",
+				"permitRelationshipObject": "within"
+			},
+			"steps": [
+				{
+					"title": "Lodge a Petroleum Report - Petroleum Resources and Reserves Report - Public",
+					"subTitle": "Report Details",
+					"name": "metadata",
+					"inputs": [
+						{
+							"name": "title",
+							"format": "[authorizedHolder] - [title] PETROLEUM RESOURCES AND RESERVES REPORT FOR PERIOD ENDING [endDate]",
+							"viewLabel": "Title of the Report",
+							"label": "Coverage Of Report",
+							"placeholder": "e.g. ALL QUEENSLAND, BOWEN BASIN, BIG HILL PROJECT, FAIR GULLY FIELD, PL 1",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "alias",
+							"label": "Aliases",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"name": "description",
+							"viewLabel": "Description",
+							"label": "Report Description",
+							"placeholder": "Describe fluid volumes oil and gas.",
+							"subLabelAtTop": "Allowable characters are alphanumeric A-Z, a-z and 0-9 ; and standard punctuation [].,!@?'$%()*=-_–~;:/&+\"\\ ; all new lines must be separated by a double line break (double enter). <br /> For guidance and troubleshooting on allowable character inputs <a href='https://github.com/geological-survey-of-queensland/gsq-lodgement-portal#character-limitations' target='_blank'>click here</a> .",
+							"type": "textArea",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=\\-_—–~;:/&+\\\"\\\\\\s]+$/",
+											"Description cannot include non-standard characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "reportAuthor",
+							"label": "Report Author",
+							"subLabelAtTop": "Please enter the name of the person who has authored this report",
+							"type": "text",
+							"validations": {
+								"type": "string",
+								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
+										"name": "max",
+										"params": [
+											256,
+											"The Report Author cannot be more than 256 characters"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "startDate",
+							"label": "Report Period Start Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period Start Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"name": "endDate",
+							"label": "Report Period End Date",
+							"type": "calender",
+							"validations": {
+								"type": "date",
+								"rules": [
+									{
+										"name": "required",
+										"params": [
+											"Report Period End Date is required"
+										]
+									},
+									{
+										"name": "min",
+										"isComplex": true,
+										"params": [
+											"yup.ref('startDate')",
+											"The Report Period End Date must be greater than the Report Period Start Date"
+										]
+									},
+									{
+										"name": "typeError",
+										"params": [
+											"Report Period End Date is required"
+										]
+									}
+								]
+							}
+						},
+						{
+							"type": "component",
+							"name": "commodity",
+							"isRequired": true
+						},
+						{
+							"type": "component",
+							"name": "earthScienceData",
+							"isRequired": true
+						},
+						{
+							"name": "detail",
+							"label": "Details",
+							"type": "component",
+							"readOnly": true
+						},
+						{
+							"type": "component",
+							"label": "Access Rights",
+							"name": "accessRight",
+							"readOnly": true
+						}
+					]
+				},
+				{
+					"title": "Documents and Data",
+					"subTitle": "Document Uploads",
+					"subTitleMainLabel": "The data within the submission template will be validated. Permits will autopopulate on the next page based on the permits listed in the data submission template.",
+					"name": "document",
+					"inputs": [
+						{
+							"name": "reportingTemplateDocuments",
+							"type": "component",
+							"readOnly": true,
+							"isRequired": false
+						},
+						{
+							"name": "associatedDocuments",
+							"label": "associated document",
+							"type": "component",
+							"isRequired": false
+						},
+						{
+							"name": "statisticalReportingDocuments",
+							"type": "component",
+							"isRequired": true
+						},
+						{
+							"name": "spatialDocuments",
+							"type": "component",
+							"isRequired": false
+						}
+					]
+				},
+				{
+					"title": "Permits",
+					"subTitle": "Permits",
+					"name": "Permits",
+					"inputs": [
+						{
+							"type": "component",
+							"name": "permit",
+							"isRequired": true,
+							"populateOwner": true
 						}
 					]
 				},
@@ -2014,6 +2727,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "max",
 										"params": [
@@ -2140,7 +2861,7 @@
 		"http://linked.data.gov.au/def/georesource-report/scientific-or-technical-survey-report": {
 			"geoconfig": {
 				"primarysource": "spatial_file",
-                "secondarysource": "permit",
+				"secondarysource": "permit",
 				"permitRelationshipObject": "within"
 			},
 			"steps": [
@@ -2198,6 +2919,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -2385,6 +3114,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -2577,6 +3314,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -2767,6 +3512,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -2960,6 +3713,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -3141,6 +3902,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -3340,6 +4109,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -3476,7 +4253,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-annual": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -3534,6 +4311,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -3721,6 +4506,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -3852,7 +4645,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-final": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -3910,6 +4703,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -4042,7 +4843,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -4100,6 +4901,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -4232,7 +5041,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-partial-relinquishment-higher-tenure": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -4290,6 +5099,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -4422,7 +5239,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-surrender": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -4480,6 +5297,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -4612,7 +5437,7 @@
 		"http://linked.data.gov.au/def/georesource-report/petroleum-report-annual": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -4670,6 +5495,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -4861,6 +5694,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -5050,6 +5891,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -5241,6 +6090,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -5431,6 +6288,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -5601,6 +6466,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -5780,6 +6653,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -5967,6 +6848,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -6146,6 +7035,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -6272,7 +7169,7 @@
 		"http://linked.data.gov.au/def/georesource-report/geothermal-report-annual-reserves": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -6329,6 +7226,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "max",
 										"params": [
@@ -6445,7 +7350,7 @@
 		"http://linked.data.gov.au/def/georesource-report/geothermal-report-annual": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -6502,6 +7407,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -6687,6 +7600,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -6866,6 +7787,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -7052,6 +7981,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "max",
 										"params": [
 											256,
@@ -7225,6 +8162,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -7411,6 +8356,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -7538,7 +8491,7 @@
 		"http://linked.data.gov.au/def/georesource-report/greenhouse-gas-report-storage-capacity": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -7595,6 +8548,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -7776,6 +8737,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -7956,6 +8925,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -8082,7 +9059,7 @@
 		"http://linked.data.gov.au/def/georesource-report/survey-plan": {
 			"geoconfig": {
 				"primarysource": "spatial_file",
-                "secondarysource": "permit",
+				"secondarysource": "permit",
 				"permitRelationshipObject": "within"
 			},
 			"steps": [
@@ -8141,6 +9118,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -8269,7 +9254,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-final-relinquishment": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -8327,6 +9312,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -8513,6 +9506,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -8687,6 +9688,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "max",
 										"params": [
 											256,
@@ -8852,6 +9861,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -8980,7 +9997,8 @@
 							"format": "[title]",
 							"viewLabel": "Title of the Report",
 							"label": "Title of the Report",
-							"type": "component"
+							"type": "component",
+							"isRequired": true
 						},
 						{
 							"name": "alias",
@@ -9022,6 +10040,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -9189,6 +10215,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "max",
 										"params": [
@@ -9358,6 +10392,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -9436,6 +10478,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Water Licence contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -10411,6 +11461,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -10587,6 +11645,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Proposal Author is required"
@@ -10726,6 +11792,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -10897,6 +11971,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -11076,6 +12158,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -11246,6 +12336,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -11425,6 +12523,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -11545,6 +12651,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -11672,6 +12786,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -11858,6 +12980,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -12040,6 +13170,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -12255,6 +13393,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -12435,6 +13581,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -12512,6 +13666,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Water Licence contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Water Licence is required"
@@ -12582,7 +13744,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-annual-ml": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -12640,6 +13802,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -12772,7 +13942,7 @@
 		"http://linked.data.gov.au/def/georesource-report/permit-report-final-higher-tenure": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -12830,6 +14000,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
@@ -13017,6 +14195,14 @@
 								"type": "string",
 								"rules": [
 									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
+									{
 										"name": "required",
 										"params": [
 											"Report Author is required"
@@ -13145,189 +14331,10 @@
 				}
 			]
 		},
-		
-		"http://linked.data.gov.au/def/georesource-report/key-resource-area-report": {
-			"geoconfig": {
-				"primarysource": "spatial_file",
-				"secondarysource": "existing",
-				"secondaryobject": "borehole/Survey",
-				"permitRelationshipObject": "intersects"
-			},
-			"steps": [
-				{
-					"title": "Lodge a Report",
-					"subTitle": "Report Details",
-					"name": "metadata",
-					"inputs": [
-						{
-							"name": "title",
-							"format": "[title]",
-							"viewLabel": "Title of the Report",
-							"label": "Title of the Report",
-							"placeholder": "i.e. KRA 1 Ravensbourne",
-							"type": "component",
-							"isRequired": true
-						},
-						{
-							"name": "alias",
-							"label": "Aliases",
-							"type": "component",
-							"readOnly": true
-						},
-						{
-							"name": "description",
-							"viewLabel": "Description",
-							"label": "Report Description",
-							"placeholder": "Describe the contents of the report and its associated documents, including a summary of activities, significant results, conclusions, main methods used, areas of interest etc.",
-							"subLabelAtTop": "Allowable characters are alphanumeric A-Z, a-z and 0-9 ; and standard punctuation [].,!@?'$%()*=-_–~;:/&+\"\\ ; all new lines must be separated by a double line break (double enter). <br /> For guidance and troubleshooting on allowable character inputs <a href='https://github.com/geological-survey-of-queensland/gsq-lodgement-portal#character-limitations' target='_blank'>click here</a> .",
-							"type": "textArea",
-							"validations": {
-								"type": "string",
-								"rules": [
-									{
-										"name": "matches",
-										"isComplex": true,
-										"params": [
-											"/^[0-9A-Za-z .,!@?'$%()[\\]*=\\-_—–~;:/&+\\\"\\\\\\s]+$/",
-											"Description cannot include non-standard characters"
-										]
-									}
-								]
-							}
-						},
-						{
-							"type": "component",
-							"name": "permit",
-							"isRequired": false,
-							"populateOwner": true
-						},
-						{
-							"name": "reportAuthor",
-							"label": "Report Author",
-							"subLabelAtTop": "Please enter the name of the person who has authored this report",
-							"type": "text",
-							"validations": {
-								"type": "string",
-								"rules": [
-									{
-										"name": "required",
-										"params": [
-											"Report Author is required"
-										]
-									},
-									{
-										"name": "max",
-										"params": [
-											256,
-											"The Report Author cannot be more than 256 characters"
-										]
-									}
-								]
-							}
-						},
-						{
-							"name": "survey",
-							"type": "component",
-							"isRequired": false
-						},
-						{
-							"name": "startDate",
-							"label": "Report Period Start Date",
-							"type": "calender",
-							"validations": {
-								"type": "date",
-								"rules": [
-									{
-										"name": "nullable",
-										"params": [
-											""
-										]
-									},
-									{
-										"name": "typeError",
-										"params": [
-											"Report Period Start Date is invalid"
-										]
-									}
-								]
-							}
-						},
-						{
-							"type": "calender",
-							"name": "endDate",
-							"label": "Report Period End Date",
-							"validations": {
-								"type": "date",
-								"rules": [
-									{
-										"name": "nullable",
-										"params": [
-											""
-										]
-									},
-									{
-										"name": "typeError",
-										"params": [
-											"Report Period End Date is invalid"
-										]
-									}
-								]
-							}
-						},
-						{
-							"type": "component",
-							"name": "commodity",
-							"isRequired": false
-						},
-						{
-							"type": "component",
-							"name": "earthScienceData",
-							"isRequired": true
-						},
-						{
-							"type": "component",
-							"label": "Access Rights",
-							"name": "accessRight",
-							"readOnly": true
-						}
-					]
-				},
-				{
-					"title": "Documents and Data",
-					"subTitle": "Document Uploads",
-					"name": "document",
-					"inputs": [
-						{
-							"name": "associatedDocuments",
-							"label": "associated document",
-							"type": "component",
-							"isRequired": true
-						},
-						{
-							"name": "spatialDocuments",
-							"type": "component",
-							"isRequired": false
-						}
-					]
-				},
-				{
-					"title": "Review and Submit",
-					"subTitle": "Review & Submit",
-					"name": "submit",
-					"inputs": [
-						{
-							"name": "review",
-							"type": "component",
-							"isRequired": true
-						}
-					]
-				}
-			]
-		},
 		"http://linked.data.gov.au/def/georesource-report/permit-report-surrender-higher-tenure": {
 			"geoconfig": {
 				"primarysource": "permit",
-				"permitRelationshipObject": "equals"
+				"permitRelationshipObject": "within"
 			},
 			"steps": [
 				{
@@ -13385,6 +14392,14 @@
 							"validations": {
 								"type": "string",
 								"rules": [
+									{
+										"name": "matches",
+										"isComplex": true,
+										"params": [
+											"/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+											"Report Author contains invalid characters"
+										]
+									},
 									{
 										"name": "required",
 										"params": [
