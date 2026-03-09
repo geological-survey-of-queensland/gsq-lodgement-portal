@@ -10324,11 +10324,11 @@
         }
       ]
     },
-    "http://linked.data.gov.au/def/georesource-report/geophysical-survey-notification-report": {
+    "http://linked.data.gov.au/def/georesource-report/survey-notification-report": {
       "steps": [
         {
-          "title": "Lodge a Geophysical Survey Notification or Report",
-          "subTitle": "Report Details",
+          "title": "Lodge a Survey Notification or Report",
+          "subTitle": "Report Details SURV-01 v1",
           "name": "metadata",
           "inputs": [
             {
@@ -10351,7 +10351,7 @@
             },
             {
               "type": "component",
-              "label": "Is this survey intended to be undertaken, or has the survey been acquired and completed? Otherwise, are you providing a Submission (i.e. submission of final report containing survey data)?",
+              "label": "<strong>Form ID :</strong> SURV-01 v1 <br><br> This form addresses the applicable requirements of the following: <ul><li><a href=\"https://www.legislation.qld.gov.au/view/html/inforce/current/act-2004-025\" target=\"_blank\">Petroleum and Gas (Production and Safety) Act 2004</a></li><li><a href=\"https://www.legislation.qld.gov.au/view/html/inforce/current/act-2010-031\" target=\"_blank\">Geothermal Energy Act 2010</a></li><li><a href=\"https://www.legislation.qld.gov.au/view/html/inforce/current/act-2009-003\" target=\"_blank\">Greenhouse Gas Storage Act 2009</a></li><li><a href=\"https://www.nrmmrrd.qld.gov.au/__data/assets/pdf_file/0019/1512073/reporting-practice-direction-minerals-coal.pdf\" target=\"_blank\">Practice Direction - Minerals and Coal Reporting</a></li></ul><br> Please indicate if this survey is intended to be undertaken, or has been acquired and completed? Otherwise, are you providing a report (i.e. submission of final survey data)?",
               "name": "intendedOrCompletedSurvey",
               "isRequired": true
             }
@@ -10386,7 +10386,7 @@
             },
             {
               "name": "surveytitle",
-              "format": "[title] - [status] - GEOPHYSICAL SURVEY NOTIFICATION OR REPORT",
+              "format": "[title] - [status] - SURVEY NOTIFICATION OR REPORT",
               "viewLabel": "Title of the Report",
               "label": "Survey Name",
               "subLabelAtTop": "For example, GULLY CREEK 3D 2025",
