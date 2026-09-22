@@ -1,6 +1,6 @@
 {
-  "version": "0.9",
-  "Last updated date": "05/02/2026",
+  "version": "0.10",
+  "Last updated date": "22/09/2026",
   "Last updated by": "S Bowden, GSQ",
   "templates": {
     "http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
@@ -8441,7 +8441,7 @@
           "inputs": [
             {
               "name": "title",
-              "format": "[permit] [title] MINE PLAN LODGEMENT AS AT [reportDate]",
+              "format": "[permit] [title] MINE PLAN LODGEMENT AS AT [endDate]",
               "viewLabel": "Title of the Report",
               "placeholder": "e.g. Cannington Mine",
               "label": "Mine Name",
