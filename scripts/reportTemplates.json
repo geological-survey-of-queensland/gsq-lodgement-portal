@@ -1,8 +1,174 @@
 {
-  "version": "0.11",
-  "Last updated date": "23/09/2026",
-  "Last updated by": "S Bowden, GSQ",
+  "version": "0.12",
+  "Last updated date": "10/11/2026",
+  "Last updated by": "D Hoy, GSQ",
   "templates": {
+    "http://linked.data.gov.au/def/georesource-report/core-store-sampling-data-report": {
+      "geoconfig": {
+        "primarysource": "existing",
+        "primaryobject": "borehole",
+        "permitRelationshipObject": "none"
+      },
+      "steps": [
+        {
+          "title": "Lodge a Core Store Sampling Data Report",
+          "subTitle": "Report Details",
+          "name": "metadata",
+          "inputs": [
+            {
+              "name": "title",
+              "format": "[title]",
+              "viewLabel": "Title of the Report",
+              "label": "Title of the Report",
+              "placeholder": "[EDC/MI][sampling number] Core Store Sampling Data Report",
+              "type": "component",
+              "isRequired": true
+            },
+            {
+              "name": "alias",
+              "label": "Aliases",
+              "type": "component",
+              "readOnly": true
+            },
+            {
+              "name": "description",
+              "viewLabel": "Description",
+              "label": "Report Description",
+              "placeholder": "Describe the contents of the report and its associated documents, including the date of sampling, a summary of the samples taken, main methods used, significant results, and conclusions. ",
+              "subLabelAtTop": "Allowable characters are alphanumeric A-Z, a-z and 0-9 ; and standard punctuation [].,!@?'$%()*=-_–~;:/&+\"\\ ; all new lines must be separated by a double line break (double enter). <br /> For guidance and troubleshooting on allowable character inputs <a href='https://github.com/geological-survey-of-queensland/gsq-lodgement-portal#character-limitations' target='_blank'>click here</a> .",
+              "type": "textArea",
+              "validations": {
+                "type": "string",
+                "rules": [
+                  {
+                    "name": "matches",
+                    "isComplex": true,
+                    "params": [
+                      "/^[0-9A-Za-z .,!@?'$%()[\\]*=\\-_—–~;:/&+\\\"\\\\\\s]+$/",
+                      "Description cannot include non-standard characters"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "reportAuthor",
+              "label": "Report Author",
+              "subLabelAtTop": "Please enter the name of the person who has authored this report",
+              "type": "text",
+              "validations": {
+                "type": "string",
+                "rules": [
+                  {
+                    "name": "matches",
+                    "isComplex": true,
+                    "params": [
+                      "/^[0-9A-Za-z .,!@?'$%()[\\]*=_–~;:/&+\"\\\\-]+$/",
+                      "Report Author contains invalid characters"
+                    ]
+                  },
+                  {
+                    "name": "required",
+                    "params": ["Report Author is required"]
+                  },
+                  {
+                    "name": "max",
+                    "params": [
+                      256,
+                      "The Report Author cannot be more than 256 characters"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "component",
+              "name": "borehole",
+              "subLabelAtTop": "Please enter all of the boreholes that the samples were taken from.",
+              "isRequired": false, 
+              "isMultiSelect": true
+            },
+            {
+              "name": "startDate",
+              "label": "Report Period Start Date",
+              "type": "calender",
+              "validations": {
+                "type": "date",
+                "rules": [
+                  {
+                    "name": "nullable",
+                    "params": [""]
+                  },
+                  {
+                    "name": "typeError",
+                    "params": ["Report Period Start Date is invalid"]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "calender",
+              "name": "endDate",
+              "label": "Report Period End Date",
+              "validations": {
+                "type": "date",
+                "rules": [
+                  {
+                    "name": "nullable",
+                    "params": [""]
+                  },
+                  {
+                    "name": "typeError",
+                    "params": ["Report Period End Date is invalid"]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "component",
+              "name": "commodity",
+              "isRequired": false
+            },
+            {
+              "type": "component",
+              "name": "earthScienceData",
+              "isRequired": true
+            },
+            {
+              "type": "component",
+              "label": "Access Rights",
+              "name": "accessRight",
+              "readOnly": true
+            }
+          ]
+        },
+        {
+          "title": "Documents and Data",
+          "subTitle": "Document Uploads",
+          "name": "document",
+          "inputs": [
+            {
+              "name": "associatedDocuments",
+              "label": "associated document",
+              "type": "component",
+              "isRequired": true
+            }
+          ]
+        },
+        {
+          "title": "Review and Submit",
+          "subTitle": "Review & Submit",
+          "name": "submit",
+          "inputs": [
+            {
+              "name": "review",
+              "type": "component",
+              "isRequired": true
+            }
+          ]
+        }
+      ]
+    },
     "http://linked.data.gov.au/def/georesource-report/minerals-annual-statistics": {
       "geoconfig": {
         "primarysource": "permit",
